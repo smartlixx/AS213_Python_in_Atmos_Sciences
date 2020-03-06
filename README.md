@@ -7,6 +7,6 @@ Course materials for AS 213: Introduction to Python and Its Applications in Atmo
 
 3. [Introduction to `xarray`- 2](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/xarray/xarray-2.ipynb)
 
-4. [Introduction to `Cartopy`-1]((https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/cartopy/Cartopy_1.ipynb))
+4. [Introduction to `Cartopy`-1](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/cartopy/Cartopy_1.ipynb)
 
 5. Introduction to `Cartopy`-2
