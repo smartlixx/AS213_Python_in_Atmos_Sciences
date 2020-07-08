@@ -11,12 +11,12 @@ Course materials for AS 213: Introduction to Python and Its Applications in Atmo
 
 4. [Introduction to `Cartopy`-1](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/cartopy/Cartopy_1.ipynb)
 
-5. [Introduction to `Cartopy`-2] (https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/cartopy/Cartopy_2.ipynb)
+5. [Introduction to `Cartopy`-2](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/cartopy/Cartopy_2.ipynb)
 
 6. [Introduction to web scraping](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/web-scraping/web-scaping.ipynb)
 
-7. [Integrated examples - 1] (https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Integrated_examples/integrated_examples_1.ipynb)
+7. [Integrated examples - 1](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Integrated_examples/integrated_examples_1.ipynb)
 
-8. [Integrated examples - 2] (https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Integrated_examples/integrated_examples_2.ipynb)
+8. [Integrated examples - 2](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Integrated_examples/integrated_examples_2.ipynb)
 
 
