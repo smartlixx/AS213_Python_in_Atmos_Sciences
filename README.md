@@ -7,9 +7,11 @@ Course materials for AS 213: Introduction to Python and Its Applications in Atmo
 
 3. [`Pandas`-3](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Pandas/Pandas_3.ipynb)
 
+   [Homework for `Pandas`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Pandas/Pandas_homework.ipynb)
+
 4. [Advanced `Matplotlib`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/matplotlib/Matplotlib_advanced.ipynb)
 
-   [`Matplotlib` homework](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/matplotlib/Matplotlib_homework.ipynb)
+   [Homework for `Matplotlib`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/matplotlib/Matplotlib_homework.ipynb)
 
 5. [Introduction to `xarray`- 1](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/xarray/xarray-1.ipynb)
 
@@ -18,6 +20,8 @@ Course materials for AS 213: Introduction to Python and Its Applications in Atmo
 7. [Introduction to `Cartopy`-1](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/cartopy/Cartopy_1.ipynb)
 
 8. [Introduction to `Cartopy`-2](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/cartopy/Cartopy_2.ipynb)
+ 
+   [Homework for `Matplotlib`,`xarray` and `Cartopy`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Exercises/Exercise_El_Nino.ipynb)
 
 9. [Integrated examples - 1](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Integrated_examples/integrated_examples_1.ipynb)
 
