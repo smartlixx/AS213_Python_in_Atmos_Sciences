@@ -9,9 +9,9 @@ Course materials for AS 213: Introduction to Python and Its Applications in Atmo
 
    [Homework for `Pandas`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Pandas/Pandas_homework.ipynb)
 
-4. [Advanced `Matplotlib`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/matplotlib/Matplotlib_advanced.ipynb)
+4. [Advanced `Matplotlib`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Matplotlib/Matplotlib_advanced.ipynb)
 
-   [Homework for `Matplotlib`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/matplotlib/Matplotlib_homework.ipynb)
+   [Homework for `Matplotlib`](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/Matplotlib/Matplotlib_homework.ipynb)
 
 5. [Introduction to `xarray`- 1](https://nbviewer.jupyter.org/github/smartlixx/AS213_Python_in_Atmos_Sciences/blob/master/xarray/xarray-1.ipynb)
 
