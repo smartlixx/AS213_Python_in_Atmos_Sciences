@@ -1,2 +1,4 @@
 theme: jekyll-theme-cayman
 title: AS213 Python in Atmospheric Sciences
+name: fastpages An easy to use blogging platform with support for Jupyter Notebooks.
+uses: fastai/fastpages@v2.1.5
