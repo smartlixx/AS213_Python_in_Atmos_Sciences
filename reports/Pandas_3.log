@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 1107, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 852, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+time.sleep(1)
+print("clock1: %s" % time.clock())
+time.sleep(1)
+print("clock2: %s" % time.clock())
+print("clock2_perf: %s" % time.perf_counter())
+print("clock2_process: %s" % time.process_time())
+time.sleep(1)
+print("clock3_perf: %s" % time.perf_counter())
+print("clock3_process: %s" % time.process_time())
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m<ipython-input-10-2fa2f1f9b755>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mtime[0m[0;34m.[0m[0msleep[0m[0;34m([0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mprint[0m[0;34m([0m[0;34m"clock1: %s"[0m [0;34m%[0m [0mtime[0m[0;34m.[0m[0mclock[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mtime[0m[0;34m.[0m[0msleep[0m[0;34m([0m[0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mprint[0m[0;34m([0m[0;34m"clock2: %s"[0m [0;34m%[0m [0mtime[0m[0;34m.[0m[0mclock[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mprint[0m[0;34m([0m[0;34m"clock2_perf: %s"[0m [0;34m%[0m [0mtime[0m[0;34m.[0m[0mperf_counter[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mAttributeError[0m: module 'time' has no attribute 'clock'
+AttributeError: module 'time' has no attribute 'clock'
+

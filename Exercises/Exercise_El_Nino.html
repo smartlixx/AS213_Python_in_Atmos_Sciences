@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>厄尔尼诺/拉尼娜 (El Nino/La Nina) 现象 &#8212; AS213 Python in Atmospheric Sciences</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="地图数据处理及可视化" href="../Integrated_examples/integrated_examples_1.html" />
+    <link rel="prev" title="Cartopy 地图绘制（3）" href="../cartopy/Cartopy_3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   AS213_Python_in_Atmos_Sciences
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_3.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_homework.html">
+   Pandas homework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/%E6%80%9D%E8%80%83%E9%A2%98.html">
+   思考题
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/%E6%80%9D%E8%80%83%E9%A2%98_%E7%AD%94%E6%A1%88.html">
+   思考题答案
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Matplotlib
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Matplotlib/Matplotlib_advanced.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   进阶
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Matplotlib/Matplotlib_homework.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   作业
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  xarray
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xarray/xarray-1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Xarray
+    </span>
+   </code>
+   数据处理（１）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xarray/xarray-2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Xarray
+    </span>
+   </code>
+   数据处理（2）
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Cartopy
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cartopy/Cartopy_1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（1）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cartopy/Cartopy_2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（2）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cartopy/Cartopy_3.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（3）
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   xarray/cartopy 作业
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intergrated examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Integrated_examples/integrated_examples_1.html">
+   地图数据处理及可视化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Integrated_examples/integrated_examples_2.html">
+   大气数据处理及可视化
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Exercises/Exercise_El_Nino.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/smartlixx/AS213_Python_in_Atmos_Sciences"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/smartlixx/AS213_Python_in_Atmos_Sciences/issues/new?title=Issue%20on%20page%20%2FExercises/Exercise_El_Nino.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/smartlixx/AS213_Python_in_Atmos_Sciences/master?urlpath=tree/Exercises/Exercise_El_Nino.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   数据
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-red-1-span">
+     <span style="color:red">
+      作业1
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sst-anomaly">
+   SST 异常（anomaly）
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-red-2-span">
+     <span style="color:red">
+      作业2
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composite-analysis">
+   对厄尔尼诺/拉尼娜进行聚合分析 Composite analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-red-3-span">
+     <span style="color:red">
+      作业3
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="el-nino-la-nina">
+<h1>厄尔尼诺/拉尼娜 (El Nino/La Nina) 现象<a class="headerlink" href="#el-nino-la-nina" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.ncdc.noaa.gov/teleconnections/enso/indicators/sst.php">https://www.ncdc.noaa.gov/teleconnections/enso/indicators/sst.php</a></p>
+<p>El Niño (La Niña) 现象指的是热带太平洋海面温度（Sea Surface Temperature, SST）随时间的震荡变化。El Niño 时，该平均海温比长期平均值高，而 La Niña 时，该平均海温较长期平均值低。通常以 0.5 °C 为阈值（即高出0.5 °C或低于-0.5 °C才认为发生 El Niño/La Niña 现象）。计算时通常取3个月的滚动平均值，并需要连续5个月满足条件，才会认定该年份为 El Niño 或 La Niña 年，否则为中性年。该温度差值被称为 Oceanic Niño Index (ONI)。</p>
+<p>El Niño (La Niña) is a phenomenon in the equatorial Pacific Ocean characterized by a five consecutive 3-month running mean of sea surface temperature (SST) anomalies in the Niño 3.4 region that is above (below) the threshold of +0.5°C (-0.5°C). This standard of measure is known as the Oceanic Niño Index (ONI).</p>
+<p><img alt="" src="https://www.ncdc.noaa.gov/monitoring-content/teleconnections/nino-regions.gif" /></p>
+<p>如上图所示，ONI 可以在多个区域进行计算。常用的为 Nino3.4（对应图中标示为3.4的区域），即 5°N - 5°S，120 - 170°W。Nino3.4 结果如下图：</p>
+<p><img alt="" src="https://www.ncdc.noaa.gov/monitoring-content/teleconnections/eln-f-pg.gif" /></p>
+<div class="section" id="id1">
+<h2>数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>我们使用 NOAA 的 Extended Reconstructed Sea Surface Temperature (ERSST) V5
+（<a class="reference external" href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html%EF%BC%89">https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.ersst.v5.html）</a>
+月平均温度数据来计算 Nino3.4 指数，并绘出上面的图。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataarray</span><span class="p">(</span><span class="s1">&#39;sst.mnmean.1950-2019.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/file_manager.py in _acquire_with_cache_info(self, needs_lock)
+    198             try:
+--&gt; 199                 file = self._cache[self._key]
+    200             except KeyError:
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/lru_cache.py in __getitem__(self, key)
+     52         with self._lock:
+---&gt; 53             value = self._cache[key]
+     54             self._cache.move_to_end(key)
+
+KeyError: [&lt;function _open_scipy_netcdf at 0x7fcbbead6670&gt;, (&#39;/Users/lixx/work/AS213_Python_in_Atmos_Sciences/Exercises/sst.mnmean.1950-2019.nc&#39;,), &#39;r&#39;, ((&#39;mmap&#39;, None), (&#39;version&#39;, 2))]
+
+During handling of the above exception, another exception occurred:
+
+TypeError                                 Traceback (most recent call last)
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in _open_scipy_netcdf(filename, mode, mmap, version)
+     93     try:
+---&gt; 94         return scipy.io.netcdf_file(filename, mode=mode, mmap=mmap, version=version)
+     95     except TypeError as e:  # netcdf3 message is obscure in this case
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/scipy/io/netcdf.py in __init__(self, filename, mode, mmap, version, maskandscale)
+    280         if mode in &#39;ra&#39;:
+--&gt; 281             self._read()
+    282 
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/scipy/io/netcdf.py in _read(self)
+    601         if not magic == b&#39;CDF&#39;:
+--&gt; 602             raise TypeError(&quot;Error: %s is not a valid NetCDF 3 file&quot; %
+    603                             self.filename)
+
+TypeError: Error: /Users/lixx/work/AS213_Python_in_Atmos_Sciences/Exercises/sst.mnmean.1950-2019.nc is not a valid NetCDF 3 file
+
+During handling of the above exception, another exception occurred:
+
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-2-682ccc5af5bd&gt; in &lt;module&gt;
+----&gt; 1 sst = xr.open_dataarray(&#39;sst.mnmean.1950-2019.nc&#39;)
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/api.py in open_dataarray(filename_or_obj, group, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, engine, chunks, lock, cache, drop_variables, backend_kwargs, use_cftime, decode_timedelta)
+    687     &quot;&quot;&quot;
+    688 
+--&gt; 689     dataset = open_dataset(
+    690         filename_or_obj,
+    691         group=group,
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/api.py in open_dataset(filename_or_obj, group, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, engine, chunks, lock, cache, drop_variables, backend_kwargs, use_cftime, decode_timedelta)
+    555 
+    556     with close_on_error(store):
+--&gt; 557         ds = maybe_decode_store(store, chunks)
+    558 
+    559     # Ensure source filename always stored in dataset object (GH issue #2550)
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/api.py in maybe_decode_store(store, chunks)
+    451 
+    452     def maybe_decode_store(store, chunks):
+--&gt; 453         ds = conventions.decode_cf(
+    454             store,
+    455             mask_and_scale=mask_and_scale,
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/conventions.py in decode_cf(obj, concat_characters, mask_and_scale, decode_times, decode_coords, drop_variables, use_cftime, decode_timedelta)
+    637         encoding = obj.encoding
+    638     elif isinstance(obj, AbstractDataStore):
+--&gt; 639         vars, attrs = obj.load()
+    640         extra_coords = set()
+    641         close = obj.close
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/common.py in load(self)
+    111         &quot;&quot;&quot;
+    112         variables = FrozenDict(
+--&gt; 113             (_decode_variable_name(k), v) for k, v in self.get_variables().items()
+    114         )
+    115         attributes = FrozenDict(self.get_attrs())
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in get_variables(self)
+    164     def get_variables(self):
+    165         return FrozenDict(
+--&gt; 166             (k, self.open_store_variable(k, v)) for k, v in self.ds.variables.items()
+    167         )
+    168 
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in ds(self)
+    153     @property
+    154     def ds(self):
+--&gt; 155         return self._manager.acquire()
+    156 
+    157     def open_store_variable(self, name, var):
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/file_manager.py in acquire(self, needs_lock)
+    179             An open file object, as returned by ``opener(*args, **kwargs)``.
+    180         &quot;&quot;&quot;
+--&gt; 181         file, _ = self._acquire_with_cache_info(needs_lock)
+    182         return file
+    183 
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/file_manager.py in _acquire_with_cache_info(self, needs_lock)
+    203                     kwargs = kwargs.copy()
+    204                     kwargs[&quot;mode&quot;] = self._mode
+--&gt; 205                 file = self._opener(*self._args, **kwargs)
+    206                 if self._mode == &quot;w&quot;:
+    207                     # ensure file doesn&#39;t get overriden when opened again
+
+/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in _open_scipy_netcdf(filename, mode, mmap, version)
+    103             &quot;&quot;&quot;
+    104             errmsg += msg
+--&gt; 105             raise TypeError(errmsg)
+    106         else:
+    107             raise
+
+TypeError: Error: /Users/lixx/work/AS213_Python_in_Atmos_Sciences/Exercises/sst.mnmean.1950-2019.nc is not a valid NetCDF 3 file
+            If this is a NetCDF4 file, you may need to install the
+            netcdf4 library, e.g.,
+
+            $ pip install netcdf4
+            
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre>&lt;xarray.DataArray &#x27;sst&#x27; (time: 840, lat: 89, lon: 180)&gt;
+[13456800 values with dtype=float32]
+Coordinates:
+  * lat      (lat) float32 88.0 86.0 84.0 82.0 80.0 ... -82.0 -84.0 -86.0 -88.0
+  * lon      (lon) float32 0.0 2.0 4.0 6.0 8.0 ... 350.0 352.0 354.0 356.0 358.0
+  * time     (time) datetime64[ns] 1950-01-01 1950-02-01 ... 2019-12-01
+Attributes:
+    long_name:     Monthly Means of Sea Surface Temperature
+    units:         degC
+    var_desc:      Sea Surface Temperature
+    level_desc:    Surface
+    statistic:     Mean
+    dataset:       NOAA Extended Reconstructed SST V5
+    parent_stat:   Individual Values
+    actual_range:  [-1.8     42.32636]
+    valid_range:   [-1.8 45. ]</pre></div></div>
+</div>
+<p><span style='color:red'>注意经度是 0 - 360 度，纬度是 88 - -88 度 (逆序） </span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/lixx/miniconda3/lib/python3.7/site-packages/xarray/core/nanops.py:142: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis=axis, dtype=dtype)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x11f0a76d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_8_2.png" src="../_images/Exercise_El_Nino_8_2.png" />
+</div>
+</div>
+<div class="section" id="span-style-color-red-1-span">
+<h3><span style='color:red'> 作业1 </span><a class="headerlink" href="#span-style-color-red-1-span" title="Permalink to this headline">¶</a></h3>
+<p>请将上图进行美化：</p>
+<ul class="simple">
+<li><p>将经度改为 -180 - 180 度</p></li>
+<li><p>增加投影信息（PlateCarree）</p></li>
+<li><p>加上海岸线</p></li>
+<li><p>在坐标轴标签改成格式化的经纬度 （如 90°E，20°N等）</p></li>
+<li><p>将坐标轴的标题（‘Longitude’,’Latitude‘）去掉</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 你的代码</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst_zonal_time_mean</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">))</span>
+<span class="n">sst_zonal_time_mean</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11f761ed0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_12_1.png" src="../_images/Exercise_El_Nino_12_1.png" />
+</div>
+</div>
+<p>我们可以来看看海温异常（anomaly）随时间和纬度的变化</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">sst</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">sst_zonal_time_mean</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/lixx/miniconda3/lib/python3.7/site-packages/xarray/core/nanops.py:142: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis=axis, dtype=dtype)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x117605390&gt;
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_14_2.png" src="../_images/Exercise_El_Nino_14_2.png" />
+</div>
+</div>
+<p>不同纬度处的海温变化幅度是不同的</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">sst</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11f3f8ad0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_16_1.png" src="../_images/Exercise_El_Nino_16_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sst-anomaly">
+<h2>SST 异常（anomaly）<a class="headerlink" href="#sst-anomaly" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 气候（即长期平均值）</span>
+<span class="n">sst_clim</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">sst_clim</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/lixx/miniconda3/lib/python3.7/site-packages/xarray/core/nanops.py:142: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis=axis, dtype=dtype)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11f8a0d10&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_18_2.png" src="../_images/Exercise_El_Nino_18_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hovmoller 图</span>
+<span class="n">sst_clim</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/lixx/miniconda3/lib/python3.7/site-packages/xarray/core/nanops.py:142: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis=axis, dtype=dtype)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x11c49ccd0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_19_2.png" src="../_images/Exercise_El_Nino_19_2.png" />
+</div>
+</div>
+<p>我们可以计算海温的异常值（即瞬时值 - 气候）</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst_anom</span> <span class="o">=</span> <span class="n">sst</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.month&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">sst_clim</span>
+<span class="n">sst_anom</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11bb3a610&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_21_1.png" src="../_images/Exercise_El_Nino_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sst_anom</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/lixx/miniconda3/lib/python3.7/site-packages/numpy/lib/nanfunctions.py:1667: RuntimeWarning: Degrees of freedom &lt;= 0 for slice.
+  keepdims=keepdims)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x11bcf1410&gt;
+</pre></div>
+</div>
+<img alt="../_images/Exercise_El_Nino_22_2.png" src="../_images/Exercise_El_Nino_22_2.png" />
+</div>
+</div>
+<div class="section" id="span-style-color-red-2-span">
+<h3><span style='color:red'>作业2</span><a class="headerlink" href="#span-style-color-red-2-span" title="Permalink to this headline">¶</a></h3>
+<p>绘制 NOAA 的 Nino3.4 曲线图 （本文件从上往下数第2张图）</p>
+<ul class="simple">
+<li><p>计算Nino3.4区域内的海温异常的空间平均值（即对经度和纬度求平均）</p></li>
+<li><p>对该平均值再求3个月滚动平均，命名为 oni</p></li>
+<li><p>绘制3个月滚动平均随时间的变化</p></li>
+<li><p>对正、负值进行填色</p></li>
+<li><p>画出 0.5，0， -0.5 °C 三条横线，其中 0 为实线，其它两条为虚线 <code class="docutils literal notranslate"><span class="pre">ax.axhline()</span></code></p></li>
+<li><p>修改坐标轴的标题</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 你的代码</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="composite-analysis">
+<h2>对厄尔尼诺/拉尼娜进行聚合分析 Composite analysis<a class="headerlink" href="#composite-analysis" title="Permalink to this headline">¶</a></h2>
+<p>聚合分析是指对性质相似的事件进行归类、取平均，以便归纳同类型事件的特性。此处我们来看厄尔尼诺和拉尼娜现象对应的海温异常分布。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 创建一个新的 dataarray，其形状和 sst 一样，但是数据类型是分类（category）</span>
+<span class="c1"># oni 是你在作业2中创建的Nino3.4指数</span>
+
+<span class="n">nino34</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">oni</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;U4&#39;</span><span class="p">)</span>
+<span class="n">nino34</span><span class="p">[</span><span class="n">oni</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nino&#39;</span>
+<span class="n">nino34</span><span class="p">[</span><span class="n">oni</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nina&#39;</span>
+<span class="n">nino34</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="span-style-color-red-3-span">
+<h3><span style='color:red'>作业3</span><a class="headerlink" href="#span-style-color-red-3-span" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>根据上面的 <code class="docutils literal notranslate"><span class="pre">nino3.4</span></code>，对 <code class="docutils literal notranslate"><span class="pre">sst_anom</span></code> 进行分类，并求平均</p></li>
+<li><p>分别画出厄尔尼诺和拉尼娜时的 <code class="docutils literal notranslate"><span class="pre">sst_anom</span></code> 空间分布图。注意：要按照作业1的美观要求进行绘制。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 你的代码</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../cartopy/Cartopy_3.html" title="previous page"><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 地图绘制（3）</a>
+    <a class='right-next' id="next-link" href="../Integrated_examples/integrated_examples_1.html" title="next page">地图数据处理及可视化</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Xianxiang Li<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

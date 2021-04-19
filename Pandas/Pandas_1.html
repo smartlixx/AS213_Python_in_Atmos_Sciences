@@ -1,0 +1,3584 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pandas - 1 &#8212; AS213 Python in Atmospheric Sciences</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pandas - 2" href="Pandas_2.html" />
+    <link rel="prev" title="AS213_Python_in_Atmos_Sciences" href="../intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   AS213_Python_in_Atmos_Sciences
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pandas_2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pandas_3.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pandas_homework.html">
+   Pandas homework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E6%80%9D%E8%80%83%E9%A2%98.html">
+   思考题
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E6%80%9D%E8%80%83%E9%A2%98_%E7%AD%94%E6%A1%88.html">
+   思考题答案
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Matplotlib
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Matplotlib/Matplotlib_advanced.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   进阶
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Matplotlib/Matplotlib_homework.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   作业
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  xarray
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xarray/xarray-1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Xarray
+    </span>
+   </code>
+   数据处理（１）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xarray/xarray-2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Xarray
+    </span>
+   </code>
+   数据处理（2）
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Cartopy
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cartopy/Cartopy_1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（1）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cartopy/Cartopy_2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（2）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cartopy/Cartopy_3.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（3）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Exercise_El_Nino.html">
+   xarray/cartopy 作业
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intergrated examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Integrated_examples/integrated_examples_1.html">
+   地图数据处理及可视化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Integrated_examples/integrated_examples_2.html">
+   大气数据处理及可视化
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Pandas/Pandas_1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/smartlixx/AS213_Python_in_Atmos_Sciences"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/smartlixx/AS213_Python_in_Atmos_Sciences/issues/new?title=Issue%20on%20page%20%2FPandas/Pandas_1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/smartlixx/AS213_Python_in_Atmos_Sciences/master?urlpath=tree/Pandas/Pandas_1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   数据结构
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     1.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Series
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframe">
+     1.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index">
+     1.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Index
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   数据类型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-o">
+   3. 文件 I/O
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     文件读取
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     文件写入
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4. 元素选取方法
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     思考题
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     4.1
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       []
+      </span>
+     </code>
+     操作符
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loc-label">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc
+      </span>
+     </code>
+     基于
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       label
+      </span>
+     </code>
+     的选取方式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iloc">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .iloc
+      </span>
+     </code>
+     基于位置的选取方式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#at-iat">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       at
+      </span>
+     </code>
+     和
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       iat
+      </span>
+     </code>
+     方法
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pandas-1">
+<h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> - 1<a class="headerlink" href="#pandas-1" title="Permalink to this headline">¶</a></h1>
+<div>
+<img src='https://pandas.pydata.org/static/img/pandas.svg' width='400'/>
+</div>
+<hr class="docutils" />
+<p>主讲人：李显祥</p>
+<p>大气科学学院</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 是一个优秀的数据分析工具包，主要用来分析二维数据和时间序列。它建构在 <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> 之上，但是能处理混合类型的数据。</p>
+<div>
+    <img src='./stack.png' width='600' align='center'/>
+</div>  <div class="section" id="pandas">
+<h2>1. <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据结构<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 主要支持两种数据结构：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code>: 一维带标签的数组，由数据类型相同的元素构成，具有列表和字典的特性。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>: 二维数据，由索引相同的 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 构成的的二维数据结构，类似表格</p></li>
+</ul>
+<div class="section" id="series">
+<h3>1.1. <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h3>
+<p>四个重要属性:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Series.index</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Series.name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Series.values</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Series.dtype</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">],</span>
+              <span class="n">name</span><span class="o">=</span><span class="s1">&#39;这是一个Series&#39;</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a   -0.554001
+b    0.066847
+c   -1.519917
+d    0.974747
+e    0.826905
+Name: 这是一个Series, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.55400121,  0.06684668, -1.51991743,  0.97474738,  0.82690501])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;这是一个Series&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;float64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span> <span class="p">}</span>
+<span class="n">index2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data2</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index2</span><span class="p">)</span>  <span class="c1"># 未指定 name</span>
+<span class="n">s2</span>      <span class="c1"># 缺失项填充NaN（NaN：not a number 为 pandas缺失值标记）</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    1.0
+b    2.0
+d    NaN
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataframe">
+<h3>1.2. <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h3>
+<p>四个重要属性:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame.index</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame.columns</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame.values</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame.dtypes</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;col1&#39;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">),</span><span class="s1">&#39;col2&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="s1">&#39;col3&#39;</span><span class="p">:[</span><span class="mf">1.3</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">3.6</span><span class="p">,</span><span class="mf">4.6</span><span class="p">,</span><span class="mf">5.8</span><span class="p">]},</span>
+                 <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;一二三四五&#39;</span><span class="p">))</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col1</th>
+      <th>col2</th>
+      <th>col3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>一</th>
+      <td>a</td>
+      <td>5</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>二</th>
+      <td>b</td>
+      <td>6</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>三</th>
+      <td>c</td>
+      <td>7</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>四</th>
+      <td>d</td>
+      <td>8</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>五</th>
+      <td>e</td>
+      <td>9</td>
+      <td>5.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span> <span class="p">)</span>
+<span class="n">index1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">columns1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns1</span><span class="p">)</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>从 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 取出一列为 <code class="docutils literal notranslate"><span class="pre">Series</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>一    a
+二    b
+三    c
+四    d
+五    e
+Name: col1, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;a&#39;, 5, 1.3],
+       [&#39;b&#39;, 6, 2.5],
+       [&#39;c&#39;, 7, 3.6],
+       [&#39;d&#39;, 8, 4.6],
+       [&#39;e&#39;, 9, 5.8]], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;col1&#39;, &#39;col2&#39;, &#39;col3&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;一&#39;, &#39;二&#39;, &#39;三&#39;, &#39;四&#39;, &#39;五&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>col1     object
+col2      int64
+col3    float64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>一</th>
+      <th>二</th>
+      <th>三</th>
+      <th>四</th>
+      <th>五</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>col1</th>
+      <td>a</td>
+      <td>b</td>
+      <td>c</td>
+      <td>d</td>
+      <td>e</td>
+    </tr>
+    <tr>
+      <th>col2</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>col3</th>
+      <td>1.3</td>
+      <td>2.5</td>
+      <td>3.6</td>
+      <td>4.6</td>
+      <td>5.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 3 entries, col1 to col3
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   一       3 non-null      object
+ 1   二       3 non-null      object
+ 2   三       3 non-null      object
+ 3   四       3 non-null      object
+ 4   五       3 non-null      object
+dtypes: object(5)
+memory usage: 252.0+ bytes
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Series</span></code> 可以转化为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, 它只有一列</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>这是一个Series</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>-0.554001</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>0.066847</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>-1.519917</td>
+    </tr>
+    <tr>
+      <th>d</th>
+      <td>0.974747</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>0.826905</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="index">
+<h3>1.3. <code class="docutils literal notranslate"><span class="pre">Index</span></code><a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Index</span></code> 是构成和操作 <code class="docutils literal notranslate"><span class="pre">Series</span></code>、<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 的关键。</p></li>
+<li><p>索引类似于元组，其本身是不能赋值修改的；</p></li>
+<li><p>其在数据进行整体运算时，辅助自动对齐，这是 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 不同于其他数据处理库的一大特征。</p></li>
+<li><p>多层索引可以帮助改变表的形态，如透视表（pivot table）等。</p></li>
+</ul>
+<p>三个重要属性:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Index.name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Index.values</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Index.dtype</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;name1&#39;</span><span class="p">)</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], dtype=&#39;object&#39;, name=&#39;name1&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;c&#39;], dtype=&#39;object&#39;, name=&#39;name1&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="p">[[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;c&#39;], dtype=&#39;object&#39;, name=&#39;name1&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;c&#39;], dtype=&#39;object&#39;, name=&#39;name1&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], dtype=&#39;object&#39;, name=&#39;name1&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>2. <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据类型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>旧版本 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 的数据类型实际上都是继承自 <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></p></li>
+<li><p>所以使用这些类型时，要加上前缀 <code class="docutils literal notranslate"><span class="pre">np</span></code></p></li>
+<li><p>基本数据类型中不包括字符串类型，字符串都是存储为 <code class="docutils literal notranslate"><span class="pre">object</span></code> 型</p></li>
+<li><p>新版本引入了字符串类型 <code class="docutils literal notranslate"><span class="pre">string</span></code>，但是还不是很成熟；暂时还是采用之前的做法（即用 <code class="docutils literal notranslate"><span class="pre">object</span></code> 表示）</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> 布尔型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> 整型</p>
+<ul>
+<li><p>有符号整型 <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">intc</span></code>, <code class="docutils literal notranslate"><span class="pre">int_</span></code>, <code class="docutils literal notranslate"><span class="pre">longlong</span></code>, <code class="docutils literal notranslate"><span class="pre">intp</span></code>, <code class="docutils literal notranslate"><span class="pre">int8</span></code>, <code class="docutils literal notranslate"><span class="pre">int16</span></code>, <code class="docutils literal notranslate"><span class="pre">int32</span></code>, <code class="docutils literal notranslate"><span class="pre">int64</span></code></p></li>
+<li><p>无符号整型 <code class="docutils literal notranslate"><span class="pre">ubyte</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">uintc</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">ulonglong</span></code>, <code class="docutils literal notranslate"><span class="pre">uintp</span></code>, <code class="docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> 浮点型：<code class="docutils literal notranslate"><span class="pre">single</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">float_</span></code>, <code class="docutils literal notranslate"><span class="pre">longfloat</span></code>, <code class="docutils literal notranslate"><span class="pre">float16</span></code>, <code class="docutils literal notranslate"><span class="pre">float32</span></code>, <code class="docutils literal notranslate"><span class="pre">float64</span></code>, <code class="docutils literal notranslate"><span class="pre">float96</span></code>, <code class="docutils literal notranslate"><span class="pre">float128</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex</span></code> 复数型：<code class="docutils literal notranslate"><span class="pre">csingle</span></code>, <code class="docutils literal notranslate"><span class="pre">complex_</span></code>, <code class="docutils literal notranslate"><span class="pre">clongfloat</span></code>, <code class="docutils literal notranslate"><span class="pre">complex64</span></code>, <code class="docutils literal notranslate"><span class="pre">complex128</span></code>, <code class="docutils literal notranslate"><span class="pre">complex196</span></code>,<code class="docutils literal notranslate"><span class="pre">complex256</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">object</span></code> 一般类型：适合所有非 <code class="docutils literal notranslate"><span class="pre">bool</span></code>、<code class="docutils literal notranslate"><span class="pre">int</span></code>、<code class="docutils literal notranslate"><span class="pre">float</span></code> 和 <code class="docutils literal notranslate"><span class="pre">complex</span></code>的类型，包括字符串</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 新版本引入了几个新的数据类型：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Categorical</span></code> 类别类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code> 字符串类型</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Categorical</span></code> 类别类型</p>
+<ul class="simple">
+<li><p>取固定几种值；</p></li>
+<li><p>可以定义序，序的形式与实数序或字典序可以都不同；</p></li>
+<li><p>即使是数值表示，数值运算可能也无意义，与离散数值型不一定相同。</p></li>
+</ul>
+<p>类别类型有两个重要属性：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">categories</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ordered</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">pd.Categorical(values,</span> <span class="pre">categories=None,</span> <span class="pre">ordered=False)</span></code></p>
+<ul class="simple">
+<li><p>values: 类别序列；</p></li>
+<li><p>categories：自定义的类别序列；</p></li>
+<li><p>ordered：类别是否定义顺序，默认增序。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 1, 3]
+Categories (3, int64): [1 &lt; 2 &lt; 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, NaN, NaN, 3]
+Categories (2, int64): [3 &lt; 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">categories</span>  <span class="c1"># 类别</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([3, 2], dtype=&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">ordered</span> <span class="c1"># 是否有序</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="i-o">
+<h2>3. 文件 I/O<a class="headerlink" href="#i-o" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 可以对多种文件进行读写操作，最常用的是 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 文件 （comma separated values）和 <code class="docutils literal notranslate"><span class="pre">excel</span></code> 文件</p>
+<div class="section" id="id2">
+<h3>文件读取<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.read_table</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code> (需要安装 <code class="docutils literal notranslate"><span class="pre">xlrd</span></code> 包)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.read_HDFStore</span></code> HDF5 文件 (需要安装 <code class="docutils literal notranslate"><span class="pre">PyTables</span></code> 包)</p></li>
+<li><p>…</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> 有几个很有用的参数：[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html</a>]</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code>: str, 间隔符，默认值 ‘,’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">header</span></code>: int 或 list of ints, 表头的位置（第几行，从 0 开始），默认为 ‘infer’（一般为第一行）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skiprows</span></code>：list-like 或 integer, 读数据前要跳过的行数，或者需要跳过的行号（从 0 开始），默认值 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skipfooter</span></code>: int, 文件尾部需要跳过的行数，默认值 0</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">comment</span></code>: str, 默认值 <code class="docutils literal notranslate"><span class="pre">None</span></code>，表示该符号之后的同行内容为注释，将被忽略</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">encoding</span></code>: str, 文件编码信息，例如 ‘utf8’, ‘gbk’, ‘gb2312’ 等，默认值 <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">names</span></code>: list，column 的命名</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">usecols</span></code>: list-like 或 callable, 指定读取哪些列，默认值 <code class="docutils literal notranslate"><span class="pre">None</span></code>（读取所有列）.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index_col</span></code>: int, str, sequence of int / str, 或 <code class="docutils literal notranslate"><span class="pre">False</span></code>, 指定作为索引的列，默认值 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">na_values</span></code>: scalar, str, list-like, 或 dict, 指定其它的缺失值，例如 -999, ‘’ 等， 默认值为 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code>: Type name 或 dict of column -&gt; type, 指定读取的每列的数据类型，默认值为 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parse_dates</span></code>: boolean，list of ints，names，list of lists 或者 dict, 指定是否将某些列转化为日期，默认 False.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>文件写入<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.to_csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.to_excel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.to_html</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.to_latex</span></code></p></li>
+<li><p>…</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">pd.to_csv(path_or_buf,</span> <span class="pre">...)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code>: 间隔符 (默认值 “,”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: 是否输出索引值 (默认值 <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">na_rep</span></code>: 指定缺失值的输出字符串 (默认值 ‘’)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float_format</span></code>: 浮点数的输出格式，例如 ‘%3f’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">columns</span></code>: 指定输出哪些列 (默认 <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">header</span></code>: 是否输出列的名字作为文件的第一行 (默认 <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_format</span></code>: 指定时间的输出格式</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>4. 元素选取方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;table.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>ID</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1101</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>173</td>
+      <td>63</td>
+      <td>34.0</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1102</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>73</td>
+      <td>32.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1103</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>186</td>
+      <td>82</td>
+      <td>87.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1104</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>167</td>
+      <td>81</td>
+      <td>80.4</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1105</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>159</td>
+      <td>64</td>
+      <td>84.8</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>1201</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>188</td>
+      <td>68</td>
+      <td>97.0</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>1202</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>176</td>
+      <td>94</td>
+      <td>63.5</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>1203</td>
+      <td>M</td>
+      <td>street_6</td>
+      <td>160</td>
+      <td>53</td>
+      <td>58.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>1204</td>
+      <td>F</td>
+      <td>street_5</td>
+      <td>162</td>
+      <td>63</td>
+      <td>33.8</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>1205</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>167</td>
+      <td>63</td>
+      <td>68.4</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>1301</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>161</td>
+      <td>68</td>
+      <td>31.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>1302</td>
+      <td>F</td>
+      <td>street_1</td>
+      <td>175</td>
+      <td>57</td>
+      <td>87.7</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>1303</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>188</td>
+      <td>82</td>
+      <td>49.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>1304</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>195</td>
+      <td>70</td>
+      <td>85.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>1305</td>
+      <td>F</td>
+      <td>street_5</td>
+      <td>187</td>
+      <td>69</td>
+      <td>61.7</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>2101</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>174</td>
+      <td>84</td>
+      <td>83.3</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>2102</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>161</td>
+      <td>61</td>
+      <td>50.6</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>2103</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>157</td>
+      <td>61</td>
+      <td>52.5</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>2104</td>
+      <td>F</td>
+      <td>street_5</td>
+      <td>159</td>
+      <td>97</td>
+      <td>72.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>2105</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>170</td>
+      <td>81</td>
+      <td>34.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>2201</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>193</td>
+      <td>100</td>
+      <td>39.1</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>2202</td>
+      <td>F</td>
+      <td>street_7</td>
+      <td>194</td>
+      <td>77</td>
+      <td>68.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>2203</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>155</td>
+      <td>91</td>
+      <td>73.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>2204</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>175</td>
+      <td>74</td>
+      <td>47.2</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>2205</td>
+      <td>F</td>
+      <td>street_7</td>
+      <td>183</td>
+      <td>76</td>
+      <td>85.4</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>2301</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>157</td>
+      <td>78</td>
+      <td>72.3</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>2302</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>171</td>
+      <td>88</td>
+      <td>32.7</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>2303</td>
+      <td>F</td>
+      <td>street_7</td>
+      <td>190</td>
+      <td>99</td>
+      <td>65.9</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>2304</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>164</td>
+      <td>81</td>
+      <td>95.5</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>2305</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>187</td>
+      <td>73</td>
+      <td>48.9</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>2401</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>62</td>
+      <td>45.3</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>2402</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>166</td>
+      <td>82</td>
+      <td>48.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>2403</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>158</td>
+      <td>60</td>
+      <td>59.7</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>2404</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>160</td>
+      <td>84</td>
+      <td>67.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>2405</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>193</td>
+      <td>54</td>
+      <td>47.6</td>
+      <td>B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ID&#39;</span><span class="p">)</span>
+<span class="n">data2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1101</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>173</td>
+      <td>63</td>
+      <td>34.0</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1102</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>73</td>
+      <td>32.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1103</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>186</td>
+      <td>82</td>
+      <td>87.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1104</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>167</td>
+      <td>81</td>
+      <td>80.4</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>1105</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>159</td>
+      <td>64</td>
+      <td>84.8</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1201</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>188</td>
+      <td>68</td>
+      <td>97.0</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <th>1202</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>176</td>
+      <td>94</td>
+      <td>63.5</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>1203</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_6</td>
+      <td>160</td>
+      <td>53</td>
+      <td>58.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1204</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>F</td>
+      <td>street_5</td>
+      <td>162</td>
+      <td>63</td>
+      <td>33.8</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1205</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>167</td>
+      <td>63</td>
+      <td>68.4</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>1301</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>161</td>
+      <td>68</td>
+      <td>31.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1302</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>F</td>
+      <td>street_1</td>
+      <td>175</td>
+      <td>57</td>
+      <td>87.7</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <th>1303</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>188</td>
+      <td>82</td>
+      <td>49.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1304</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>195</td>
+      <td>70</td>
+      <td>85.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>1305</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>F</td>
+      <td>street_5</td>
+      <td>187</td>
+      <td>69</td>
+      <td>61.7</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>2101</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>174</td>
+      <td>84</td>
+      <td>83.3</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2102</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>161</td>
+      <td>61</td>
+      <td>50.6</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2103</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>157</td>
+      <td>61</td>
+      <td>52.5</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>2104</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_5</td>
+      <td>159</td>
+      <td>97</td>
+      <td>72.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2105</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>170</td>
+      <td>81</td>
+      <td>34.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2201</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>193</td>
+      <td>100</td>
+      <td>39.1</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2202</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>F</td>
+      <td>street_7</td>
+      <td>194</td>
+      <td>77</td>
+      <td>68.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2203</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>155</td>
+      <td>91</td>
+      <td>73.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>2204</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>175</td>
+      <td>74</td>
+      <td>47.2</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>2205</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>F</td>
+      <td>street_7</td>
+      <td>183</td>
+      <td>76</td>
+      <td>85.4</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2301</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>157</td>
+      <td>78</td>
+      <td>72.3</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2302</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>171</td>
+      <td>88</td>
+      <td>32.7</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2303</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>F</td>
+      <td>street_7</td>
+      <td>190</td>
+      <td>99</td>
+      <td>65.9</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2304</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>164</td>
+      <td>81</td>
+      <td>95.5</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <th>2305</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>187</td>
+      <td>73</td>
+      <td>48.9</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2401</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>62</td>
+      <td>45.3</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2402</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>166</td>
+      <td>82</td>
+      <td>48.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2403</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>158</td>
+      <td>60</td>
+      <td>59.7</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2404</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>160</td>
+      <td>84</td>
+      <td>67.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2405</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>F</td>
+      <td>street_6</td>
+      <td>193</td>
+      <td>54</td>
+      <td>47.6</td>
+      <td>B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="id5">
+<h3>思考题<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>结合上面讲过的文件 I/O，思考如何将上面两个语句合并成一个，以达到同样的效果？</p>
+</div>
+<div class="section" id="id6">
+<h3>4.1 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 操作符<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">[]</span></code> 用来选取行，使用的是位置（即第几行）</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>ID</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1102</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>73</td>
+      <td>32.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1103</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>186</td>
+      <td>82</td>
+      <td>87.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1104</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>167</td>
+      <td>81</td>
+      <td>80.4</td>
+      <td>B-</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1102</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>73</td>
+      <td>32.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1103</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>186</td>
+      <td>82</td>
+      <td>87.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1104</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>167</td>
+      <td>81</td>
+      <td>80.4</td>
+      <td>B-</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>使用列的名字，<code class="docutils literal notranslate"><span class="pre">[]</span></code> 可以用来提取一列（成为 <code class="docutils literal notranslate"><span class="pre">Series</span></code>）或者多列 (返回新的 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Physics&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># 等价于 data.Physics</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    A+
+1    B+
+2    B+
+3    B-
+4    B+
+Name: Physics, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>注意：使用 <code class="docutils literal notranslate"><span class="pre">.</span></code> + 列名 来提取一列时，该列名必须满足 Python 变量的要求（即不能有特殊字符，不能以数字开头）。否则，只能用 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 来提取。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span><span class="s1">&#39;School&#39;</span><span class="p">,</span><span class="s1">&#39;Class&#39;</span><span class="p">,</span><span class="s1">&#39;Physics&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Physics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1101</td>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1102</td>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1103</td>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1104</td>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1105</td>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>B+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Math&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">80</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Address&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;street_7&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>ID</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>2101</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>174</td>
+      <td>84</td>
+      <td>83.3</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>2205</td>
+      <td>F</td>
+      <td>street_7</td>
+      <td>183</td>
+      <td>76</td>
+      <td>85.4</td>
+      <td>B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="loc-label">
+<h3><code class="docutils literal notranslate"><span class="pre">.loc</span></code> 基于 <code class="docutils literal notranslate"><span class="pre">label</span></code> 的选取方式<a class="headerlink" href="#loc-label" title="Permalink to this headline">¶</a></h3>
+<p>基于 <code class="docutils literal notranslate"><span class="pre">label</span></code> 的选取方式，使用索引值和列名来访问元素。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1101</span><span class="p">:</span><span class="mi">1104</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1101</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>173</td>
+      <td>63</td>
+      <td>34.0</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1102</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>73</td>
+      <td>32.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1103</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>186</td>
+      <td>82</td>
+      <td>87.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1104</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>167</td>
+      <td>81</td>
+      <td>80.4</td>
+      <td>B-</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>注意：这种方法的切片是闭区间（左右都包括），区别于基于位置的选取方式。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1101</span><span class="p">:</span><span class="mi">1104</span><span class="p">,</span><span class="s1">&#39;Math&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID
+1101    34.0
+1102    32.5
+1103    87.2
+1104    80.4
+Name: Math, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1101</span><span class="p">:</span><span class="mi">1104</span><span class="p">,[</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span><span class="s1">&#39;Physics&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1101</th>
+      <td>34.0</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1102</th>
+      <td>32.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1103</th>
+      <td>87.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1104</th>
+      <td>80.4</td>
+      <td>B-</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;Class&#39;</span><span class="p">,</span><span class="s1">&#39;Physics&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1101</th>
+      <td>C_1</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1102</th>
+      <td>C_1</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1103</th>
+      <td>C_1</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1104</th>
+      <td>C_1</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>1105</th>
+      <td>C_1</td>
+      <td>B+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Height&#39;</span><span class="p">:</span><span class="s1">&#39;Math&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1101</th>
+      <td>173</td>
+      <td>63</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>1102</th>
+      <td>192</td>
+      <td>73</td>
+      <td>32.5</td>
+    </tr>
+    <tr>
+      <th>1103</th>
+      <td>186</td>
+      <td>82</td>
+      <td>87.2</td>
+    </tr>
+    <tr>
+      <th>1104</th>
+      <td>167</td>
+      <td>81</td>
+      <td>80.4</td>
+    </tr>
+    <tr>
+      <th>1105</th>
+      <td>159</td>
+      <td>64</td>
+      <td>84.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>选取元素的条件可以是函数（返回 True/False 或者切片)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data2</span><span class="o">.</span><span class="n">Gender</span><span class="o">==</span><span class="s1">&#39;M&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1101</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>173</td>
+      <td>63</td>
+      <td>34.0</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1103</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>186</td>
+      <td>82</td>
+      <td>87.2</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1201</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>188</td>
+      <td>68</td>
+      <td>97.0</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <th>1203</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_6</td>
+      <td>160</td>
+      <td>53</td>
+      <td>58.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1301</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>161</td>
+      <td>68</td>
+      <td>31.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1303</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>188</td>
+      <td>82</td>
+      <td>49.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1304</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>195</td>
+      <td>70</td>
+      <td>85.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2101</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>174</td>
+      <td>84</td>
+      <td>83.3</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2103</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>157</td>
+      <td>61</td>
+      <td>52.5</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>2105</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>170</td>
+      <td>81</td>
+      <td>34.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2201</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>193</td>
+      <td>100</td>
+      <td>39.1</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2203</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>155</td>
+      <td>91</td>
+      <td>73.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>2204</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>175</td>
+      <td>74</td>
+      <td>47.2</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>2302</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>171</td>
+      <td>88</td>
+      <td>32.7</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2305</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>187</td>
+      <td>73</td>
+      <td>48.9</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2402</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>166</td>
+      <td>82</td>
+      <td>48.7</td>
+      <td>B</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Physics&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;A+&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">])]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1101</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_1</td>
+      <td>173</td>
+      <td>63</td>
+      <td>34.0</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1203</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_6</td>
+      <td>160</td>
+      <td>53</td>
+      <td>58.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1304</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_2</td>
+      <td>195</td>
+      <td>70</td>
+      <td>85.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2105</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>170</td>
+      <td>81</td>
+      <td>34.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2203</th>
+      <td>S_2</td>
+      <td>C_2</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>155</td>
+      <td>91</td>
+      <td>73.8</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>2302</th>
+      <td>S_2</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_5</td>
+      <td>171</td>
+      <td>88</td>
+      <td>32.7</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2401</th>
+      <td>S_2</td>
+      <td>C_4</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>192</td>
+      <td>62</td>
+      <td>45.3</td>
+      <td>A</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="kc">True</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;4&#39;</span> <span class="ow">or</span> <span class="n">i</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;7&#39;</span> <span class="k">else</span> <span class="kc">False</span> 
+           <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data2</span><span class="o">.</span><span class="n">Address</span><span class="o">.</span><span class="n">values</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1105</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>159</td>
+      <td>64</td>
+      <td>84.8</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1202</th>
+      <td>S_1</td>
+      <td>C_2</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>176</td>
+      <td>94</td>
+      <td>63.5</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>1301</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_4</td>
+      <td>161</td>
+      <td>68</td>
+      <td>31.5</td>
+      <td>B+</td>
+    </tr>
+    <tr>
+      <th>1303</th>
+      <td>S_1</td>
+      <td>C_3</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>188</td>
+      <td>82</td>
+      <td>49.7</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2101</th>
+      <td>S_2</td>
+      <td>C_1</td>
+      <td>M</td>
+      <td>street_7</td>
+      <td>174</td>
+      <td>84</td>
+      <td>83.3</td>
+      <td>C</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="iloc">
+<h3><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> 基于位置的选取方式<a class="headerlink" href="#iloc" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> 可以使用位置来选取元素，注意：与 <code class="docutils literal notranslate"><span class="pre">.loc</span></code> 不同，切片右端点不包含</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>School          S_1
+Class           C_1
+ID             1104
+Gender            F
+Address    street_2
+Height          167
+Weight           81
+Math           80.4
+Physics          B-
+Name: 3, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>School</th>
+      <th>Class</th>
+      <th>ID</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Math</th>
+      <th>Physics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1104</td>
+      <td>F</td>
+      <td>street_2</td>
+      <td>167</td>
+      <td>81</td>
+      <td>80.4</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>S_1</td>
+      <td>C_1</td>
+      <td>1105</td>
+      <td>F</td>
+      <td>street_4</td>
+      <td>159</td>
+      <td>64</td>
+      <td>84.8</td>
+      <td>B+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1101
+1    1102
+2    1103
+3    1104
+4    1105
+Name: ID, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">7</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Math</th>
+      <th>Height</th>
+      <th>Gender</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>34.0</td>
+      <td>173</td>
+      <td>M</td>
+      <td>C_1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>32.5</td>
+      <td>192</td>
+      <td>F</td>
+      <td>C_1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>87.2</td>
+      <td>186</td>
+      <td>M</td>
+      <td>C_1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>80.4</td>
+      <td>167</td>
+      <td>F</td>
+      <td>C_1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>84.8</td>
+      <td>159</td>
+      <td>F</td>
+      <td>C_1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">::</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Math</th>
+      <th>Height</th>
+      <th>Gender</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>80.4</td>
+      <td>167</td>
+      <td>F</td>
+      <td>C_1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>58.8</td>
+      <td>160</td>
+      <td>M</td>
+      <td>C_2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>87.7</td>
+      <td>175</td>
+      <td>F</td>
+      <td>C_3</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>83.3</td>
+      <td>174</td>
+      <td>M</td>
+      <td>C_1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>34.2</td>
+      <td>170</td>
+      <td>M</td>
+      <td>C_1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="at-iat">
+<h3><code class="docutils literal notranslate"><span class="pre">at</span></code> 和 <code class="docutils literal notranslate"><span class="pre">iat</span></code> 方法<a class="headerlink" href="#at-iat" title="Permalink to this headline">¶</a></h3>
+<p>当访问单个元素时，使用 <code class="docutils literal notranslate"><span class="pre">at</span></code>（基于 label）和 <code class="docutils literal notranslate"><span class="pre">iat</span></code>（基于位置）都比相应的 <code class="docutils literal notranslate"><span class="pre">loc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">iloc</span></code> 要快一些</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">1101</span><span class="p">,</span><span class="s1">&#39;School&#39;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1101</span><span class="p">,</span><span class="s1">&#39;School&#39;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="o">%</span><span class="k">timeit</span> data2.at[1101,&#39;School&#39;]
+<span class="o">%</span><span class="k">timeit</span> data2.loc[1101,&#39;School&#39;]
+<span class="o">%</span><span class="k">timeit</span> data2.iat[0,0]
+<span class="o">%</span><span class="k">timeit</span> data2.iloc[0,0]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S_1&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S_1&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S_1&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S_1&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.7 µs ± 42 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 µs ± 33.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.7 µs ± 648 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.7 µs ± 409 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>1.<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide">https://pandas.pydata.org/pandas-docs/stable/user_guide</a></p>
+<p>2.<a class="reference external" href="https://github.com/datawhalechina/joyful-pandas/tree/master/data">https://github.com/datawhalechina/joyful-pandas</a></p>
+<p>3.<a class="reference external" href="https://github.com/hangsz/pandas-tutorial">https://github.com/hangsz/pandas-tutorial</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">AS213_Python_in_Atmos_Sciences</a>
+    <a class='right-next' id="next-link" href="Pandas_2.html" title="next page"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> - 2</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Xianxiang Li<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

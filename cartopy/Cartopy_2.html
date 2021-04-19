@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartopy 地图绘制（2） &#8212; AS213 Python in Atmospheric Sciences</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cartopy 地图绘制（3）" href="Cartopy_3.html" />
+    <link rel="prev" title="Cartopy 地图绘制（1）" href="Cartopy_1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   AS213_Python_in_Atmos_Sciences
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_3.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   - 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/Pandas_homework.html">
+   Pandas homework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/%E6%80%9D%E8%80%83%E9%A2%98.html">
+   思考题
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Pandas/%E6%80%9D%E8%80%83%E9%A2%98_%E7%AD%94%E6%A1%88.html">
+   思考题答案
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Matplotlib
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Matplotlib/Matplotlib_advanced.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   进阶
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Matplotlib/Matplotlib_homework.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   作业
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  xarray
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xarray/xarray-1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Xarray
+    </span>
+   </code>
+   数据处理（１）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xarray/xarray-2.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Xarray
+    </span>
+   </code>
+   数据处理（2）
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Cartopy
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cartopy_1.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（1）
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（2）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cartopy_3.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Cartopy
+    </span>
+   </code>
+   地图绘制（3）
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Exercise_El_Nino.html">
+   xarray/cartopy 作业
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intergrated examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Integrated_examples/integrated_examples_1.html">
+   地图数据处理及可视化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Integrated_examples/integrated_examples_2.html">
+   大气数据处理及可视化
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/cartopy/Cartopy_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/smartlixx/AS213_Python_in_Atmos_Sciences"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/smartlixx/AS213_Python_in_Atmos_Sciences/issues/new?title=Issue%20on%20page%20%2Fcartopy/Cartopy_2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/smartlixx/AS213_Python_in_Atmos_Sciences/master?urlpath=tree/cartopy/Cartopy_2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   地图背景 - 天地图
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   绘制台风路线
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   天地图的标记图层
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   天地图边界线图层
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nasa">
+   绘制 NASA 晚间灯光数据
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cartopy-2">
+<h1><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 地图绘制（2）<a class="headerlink" href="#cartopy-2" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="https://scitools.org.uk/cartopy/docs/latest/_static/cartopy.png" /></p>
+<p><strong>Carto</strong>graphy <strong>Py</strong>thon</p>
+<hr class="docutils" />
+<p>主讲人：李显祥</p>
+<p>大气科学学院</p>
+<div class="section" id="id1">
+<h2>地图背景 - 天地图<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">web</span> <span class="o">=</span> <span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;https://www.tianditu.gov.cn/index.html&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">web</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="1000"
+    height="500"
+    src="https://www.tianditu.gov.cn/index.html"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<ul class="simple">
+<li><p>天地图（和其它很多种地图服务）都采用 Web Map Tile Service (WMTS) 来提供地图服务。</p></li>
+<li><p>常用的有 Google，OpenStreetMap等</p></li>
+<li><p>国内有百度、高德等</p></li>
+</ul>
+<p>由于它们都遵循相同的规范，我们可以通过修改 <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> 中已有的 Google 地图类来实现天地图的调用。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.io.img_tiles</span> <span class="k">as</span> <span class="nn">cimgt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">from</span> <span class="nn">cartopy.io</span> <span class="kn">import</span> <span class="n">shapereader</span>
+<span class="kn">from</span> <span class="nn">cartopy.mpl.gridliner</span> <span class="kn">import</span> <span class="n">LONGITUDE_FORMATTER</span><span class="p">,</span> <span class="n">LATITUDE_FORMATTER</span>
+
+<span class="n">headers</span><span class="o">=</span><span class="s1">&#39;Mozilla/5.0&#39;</span> <span class="c1">#{&#39;User-Agent&#39;: &#39;Mozilla/5.0&#39;}</span>
+<span class="n">tk</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">token</span><span class="o">&gt;</span>
+
+<span class="k">class</span> <span class="nc">TDT</span><span class="p">(</span><span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleWTS</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desired_tile_form</span><span class="o">=</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">desired_tile_form</span><span class="o">=</span><span class="n">desired_tile_form</span><span class="p">,</span>
+                         <span class="n">user_agent</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_image_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">tile</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://t0.tianditu.gov.cn/DataServer?T=vec_w&amp;x=</span><span class="si">%s</span><span class="s1">&amp;y=</span><span class="si">%s</span><span class="s1">&amp;l=</span><span class="si">%s</span><span class="s1">&amp;tk=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">tk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span>
+    
+<span class="k">class</span> <span class="nc">TDT_ter</span><span class="p">(</span><span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleWTS</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desired_tile_form</span><span class="o">=</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">desired_tile_form</span><span class="o">=</span><span class="n">desired_tile_form</span><span class="p">,</span>
+                         <span class="n">user_agent</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_image_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">tile</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://t0.tianditu.gov.cn/DataServer?T=ter_w&amp;x=</span><span class="si">%s</span><span class="s1">&amp;y=</span><span class="si">%s</span><span class="s1">&amp;l=</span><span class="si">%s</span><span class="s1">&amp;tk=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">tk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span>
+    
+<span class="k">class</span> <span class="nc">TDT_img</span><span class="p">(</span><span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleWTS</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desired_tile_form</span><span class="o">=</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">desired_tile_form</span><span class="o">=</span><span class="n">desired_tile_form</span><span class="p">,</span>
+                         <span class="n">user_agent</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_image_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">tile</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://t0.tianditu.gov.cn/DataServer?T=img_w&amp;x=</span><span class="si">%s</span><span class="s1">&amp;y=</span><span class="si">%s</span><span class="s1">&amp;l=</span><span class="si">%s</span><span class="s1">&amp;tk=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">tk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-9216c7829aa2&gt;&quot;</span><span class="gt">, line </span><span class="mi">8</span>
+    <span class="n">tk</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">token</span><span class="o">&gt;</span>
+         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span>
+                           <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">))</span>
+    <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span> <span class="c1">#21.5, 23.5] #广东图</span>
+<span class="c1">#request = TDT() #矢量图层</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">TDT_img</span><span class="p">()</span> <span class="c1">#影像</span>
+<span class="c1">#request = TDT_ter() #地形</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="c1"># leve  l=10 缩放等级 </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Cartopy_2_5_0.png" src="../_images/Cartopy_2_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>绘制台风路线<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">from</span> <span class="nn">cartopy.mpl.gridliner</span> <span class="kn">import</span> <span class="n">LONGITUDE_FORMATTER</span><span class="p">,</span> <span class="n">LATITUDE_FORMATTER</span>
+<span class="kn">import</span> <span class="nn">cartopy.io.img_tiles</span> <span class="k">as</span> <span class="nn">cimgt</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeat</span>
+<span class="kn">from</span> <span class="nn">cartopy.io.shapereader</span> <span class="kn">import</span> <span class="n">Reader</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_plot</span><span class="p">(</span><span class="n">WTS</span><span class="p">,</span><span class="n">level</span><span class="p">):</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">54</span><span class="p">]</span>
+    <span class="n">shp</span><span class="o">=</span> <span class="s1">&#39;../shp_file/china.shp&#39;</span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">WTS</span><span class="o">.</span><span class="n">crs</span><span class="p">))</span>
+    <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="n">gl</span><span class="o">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
+    <span class="n">gl</span><span class="o">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">WTS</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span> 
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">Reader</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span>
+    <span class="n">provinces</span> <span class="o">=</span> <span class="n">cfeat</span><span class="o">.</span><span class="n">ShapelyFeature</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">geometries</span><span class="p">(),</span><span class="n">proj</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">provinces</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="n">sub_extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">105</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+    <span class="n">sub_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.66</span><span class="p">,</span> <span class="mf">0.13</span><span class="p">,</span> <span class="mf">0.135</span><span class="p">,</span> <span class="mf">0.155</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="n">WTS</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+    <span class="n">sub_ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">sub_extent</span><span class="p">)</span>
+    <span class="n">sub_ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">WTS</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span> 
+    <span class="n">sub_ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">provinces</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">sub_ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">typhoon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;1909.csv&quot;</span><span class="p">)</span>
+<span class="n">typhoon</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">typhoon</span> <span class="o">=</span> <span class="n">typhoon</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">10.8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mf">17.1</span><span class="p">),</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;TROPICAL DEPRESSION&#39;</span>
+<span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">17.2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mf">24.4</span><span class="p">),</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;TROPICAL STORM&#39;</span>
+<span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">24.5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mf">32.6</span><span class="p">),</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SEVERE TROPICAL STORM&quot;</span>
+<span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">32.7</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mf">41.4</span><span class="p">),</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;TYPHOON&quot;</span>
+<span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">41.5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mf">50.9</span><span class="p">),</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SEVERE TYPHOON&quot;</span>
+<span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">51</span><span class="p">),</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;SUPER TYPHOON&quot;</span>
+<span class="c1">#color_dict = {&#39;TROPICAL DEPRESSION&#39;: &#39;#7fffd4&#39;, &#39;TROPICAL STORM&#39;: &#39;#008000&#39;, &quot;SEVERE TROPICAL STORM&quot;: &#39;#0000ff&#39;, </span>
+<span class="c1">#              &quot;TYPHOON&quot;: &#39;#ffff00&#39;, &quot;SEVERE TYPHOON&quot;: &#39;#ffa500&#39;, &quot;SUPER TYPHOON&quot;: &#39;#ff4500&#39;}</span>
+<span class="n">color_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TROPICAL DEPRESSION&#39;</span><span class="p">:</span> <span class="s1">&#39;lime&#39;</span><span class="p">,</span> <span class="s1">&#39;TROPICAL STORM&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s2">&quot;SEVERE TROPICAL STORM&quot;</span><span class="p">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> 
+              <span class="s2">&quot;TYPHOON&quot;</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s2">&quot;SEVERE TYPHOON&quot;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s2">&quot;SUPER TYPHOON&quot;</span><span class="p">:</span> <span class="s1">&#39;darkred&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wts</span> <span class="o">=</span> <span class="n">TDT_img</span><span class="p">()</span>  
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">sub_ax</span> <span class="o">=</span> <span class="n">make_plot</span><span class="p">(</span><span class="n">wts</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">typhoon</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<span class="c1">#    fig,ax,sub_ax = make_plot(wts,5)</span>
+<span class="c1">#        </span>
+<span class="c1">#    for i in typhoon.index[:j]:</span>
+        <span class="n">a0</span><span class="p">,</span> <span class="n">b0</span> <span class="o">=</span> <span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;lon&quot;</span><span class="p">],</span> <span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;lat&quot;</span><span class="p">]</span>
+        <span class="n">a1</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;lon&quot;</span><span class="p">],</span> <span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;lat&quot;</span><span class="p">]</span>
+            
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">),(</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">color_dict</span><span class="p">[</span><span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;class&quot;</span><span class="p">]],</span> 
+                <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color_dict</span><span class="p">[</span><span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;class&quot;</span><span class="p">]],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> 
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">sub_ax</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">),(</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">color_dict</span><span class="p">[</span><span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;class&quot;</span><span class="p">]],</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+        <span class="n">sub_ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color_dict</span><span class="p">[</span><span class="n">typhoon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;class&quot;</span><span class="p">]],</span> 
+                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Typhoon: </span><span class="si">%s</span><span class="se">\n</span><span class="s1"> Date: </span><span class="si">%s</span><span class="se">\n</span><span class="s1"> Data: http://typhoon.weather.com.cn/</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Lekima(ID-1909)&#39;</span><span class="p">,</span> <span class="s2">&quot;2019-08-04 14:00:00&quot;</span><span class="p">),</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">),</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">,</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Cartopy_2_10_0.png" src="../_images/Cartopy_2_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 参考 https://scitools.org.uk/cartopy/docs/latest/gallery/hurricane_katrina.html</span>
+<span class="kn">import</span> <span class="nn">shapely.geometry</span> <span class="k">as</span> <span class="nn">sgeom</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">mpatches</span>
+
+<span class="n">lons</span><span class="p">,</span> <span class="n">lats</span> <span class="o">=</span> <span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">typhoon</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+                             <span class="n">false_easting</span><span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">400000</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">54</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+    
+<span class="n">shp</span><span class="o">=</span> <span class="s1">&#39;../shp_file/china.shp&#39;</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">Reader</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span>
+<span class="c1">#provinces = cfeat.ShapelyFeature(reader.geometries(),proj, edgecolor=&#39;white&#39;, facecolor=&#39;none&#39;)</span>
+    
+<span class="c1"># to get the effect of having just the states without a map &quot;background&quot;</span>
+<span class="c1"># turn off the outline and background patches</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Track of Typhoon Lekima (ID-1909)&#39;</span><span class="p">)</span>
+
+<span class="c1"># turn the lons and lats into a shapely LineString</span>
+<span class="n">track</span> <span class="o">=</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">LineString</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">))</span>
+<span class="c1"># buffer the linestring by two degrees (note: this is a non-physical distance)</span>
+<span class="n">track_buffer</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">colorize_province</span><span class="p">(</span><span class="n">geometry</span><span class="p">):</span>
+    <span class="n">facecolor</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.9375</span><span class="p">,</span> <span class="mf">0.9375</span><span class="p">,</span> <span class="mf">0.859375</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">geometry</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">track</span><span class="p">):</span>
+        <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+    <span class="k">elif</span> <span class="n">geometry</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">track_buffer</span><span class="p">):</span>
+        <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;#FF7E00&#39;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="n">facecolor</span><span class="p">,</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">}</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">(</span><span class="n">reader</span><span class="o">.</span><span class="n">geometries</span><span class="p">(),</span>
+        <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+        <span class="n">styler</span><span class="o">=</span><span class="n">colorize_province</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">track_buffer</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                      <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#C8A2C8&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">track</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                      <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># make two proxy artists to add to a legend</span>
+<span class="n">direct_hit</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">within_2_deg</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;#FF7E00&quot;</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Province directly intersects</span><span class="se">\n</span><span class="s1">with track&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Province is within </span><span class="se">\n</span><span class="s1">2 degrees of track&#39;</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="n">direct_hit</span><span class="p">,</span> <span class="n">within_2_deg</span><span class="p">],</span> <span class="n">labels</span><span class="p">,</span>
+            <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.025</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e113653af0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Cartopy_2_11_1.png" src="../_images/Cartopy_2_11_1.png" />
+</div>
+</div>
+<p>2018-22台风山竹</p>
+<p><img alt="" src="../_images/2018-22_Mangkhut.png" /></p>
+</div>
+<div class="section" id="id3">
+<h2>天地图的标记图层<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>天地图的标记和边界图层都是透明的，可以叠加在矢量、图像或地形图层上。</p></li>
+<li><p>需要使用 <code class="docutils literal notranslate"><span class="pre">desired_tile_form='RGBA'</span></code> 选项。</p></li>
+<li><p>需要设置背景为 <code class="docutils literal notranslate"><span class="pre">invisible</span></code>。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TDT_e_label</span><span class="p">(</span><span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleWTS</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">     带英文标注的矢量图</span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desired_tile_form</span><span class="o">=</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">desired_tile_form</span><span class="o">=</span><span class="n">desired_tile_form</span><span class="p">,</span>
+                         <span class="n">user_agent</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_image_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">tile</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://t3.tianditu.gov.cn/DataServer?T=eva_w&amp;x=</span><span class="si">%s</span><span class="s1">&amp;y=</span><span class="si">%s</span><span class="s1">&amp;l=</span><span class="si">%s</span><span class="s1">&amp;tk=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">tk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TDT_c_label</span><span class="p">(</span><span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleWTS</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">     带中文标注的矢量图</span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desired_tile_form</span><span class="o">=</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">desired_tile_form</span><span class="o">=</span><span class="n">desired_tile_form</span><span class="p">,</span>
+                         <span class="n">user_agent</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_image_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">tile</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://t3.tianditu.gov.cn/DataServer?T=cva_w&amp;x=</span><span class="si">%s</span><span class="s1">&amp;y=</span><span class="si">%s</span><span class="s1">&amp;l=</span><span class="si">%s</span><span class="s1">&amp;tk=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">tk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference: https://github.com/SciTools/cartopy/issues/762</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span> <span class="c1">#广东图</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">TDT</span><span class="p">()</span> <span class="c1">#矢量图层</span>
+<span class="n">request_l</span> <span class="o">=</span> <span class="n">TDT_c_label</span><span class="p">()</span> <span class="c1">#desired_tile_form=&#39;RGBA&#39;) #矢量图层的标注</span>
+<span class="c1">#print(type(request_l))</span>
+<span class="c1">#request = TDT_ter() #地形</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span><span class="c1"># level=10 缩放等级  </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request_l</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Cartopy_2_17_0.png" src="../_images/Cartopy_2_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reference: https://github.com/SciTools/cartopy/issues/762</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span> <span class="c1">#广东图</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">TDT</span><span class="p">()</span> <span class="c1">#矢量图层</span>
+<span class="n">request_l</span> <span class="o">=</span> <span class="n">TDT_e_label</span><span class="p">()</span>  <span class="c1">#desired_tile_form=&#39;RGBA&#39;) #矢量图层的标注</span>
+<span class="c1">#print(type(request_l))</span>
+<span class="c1">#request = TDT_ter() #地形</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span><span class="c1"># level=10 缩放等级 </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request_l</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Cartopy_2_18_0.png" src="../_images/Cartopy_2_18_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>天地图边界线图层<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TDT_borders</span><span class="p">(</span><span class="n">cimgt</span><span class="o">.</span><span class="n">GoogleWTS</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">     全球境界</span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">desired_tile_form</span><span class="o">=</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">desired_tile_form</span><span class="o">=</span><span class="n">desired_tile_form</span><span class="p">,</span>
+                         <span class="n">user_agent</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_image_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">tile</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://t3.tianditu.gov.cn/DataServer?T=ibo_w&amp;x=</span><span class="si">%s</span><span class="s1">&amp;y=</span><span class="si">%s</span><span class="s1">&amp;l=</span><span class="si">%s</span><span class="s1">&amp;tk=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">tk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">url</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>同时叠加天地图的边界线和 NaturalEarth 边界线，注意两者的区别。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span> <span class="c1">#广东图</span>
+<span class="c1">#request = TDT() #矢量图层</span>
+<span class="n">request_l</span> <span class="o">=</span> <span class="n">TDT_borders</span><span class="p">()</span>  <span class="c1">#desired_tile_form=&#39;RGBA&#39;)</span>
+<span class="c1">#print(type(request_l))</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">TDT_ter</span><span class="p">()</span> <span class="c1">#地形</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">make_map</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="c1"># 为了显示边界层，必须设置此项</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+<span class="c1">#ax.set_global()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="c1"># level=10 缩放等级 </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request_l</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeat</span><span class="o">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x1e115426640&gt;
+</pre></div>
+</div>
+<img alt="../_images/Cartopy_2_22_1.png" src="../_images/Cartopy_2_22_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="nasa">
+<h2>绘制 NASA 晚间灯光数据<a class="headerlink" href="#nasa" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from https://stackoverflow.com/questions/58377561/cartopy-wmts-keyerror-issue-tilematrixlimits</span>
+<span class="c1">### START REPLACEMENT ###</span>
+
+<span class="kn">from</span> <span class="nn">owslib.wmts</span> <span class="kn">import</span> <span class="n">TileMatrixSetLink</span><span class="p">,</span> <span class="n">TileMatrixLimits</span><span class="p">,</span> <span class="n">_TILE_MATRIX_SET_TAG</span><span class="p">,</span> <span class="n">_TILE_MATRIX_SET_LIMITS_TAG</span><span class="p">,</span> <span class="n">_TILE_MATRIX_LIMITS_TAG</span>
+
+<span class="k">def</span> <span class="nf">custom_from_elements</span><span class="p">(</span><span class="n">link_elements</span><span class="p">):</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">link_element</span> <span class="ow">in</span> <span class="n">link_elements</span><span class="p">:</span>
+        <span class="n">matrix_set_elements</span> <span class="o">=</span> <span class="n">link_element</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">_TILE_MATRIX_SET_TAG</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix_set_elements</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Missing TileMatrixSet in </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">link_element</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix_set_elements</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">set_limits_elements</span> <span class="o">=</span> <span class="n">link_element</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
+                <span class="n">_TILE_MATRIX_SET_LIMITS_TAG</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">set_limits_elements</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Multiple instances of TileMatrixSet&#39;</span>
+                                  <span class="s1">&#39; plus TileMatrixSetLimits in </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span>
+                                  <span class="n">link_element</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">matrix_set_element</span> <span class="ow">in</span> <span class="n">matrix_set_elements</span><span class="p">:</span>
+                <span class="n">uri</span> <span class="o">=</span> <span class="n">matrix_set_element</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TileMatrixSetLink</span><span class="p">(</span><span class="n">uri</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">uri</span> <span class="o">=</span> <span class="n">matrix_set_elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="n">tilematrixlimits</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_TILE_MATRIX_SET_LIMITS_TAG</span><span class="p">,</span>
+                              <span class="n">_TILE_MATRIX_LIMITS_TAG</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">limits_element</span> <span class="ow">in</span> <span class="n">link_element</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">tml</span> <span class="o">=</span> <span class="n">TileMatrixLimits</span><span class="p">(</span><span class="n">limits_element</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">tml</span><span class="o">.</span><span class="n">tilematrix</span><span class="p">:</span>
+                    <span class="n">tilematrixlimits</span><span class="p">[</span><span class="n">tml</span><span class="o">.</span><span class="n">tilematrix</span><span class="p">]</span> <span class="o">=</span> <span class="n">tml</span>
+
+            <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TileMatrixSetLink</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">tilematrixlimits</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">links</span>
+
+<span class="n">TileMatrixSetLink</span><span class="o">.</span><span class="n">from_elements</span> <span class="o">=</span> <span class="n">custom_from_elements</span>
+
+<span class="c1">### END REPLACEMENT ###</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define resource for the NASA night-time illumination data. </span>
+<span class="n">base_uri</span> <span class="o">=</span> <span class="s1">&#39;http://map1c.vis.earthdata.nasa.gov/wmts-geo/wmts.cgi&#39;</span> 
+<span class="n">layer_name</span> <span class="o">=</span> <span class="s1">&#39;VIIRS_CityLights_2012&#39;</span>  
+
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">54</span><span class="p">]</span> <span class="c1">#[90,130,15,50] </span>
+
+<span class="c1"># Create a Cartopy crs for plain and rotated lat-lon projections. </span>
+<span class="n">plain_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span> 
+<span class="n">lambert_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> 
+                              <span class="n">false_easting</span><span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">400000</span><span class="p">)</span> 
+ 
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
+ 
+<span class="c1"># Plot WMTS data in a specific region, over a plain lat-lon map. </span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">plain_crs</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> 
+<span class="c1"># Add WMTS imaging. </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_wmts</span><span class="p">(</span><span class="n">base_uri</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span> 
+  
+<span class="c1"># Plot WMTS data on a rotated map, over the same nominal region. </span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">lambert_crs</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> 
+<span class="c1"># Add WMTS imaging. </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_wmts</span><span class="p">(</span><span class="n">base_uri</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span>          
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.slippy_image_artist.SlippyImageArtist at 0x1e115f59e80&gt;
+</pre></div>
+</div>
+<img alt="../_images/Cartopy_2_25_1.png" src="../_images/Cartopy_2_25_1.png" />
+</div>
+</div>
+<p>查看 NASA 有多少类似的服务</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">owslib.wmts</span> <span class="kn">import</span> <span class="n">WebMapTileService</span>
+
+<span class="n">wmts</span> <span class="o">=</span> <span class="n">WebMapTileService</span><span class="p">(</span><span class="s2">&quot;http://map1c.vis.earthdata.nasa.gov/wmts-geo/wmts.cgi&quot;</span><span class="p">)</span>
+
+<span class="n">wmts</span><span class="o">.</span><span class="n">contents</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;AMSR2_Cloud_Liquid_Water_Day&#39;, &#39;AMSR2_Cloud_Liquid_Water_Night&#39;, &#39;AMSR2_Surface_Precipitation_Rate_Day&#39;, &#39;AMSR2_Surface_Precipitation_Rate_Night&#39;, &#39;AMSR2_Surface_Rain_Rate_Day&#39;, &#39;AMSR2_Surface_Rain_Rate_Night&#39;, &#39;AMSR2_Wind_Speed_Day&#39;, &#39;AMSR2_Wind_Speed_Night&#39;, &#39;AMSR2_Columnar_Water_Vapor_Day&#39;, &#39;AMSR2_Columnar_Water_Vapor_Night&#39;, &#39;AMSRE_Brightness_Temp_89H_Day&#39;, &#39;AMSRE_Brightness_Temp_89H_Night&#39;, &#39;AMSRE_Brightness_Temp_89V_Day&#39;, &#39;AMSRE_Brightness_Temp_89V_Night&#39;, &#39;AMSRE_Surface_Precipitation_Rate_Day&#39;, &#39;AMSRE_Surface_Precipitation_Rate_Night&#39;, &#39;AMSRE_Surface_Rain_Rate_Day&#39;, &#39;AMSRE_Surface_Rain_Rate_Night&#39;, &#39;AMSRE_Sea_Ice_Concentration_12km&#39;, &#39;AMSRE_Snow_Depth_Over_Ice&#39;, &#39;AMSRE_Sea_Ice_Concentration_25km&#39;, &#39;AMSRE_Sea_Ice_Brightness_Temp_89H&#39;, &#39;AMSRE_Sea_Ice_Brightness_Temp_89V&#39;, &#39;AIRS_L2_Methane_400hPa_Volume_Mixing_Ratio_Day&#39;, &#39;AIRS_L2_Methane_400hPa_Volume_Mixing_Ratio_Night&#39;, &#39;AIRS_L2_Carbon_Monoxide_500hPa_Volume_Mixing_Ratio_Day&#39;, &#39;AIRS_L2_Carbon_Monoxide_500hPa_Volume_Mixing_Ratio_Night&#39;, &#39;AIRS_L2_Cloud_Top_Height_Day&#39;, &#39;AIRS_L2_Cloud_Top_Height_Night&#39;, &#39;AIRS_L2_Dust_Score_Day&#39;, &#39;AIRS_L2_Dust_Score_Night&#39;, &#39;AIRS_L2_RelativeHumidity_500hPa_Day&#39;, &#39;AIRS_L2_RelativeHumidity_500hPa_Night&#39;, &#39;AIRS_L2_RelativeHumidity_700hPa_Day&#39;, &#39;AIRS_L2_RelativeHumidity_700hPa_Night&#39;, &#39;AIRS_L2_RelativeHumidity_850hPa_Day&#39;, &#39;AIRS_L2_RelativeHumidity_850hPa_Night&#39;, &#39;AIRS_L2_Surface_Relative_Humidity_Day&#39;, &#39;AIRS_L2_Surface_Relative_Humidity_Night&#39;, &#39;AIRS_L2_Surface_Air_Temperature_Day&#39;, &#39;AIRS_L2_Surface_Air_Temperature_Night&#39;, &#39;AIRS_L2_Sulfur_Dioxide_Brightness_Temperature_Difference_Day&#39;, &#39;AIRS_L2_Sulfur_Dioxide_Brightness_Temperature_Difference_Night&#39;, &#39;AIRS_L2_Surface_Skin_Temperature_Day&#39;, &#39;AIRS_L2_Surface_Skin_Temperature_Night&#39;, &#39;AIRS_L2_Temperature_500hPa_Day&#39;, &#39;AIRS_L2_Temperature_500hPa_Night&#39;, &#39;AIRS_L2_Temperature_700hPa_Day&#39;, &#39;AIRS_L2_Temperature_700hPa_Night&#39;, &#39;AIRS_L2_Temperature_850hPa_Day&#39;, &#39;AIRS_L2_Temperature_850hPa_Night&#39;, &#39;AIRS_L2_Total_Cloud_Fraction_Day&#39;, &#39;AIRS_L2_Total_Cloud_Fraction_Night&#39;, &#39;AIRS_L3_All_Sky_Outgoing_Longwave_Radiation_Daily_Day&#39;, &#39;AIRS_L3_All_Sky_Outgoing_Longwave_Radiation_Daily_Night&#39;, &#39;AIRS_L3_All_Sky_Outgoing_Longwave_Radiation_Monthly_Day&#39;, &#39;AIRS_L3_All_Sky_Outgoing_Longwave_Radiation_Monthly_Night&#39;, &#39;AIRS_L3_Methane_400hPa_Volume_Mixing_Ratio_Daily_Day&#39;, &#39;AIRS_L3_Methane_400hPa_Volume_Mixing_Ratio_Daily_Night&#39;, &#39;AIRS_L3_Methane_400hPa_Volume_Mixing_Ratio_Monthly_Day&#39;, &#39;AIRS_L3_Methane_400hPa_Volume_Mixing_Ratio_Monthly_Night&#39;, &#39;AIRS_L3_Carbon_Dioxide_AIRS_AMSU_Monthly&#39;, &#39;AIRS_L3_Carbon_Dioxide_IR_Monthly&#39;, &#39;AIRS_L3_Carbon_Monoxide_500hPa_Volume_Mixing_Ratio_Daily_Day&#39;, &#39;AIRS_L3_Carbon_Monoxide_500hPa_Volume_Mixing_Ratio_Daily_Night&#39;, &#39;AIRS_L3_Carbon_Monoxide_500hPa_Volume_Mixing_Ratio_Monthly_Day&#39;, &#39;AIRS_L3_Carbon_Monoxide_500hPa_Volume_Mixing_Ratio_Monthly_Night&#39;, &#39;AIRS_L3_Clear_Sky_Outgoing_Longwave_Radiation_Daily_Day&#39;, &#39;AIRS_L3_Clear_Sky_Outgoing_Longwave_Radiation_Daily_Night&#39;, &#39;AIRS_L3_Clear_Sky_Outgoing_Longwave_Radiation_Monthly_Day&#39;, &#39;AIRS_L3_Clear_Sky_Outgoing_Longwave_Radiation_Monthly_Night&#39;, &#39;AIRS_L3_Surface_Relative_Humidity_Daily_Day&#39;, &#39;AIRS_L3_Surface_Relative_Humidity_Daily_Night&#39;, &#39;AIRS_L3_Surface_Relative_Humidity_Monthly_Day&#39;, &#39;AIRS_L3_Surface_Relative_Humidity_Monthly_Night&#39;, &#39;AIRS_L3_Surface_Air_Temperature_Daily_Day&#39;, &#39;AIRS_L3_Surface_Air_Temperature_Daily_Night&#39;, &#39;AIRS_L3_Surface_Air_Temperature_Monthly_Day&#39;, &#39;AIRS_L3_Surface_Air_Temperature_Monthly_Night&#39;, &#39;AIRS_L3_Surface_Skin_Temperature_Daily_Day&#39;, &#39;AIRS_L3_Surface_Skin_Temperature_Daily_Night&#39;, &#39;AIRS_L3_Surface_Skin_Temperature_Monthly_Day&#39;, &#39;AIRS_L3_Surface_Skin_Temperature_Monthly_Night&#39;, &#39;AIRS_Prata_SO2_Index_Day&#39;, &#39;AIRS_Prata_SO2_Index_Night&#39;, &#39;AIRS_Precipitation_Day&#39;, &#39;AIRS_Precipitation_Night&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_1&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_2&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_3&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_4&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_5&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_6&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_7&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_8&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_9&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_10&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_11&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_12&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_13&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_14&#39;, &#39;AMSUA_NOAA15_Brightness_Temp_Channel_15&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_1&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_2&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_3&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_4&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_5&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_6&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_7&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_8&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_9&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_10&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_11&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_12&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_13&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_14&#39;, &#39;AMSUA_NOAA16_Brightness_Temp_Channel_15&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_1&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_2&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_3&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_4&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_5&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_6&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_7&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_8&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_9&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_10&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_11&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_12&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_13&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_14&#39;, &#39;AMSUA_NOAA17_Brightness_Temp_Channel_15&#39;, &#39;Aquarius_Soil_Moisture_Daily&#39;, &#39;Aquarius_Soil_Moisture_Weekly&#39;, &#39;Aquarius_Sea_Surface_Salinity_L3_7Day_RunningMean&#39;, &#39;Aquarius_Sea_Surface_Salinity_L3_7Day_Snapshot&#39;, &#39;Aquarius_Sea_Surface_Salinity_L3_Daily&#39;, &#39;Aquarius_Sea_Surface_Salinity_L3_Monthly&#39;, &#39;Aquarius_Sea_Surface_Salinity_L3_3Month&#39;, &#39;Aquarius_Wind_Speed_L3_7Day_Snapshot&#39;, &#39;Aquarius_Wind_Speed_L3_Daily&#39;, &#39;ASTER_GDEM_Color_Index&#39;, &#39;ASTER_GDEM_Color_Shaded_Relief&#39;, &#39;ASTER_GDEM_Greyscale_Shaded_Relief&#39;, &#39;AMSRU2_Snow_Water_Equivalent_5Day&#39;, &#39;AMSRU2_Snow_Water_Equivalent_Daily&#39;, &#39;AMSRU2_Soil_Moisture_NPD_Day&#39;, &#39;AMSRU2_Soil_Moisture_NPD_Night&#39;, &#39;AMSRU2_Soil_Moisture_SCA_Day&#39;, &#39;AMSRU2_Soil_Moisture_SCA_Night&#39;, &#39;AMSRU2_Snow_Water_Equivalent_Monthly&#39;, &#39;AMSRU2_Cloud_Liquid_Water_Day&#39;, &#39;AMSRU2_Cloud_Liquid_Water_Night&#39;, &#39;AMSRU2_Wind_Speed_Day&#39;, &#39;AMSRU2_Wind_Speed_Night&#39;, &#39;AMSRU2_Total_Precipitable_Water_Day&#39;, &#39;AMSRU2_Total_Precipitable_Water_Night&#39;, &#39;AMSRU2_Surface_Precipitation_Day&#39;, &#39;AMSRU2_Surface_Precipitation_Night&#39;, &#39;AMSRU2_Columnar_Water_Vapor_Day&#39;, &#39;AMSRU2_Columnar_Water_Vapor_Night&#39;, &#39;AMSRU2_Sea_Ice_Concentration_12km&#39;, &#39;AMSRU2_Sea_Ice_Concentration_25km&#39;, &#39;AMSRU2_Sea_Ice_Brightness_Temp_6km_89H&#39;, &#39;AMSRU2_Sea_Ice_Brightness_Temp_6km_89V&#39;, &#39;AVISO_Absolute_Dynamic_Topography&#39;, &#39;BlueMarble_NextGeneration&#39;, &#39;BlueMarble_ShadedRelief&#39;, &#39;BlueMarble_ShadedRelief_Bathymetry&#39;, &#39;CALIPSO_Wide_Field_Camera_Radiance_v3-01&#39;, &#39;CALIPSO_Wide_Field_Camera_Radiance_v3-02&#39;, &#39;CCMP_REMSS_Scalar_Wind_Speed_Monthly&#39;, &#39;CCMP_REMSS_Zonal_Wind_Speed_Monthly&#39;, &#39;CCMP_REMSS_Meridional_Wind_Speed_Monthly&#39;, &#39;CERES_Combined_Surface_Longwave_Flux_Down_All_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Longwave_Flux_Up_All_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Longwave_Flux_Down_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Longwave_Flux_Up_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Diffuse_All_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Direct_All_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Down_All_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Up_All_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Diffuse_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Direct_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Down_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_Shortwave_Flux_Up_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_Surface_UV_Index_All_Sky_Monthly&#39;, &#39;CERES_Combined_TOA_Longwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_Combined_TOA_Longwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_TOA_Shortwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_Combined_TOA_Shortwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_Combined_TOA_Window_Region_Flux_All_Sky_Monthly&#39;, &#39;CERES_Combined_TOA_Window_Region_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_CRE_Net_Longwave_Flux_Monthly&#39;, &#39;CERES_EBAF_Surface_CRE_Net_Shortwave_Flux_Monthly&#39;, &#39;CERES_EBAF_Surface_CRE_Net_Total_Flux_Monthly&#39;, &#39;CERES_EBAF_Surface_Longwave_Flux_Down_All_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Longwave_Flux_Up_All_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Longwave_Flux_Down_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Longwave_Flux_Up_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Net_Longwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Net_Longwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Net_Shortwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Net_Shortwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Net_Total_Flux_All_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Net_Total_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Shortwave_Flux_Down_All_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Shortwave_Flux_Up_All_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Shortwave_Flux_Down_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_Surface_Shortwave_Flux_Up_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_TOA_CRE_Longwave_Flux_Monthly&#39;, &#39;CERES_EBAF_TOA_CRE_Net_Flux_Monthly&#39;, &#39;CERES_EBAF_TOA_CRE_Shortwave_Flux_Monthly&#39;, &#39;CERES_EBAF_TOA_Longwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_EBAF_TOA_Longwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_TOA_Net_Flux_All_Sky_Monthly&#39;, &#39;CERES_EBAF_TOA_Net_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_EBAF_TOA_Incoming_Solar_Flux_Monthly&#39;, &#39;CERES_EBAF_TOA_Shortwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_EBAF_TOA_Shortwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Longwave_Flux_Down_All_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Longwave_Flux_Up_All_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Longwave_Flux_Down_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Longwave_Flux_Up_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Diffuse_All_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Direct_All_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Down_All_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Up_All_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Diffuse_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Direct_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Down_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_Shortwave_Flux_Up_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_Surface_UV_Index_All_Sky_Monthly&#39;, &#39;CERES_Terra_TOA_Longwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_Terra_TOA_Longwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_TOA_Shortwave_Flux_All_Sky_Monthly&#39;, &#39;CERES_Terra_TOA_Shortwave_Flux_Clear_Sky_Monthly&#39;, &#39;CERES_Terra_TOA_Window_Region_Flux_All_Sky_Monthly&#39;, &#39;CERES_Terra_TOA_Window_Region_Flux_Clear_Sky_Monthly&#39;, &#39;Coastlines&#39;, &#39;CYGNSS_L3_Wind_Speed_Daily&#39;, &#39;Daymet_Maximum_Air_Temp_Daily&#39;, &#39;Daymet_Minimum_Air_Temp_Daily&#39;, &#39;MODIS_Aqua_Thermal_Anomalies_All&#39;, &#39;MODIS_Aqua_Thermal_Anomalies_Day&#39;, &#39;MODIS_Aqua_Thermal_Anomalies_Night&#39;, &#39;MODIS_Combined_Thermal_Anomalies_All&#39;, &#39;MODIS_Combined_Thermal_Anomalies_Day&#39;, &#39;MODIS_Combined_Thermal_Anomalies_Night&#39;, &#39;VIIRS_NOAA20_Thermal_Anomalies_375m_All&#39;, &#39;VIIRS_NOAA20_Thermal_Anomalies_375m_Day&#39;, &#39;VIIRS_NOAA20_Thermal_Anomalies_375m_Night&#39;, &#39;VIIRS_SNPP_Thermal_Anomalies_375m_All&#39;, &#39;VIIRS_SNPP_Thermal_Anomalies_375m_Day&#39;, &#39;VIIRS_SNPP_Thermal_Anomalies_375m_Night&#39;, &#39;MODIS_Terra_Thermal_Anomalies_All&#39;, &#39;MODIS_Terra_Thermal_Anomalies_Day&#39;, &#39;MODIS_Terra_Thermal_Anomalies_Night&#39;, &#39;GHRSST_L4_AVHRR-OI_Sea_Surface_Temperature&#39;, &#39;GHRSST_L4_G1SST_Sea_Surface_Temperature&#39;, &#39;GHRSST_L4_GAMSSA_GDS2_Sea_Surface_Temperature&#39;, &#39;GHRSST_L4_GAMSSA_GDS2_Sea_Ice_Concentration&#39;, &#39;GHRSST_L4_MUR25_Sea_Ice_Concentration&#39;, &#39;GHRSST_L4_MUR25_Sea_Surface_Temperature&#39;, &#39;GHRSST_L4_MUR25_Sea_Surface_Temperature_Anomalies&#39;, &#39;GHRSST_L4_MUR_Sea_Surface_Temperature&#39;, &#39;GHRSST_L4_MUR_Sea_Ice_Concentration&#39;, &#39;GHRSST_L4_MUR_Sea_Surface_Temperature_Anomalies&#39;, &#39;GLDAS_Near_Surface_Air_Temperature_Monthly&#39;, &#39;GLDAS_Surface_Total_Precipitation_Rate_Monthly&#39;, &#39;GLDAS_Underground_Soil_Moisture_Monthly&#39;, &#39;GMI_Rain_Rate_Asc&#39;, &#39;GMI_Rain_Rate_Dsc&#39;, &#39;GMI_Brightness_Temp_Asc&#39;, &#39;GMI_Brightness_Temp_Dsc&#39;, &#39;GMI_Snow_Rate_Asc&#39;, &#39;GMI_Snow_Rate_Dsc&#39;, &#39;GOES-East_ABI_Air_Mass&#39;, &#39;GOES-East_ABI_Band2_Red_Visible_1km&#39;, &#39;GOES-East_ABI_Band13_Clean_Infrared&#39;, &#39;GOES-West_ABI_Air_Mass&#39;, &#39;GOES-West_ABI_Band2_Red_Visible_1km&#39;, &#39;GOES-West_ABI_Band13_Clean_Infrared&#39;, &#39;GRACE_Tellus_Liquid_Water_Equivalent_Thickness_Mascon_CRI&#39;, &#39;Himawari_AHI_Air_Mass&#39;, &#39;Himawari_AHI_Band3_Red_Visible_1km&#39;, &#39;Himawari_AHI_Band13_Clean_Infrared&#39;, &#39;HLS_MGRS_Granule_Grid&#39;, &#39;IMERG_Precipitation_Rate&#39;, &#39;LIS_ISS_Flash_Count&#39;, &#39;LIS_ISS_Flash_Radiance&#39;, &#39;LIS_TRMM_Flash_Radiance&#39;, &#39;LIS_Very_High_Resolution_Lightning_Daily_Climatology_LIS_Mean_Flash_Rate&#39;, &#39;LIS_Very_High_Resolution_Lightning_Full_Climatology_LIS_Mean_Flash_Rate&#39;, &#39;LIS_Very_High_Resolution_Lightning_Monthly_Climatology_LIS_Mean_Flash_Rate&#39;, &#39;LIS_Very_High_Resolution_Lightning_Seasonal_Climatology_LIS_Mean_Flash_Rate&#39;, &#39;LIS_High_Resolution_Full_Climatology_Combined_Flash_Rate_Climatology&#39;, &#39;LIS_High_Resolution_Full_Climatology_LIS_Flash_Rate_Climatology&#39;, &#39;LIS_High_Resolution_Full_Climatology_LIS_Raw_Flashes&#39;, &#39;LIS_High_Resolution_Full_Climatology_LIS_Scaled_Flashes&#39;, &#39;OTD_High_Resolution_Full_Climatology_OTD_Flash_Rate_Climatology&#39;, &#39;OTD_High_Resolution_Full_Climatology_OTD_Raw_Flashes&#39;, &#39;OTD_High_Resolution_Full_Climatology_OTD_Scaled_Flashes&#39;, &#39;LPRM_AMSR2_Downscaled_Surface_Soil_Moisture_C1_Band_Day_Daily&#39;, &#39;LPRM_AMSR2_Downscaled_Surface_Soil_Moisture_C1_Band_Night_Daily&#39;, &#39;LPRM_AMSR2_Surface_Soil_Moisture_C1_Band_Day_Daily&#39;, &#39;LPRM_AMSR2_Surface_Soil_Moisture_C1_Band_Night_Daily&#39;, &#39;LPRM_AMSRE_Surface_Soil_Moisture_C_Band_Day_Daily&#39;, &#39;LPRM_AMSRE_Surface_Soil_Moisture_C_Band_Night_Daily&#39;, &#39;LPRM_TMI_Surface_Soil_Moisture_X_Band_Day_Daily&#39;, &#39;LPRM_TMI_Surface_Soil_Moisture_X_Band_Night_Daily&#39;, &#39;MODIS_Combined_L3_IGBP_Land_Cover_Type_Annual&#39;, &#39;MODIS_Combined_L4_FPAR_8Day&#39;, &#39;MODIS_Combined_L4_LAI_8Day&#39;, &#39;MODIS_Combined_L4_FPAR_4Day&#39;, &#39;MODIS_Combined_L4_LAI_4Day&#39;, &#39;MODIS_Combined_MAIAC_L2G_BidirectionalReflectance_Bands143&#39;, &#39;MODIS_Combined_MAIAC_L2G_AerosolOpticalDepth&#39;, &#39;MODIS_Combined_MAIAC_L2G_ColumnWaterVapor&#39;, &#39;MODIS_Combined_MAIAC_L3_IsotropicKernelParameters_8Day&#39;, &#39;MODIS_Combined_L3_White_Sky_Albedo_Daily&#39;, &#39;MODIS_Combined_L3_Nadir-BRDF_Daily&#39;, &#39;MODIS_Combined_Value_Added_AOD&#39;, &#39;MEaSUREs_Daily_Landscape_Freeze_Thaw_AMSRE&#39;, &#39;MEaSUREs_Daily_Landscape_Freeze_Thaw_SSMI&#39;, &#39;JPL_MEaSUREs_L4_Sea_Surface_Height_Anomalies&#39;, &#39;MERRA2_Surface_Albedo_Monthly&#39;, &#39;MERRA2_Aerosol_Optical_Depth_Analysis_Monthly&#39;, &#39;MERRA2_Air_Temperature_250hPa_Monthly&#39;, &#39;MERRA2_Carbon_Monoxide_Emission_Monthly&#39;, &#39;MERRA2_Convective_Rainwater_Source_700hPa_Monthly&#39;, &#39;MERRA2_Total_Dust_Deposition_Dry_Wet_Monthly&#39;, &#39;MERRA2_Dust_Surface_Mass_Concentration_PM25_Monthly&#39;, &#39;MERRA2_Dust_Surface_Mass_Concentration_Monthly&#39;, &#39;MERRA2_Open_Water_Latent_Energy_Flux_Monthly&#39;, &#39;MERRA2_Evaporation_from_Turbulence_Monthly&#39;, &#39;MERRA2_Evaporation_Land_Monthly&#39;, &#39;MERRA2_ISCCP_Cloud_Albedo_Monthly&#39;, &#39;MERRA2_Ozone_Mixing_Ratio_50hPa_Monthly&#39;, &#39;MERRA2_Snowfall_Monthly&#39;, &#39;MERRA2_Precipitation_Bias_Corrected_Monthly&#39;, &#39;MERRA2_Relative_Humidity_After_Moist_700hPa_Monthly&#39;, &#39;MERRA2_Soil_Water_Root_Zone_Monthly&#39;, &#39;MERRA2_Snow_Depth_Over_Glaciated_Surface_Monthly&#39;, &#39;MERRA2_SO2_Column_Mass_Density_Monthly&#39;, &#39;MERRA2_Surface_Wind_Speed_Monthly&#39;, &#39;MERRA2_Surface_Pressure_Monthly&#39;, &#39;MERRA2_Surface_Skin_Temperature_Monthly&#39;, &#39;MERRA2_Incident_Shortwave_Over_Land_Monthly&#39;, &#39;MERRA2_2m_Air_Temperature_Monthly&#39;, &#39;MERRA2_2m_Air_Temperature_Assimilated_Monthly&#39;, &#39;MERRA2_Total_Aerosol_Optical_Thickness_550nm_Extinction_Monthly&#39;, &#39;MERRA2_Total_Aerosol_Optical_Thickness_550nm_Scattering_Monthly&#39;, &#39;MERRA2_Total_Precipitable_Water_Vapor_Monthly&#39;, &#39;MERRA_Surface_Pressure_Monthly&#39;, &#39;MERRA_Surface_Skin_Temperature_Monthly&#39;, &#39;MISR_Aerosol_Optical_Depth_Avg_Green_Monthly&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_AA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_AF&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_AN&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_BA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_BF&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_CA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_CF&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_DA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_NGB_DF&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_AA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_AF&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_AN&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_BA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_BF&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_CA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_CF&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_DA&#39;, &#39;MISR_AM1_Ellipsoid_Radiance_RGB_DF&#39;, &#39;MISR_Cloud_Stereo_Height_Histogram_Bin_0.5km_Monthly&#39;, &#39;MISR_Cloud_Stereo_Height_Histogram_Bin_1.5-2.0km_Monthly&#39;, &#39;MISR_Directional_Hemispherical_Reflectance_Average_Natural_Color_Monthly&#39;, &#39;MISR_Land_NDVI_Average_Monthly&#39;, &#39;MISR_Radiance_Average_Infrared_Color_Monthly&#39;, &#39;MISR_Radiance_Average_Natural_Color_Monthly&#39;, &#39;MISR_TOA_Albedo_Average_Red_Monthly&#39;, &#39;MLS_CO_215hPa_Day&#39;, &#39;MLS_CO_215hPa_Night&#39;, &#39;MLS_H2O_46hPa_Day&#39;, &#39;MLS_H2O_46hPa_Night&#39;, &#39;MLS_HNO3_46hPa_Day&#39;, &#39;MLS_HNO3_46hPa_Night&#39;, &#39;MLS_N2O_46hPa_Day&#39;, &#39;MLS_N2O_46hPa_Night&#39;, &#39;MLS_O3_46hPa_Day&#39;, &#39;MLS_O3_46hPa_Night&#39;, &#39;MLS_SO2_147hPa_Day&#39;, &#39;MLS_SO2_147hPa_Night&#39;, &#39;MLS_Temperature_46hPa_Day&#39;, &#39;MLS_Temperature_46hPa_Night&#39;, &#39;MODIS_Terra_Chlorophyll_A&#39;, &#39;MODIS_Water_Mask&#39;, &#39;MODIS_Terra_Brightness_Temp_Band31_Day&#39;, &#39;MODIS_Terra_Brightness_Temp_Band31_Night&#39;, &#39;MODIS_Terra_Aerosol_Optical_Depth_3km&#39;, &#39;MODIS_Terra_Angstrom_Exponent_Land&#39;, &#39;MODIS_Terra_Angstrom_Exponent_Ocean&#39;, &#39;MODIS_Terra_AOD_Deep_Blue_Land&#39;, &#39;MODIS_Terra_AOD_Deep_Blue_Combined&#39;, &#39;MODIS_Terra_Aerosol&#39;, &#39;MODIS_Terra_Water_Vapor_5km_Day&#39;, &#39;MODIS_Terra_Water_Vapor_5km_Night&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius_37_PCL&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius_16&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius_16_PCL&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius_1621&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius_PCL_1621&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius_37&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius&#39;, &#39;MODIS_Terra_Cloud_Effective_Radius_PCL&#39;, &#39;MODIS_Terra_Cloud_Multi_Layer_Flag&#39;, &#39;MODIS_Terra_Cloud_Optical_Thickness_16&#39;, &#39;MODIS_Terra_Cloud_Optical_Thickness_16_PCL&#39;, &#39;MODIS_Terra_Cloud_Optical_Thickness_1621&#39;, &#39;MODIS_Terra_Cloud_Optical_Thickness_PCL_1621&#39;, &#39;MODIS_Terra_Cloud_Optical_Thickness&#39;, &#39;MODIS_Terra_Cloud_Optical_Thickness_PCL&#39;, &#39;MODIS_Terra_Cloud_Phase_Optical_Properties&#39;, &#39;MODIS_Terra_Cloud_Water_Path&#39;, &#39;MODIS_Terra_Cloud_Water_Path_PCL&#39;, &#39;MODIS_Terra_Cloud_Fraction_Day&#39;, &#39;MODIS_Terra_Cloud_Phase_Infrared_Day&#39;, &#39;MODIS_Terra_Cloud_Top_Height_Day&#39;, &#39;MODIS_Terra_Cloud_Top_Pressure_Day&#39;, &#39;MODIS_Terra_Cloud_Top_Temp_Day&#39;, &#39;MODIS_Terra_Cloud_Fraction_Night&#39;, &#39;MODIS_Terra_Cloud_Phase_Infrared_Night&#39;, &#39;MODIS_Terra_Cloud_Top_Height_Night&#39;, &#39;MODIS_Terra_Cloud_Top_Pressure_Night&#39;, &#39;MODIS_Terra_Cloud_Top_Temp_Night&#39;, &#39;MODIS_Terra_SurfaceReflectance_Bands143&#39;, &#39;MODIS_Terra_SurfaceReflectance_Bands721&#39;, &#39;MODIS_Terra_SurfaceReflectance_Bands121&#39;, &#39;MODIS_Terra_L3_SurfaceReflectance_Bands143_8Day&#39;, &#39;MODIS_Terra_L3_SurfaceReflectance_Bands721_8Day&#39;, &#39;MODIS_Terra_L2G_SurfaceReflectance_Bands143_Daily&#39;, &#39;MODIS_Terra_L3_SurfaceReflectance_Bands121_8Day&#39;, &#39;MODIS_Terra_NDSI_Snow_Cover&#39;, &#39;MODIS_Terra_L3_NDSI_Snow_Cover_Daily&#39;, &#39;MODIS_Terra_L3_Snow_Extent_8Day&#39;, &#39;MODIS_Terra_L3_Snow_Cover_Monthly_Average_Pct&#39;, &#39;MODIS_Terra_Land_Surface_Temp_Day&#39;, &#39;MODIS_Terra_Land_Surface_Temp_Night&#39;, &#39;MODIS_Terra_L3_Land_Surface_Temp_Daily_Day&#39;, &#39;MODIS_Terra_L3_Land_Surface_Temp_Daily_Night&#39;, &#39;MODIS_Terra_L3_Land_Surface_Temp_8Day_Day&#39;, &#39;MODIS_Terra_L3_Land_Surface_Temp_8Day_Night&#39;, &#39;MODIS_Terra_L3_Land_Surface_Temp_Monthly_Day&#39;, &#39;MODIS_Terra_L3_Land_Surface_Temp_Monthly_Night&#39;, &#39;MODIS_Terra_L3_EVI_Monthly&#39;, &#39;MODIS_Terra_L3_NDVI_Monthly&#39;, &#39;MODIS_Terra_L3_EVI_16Day&#39;, &#39;MODIS_Terra_L3_NDVI_16Day&#39;, &#39;MODIS_Terra_EVI_8Day&#39;, &#39;MODIS_Terra_NDVI_8Day&#39;, &#39;MODIS_Terra_L4_FPAR_8Day&#39;, &#39;MODIS_Terra_L4_LAI_8Day&#39;, &#39;MODIS_Terra_L4_Gross_Primary_Productivity_8Day&#39;, &#39;MODIS_Terra_L4_Net_Photosynthesis_8Day&#39;, &#39;MODIS_Terra_Ice_Surface_Temp_Day&#39;, &#39;MODIS_Terra_Sea_Ice&#39;, &#39;MODIS_Terra_Ice_Surface_Temp_Night&#39;, &#39;MODIS_Terra_L3_Ice_Surface_Temp_Daily_Day&#39;, &#39;MODIS_Terra_L3_Sea_Ice_Daily&#39;, &#39;MODIS_Terra_L3_Ice_Surface_Temp_Daily_Night&#39;, &#39;MODIS_Terra_L3_Land_Water_Mask&#39;, &#39;MODIS_Terra_CorrectedReflectance_TrueColor&#39;, &#39;MODIS_Terra_CorrectedReflectance_Bands367&#39;, &#39;MODIS_Terra_CorrectedReflectance_Bands721&#39;, &#39;MODIS_Terra_Data_No_Data&#39;, &#39;MODIS_Terra_L2_Chlorophyll_A&#39;, &#39;MODIS_Terra_L2_Photosynthetically_Available_Radiation&#39;, &#39;MODIS_Terra_L2_Sea_Surface_Temp_Day&#39;, &#39;MODIS_Terra_L2_Sea_Surface_Temp_Night&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Day_8Day&#39;, &#39;MODIS_Terra_L3_SST_MidIR_4km_Night_8Day&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Night_8Day&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Day_Annual&#39;, &#39;MODIS_Terra_L3_SST_MidIR_4km_Night_Annual&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Night_Annual&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Day_Daily&#39;, &#39;MODIS_Terra_L3_SST_MidIR_4km_Night_Daily&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Night_Daily&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Day_Monthly&#39;, &#39;MODIS_Terra_L3_SST_MidIR_4km_Night_Monthly&#39;, &#39;MODIS_Terra_L3_SST_Thermal_4km_Night_Monthly&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Day_8Day&#39;, &#39;MODIS_Terra_L3_SST_MidIR_9km_Night_8Day&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Night_8Day&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Day_Annual&#39;, &#39;MODIS_Terra_L3_SST_MidIR_9km_Night_Annual&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Night_Annual&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Day_Daily&#39;, &#39;MODIS_Terra_L3_SST_MidIR_9km_Night_Daily&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Night_Daily&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Day_Monthly&#39;, &#39;MODIS_Terra_L3_SST_MidIR_9km_Night_Monthly&#39;, &#39;MODIS_Terra_L3_SST_Thermal_9km_Night_Monthly&#39;, &#39;MOPITT_CO_Daily_Surface_Mixing_Ratio_Night&#39;, &#39;MOPITT_CO_Daily_Surface_Mixing_Ratio_Day&#39;, &#39;MOPITT_CO_Daily_Total_Column_Night&#39;, &#39;MOPITT_CO_Daily_Total_Column_Day&#39;, &#39;MOPITT_CO_Daily_Total_Column_L2&#39;, &#39;MOPITT_CO_Monthly_Surface_Mixing_Ratio_Night&#39;, &#39;MOPITT_CO_Monthly_Surface_Mixing_Ratio_Day&#39;, &#39;MOPITT_CO_Monthly_Total_Column_Night&#39;, &#39;MOPITT_CO_Monthly_Total_Column_Day&#39;, &#39;MODIS_Aqua_Chlorophyll_A&#39;, &#39;MODIS_Aqua_Brightness_Temp_Band31_Day&#39;, &#39;MODIS_Aqua_Brightness_Temp_Band31_Night&#39;, &#39;MODIS_Aqua_Aerosol_Optical_Depth_3km&#39;, &#39;MODIS_Aqua_Angstrom_Exponent_Land&#39;, &#39;MODIS_Aqua_Angstrom_Exponent_Ocean&#39;, &#39;MODIS_Aqua_AOD_Deep_Blue_Land&#39;, &#39;MODIS_Aqua_AOD_Deep_Blue_Combined&#39;, &#39;MODIS_Aqua_Aerosol&#39;, &#39;MODIS_Aqua_Water_Vapor_5km_Day&#39;, &#39;MODIS_Aqua_Water_Vapor_5km_Night&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius_37_PCL&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius_16&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius_16_PCL&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius_1621&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius_PCL_1621&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius_37&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius&#39;, &#39;MODIS_Aqua_Cloud_Effective_Radius_PCL&#39;, &#39;MODIS_Aqua_Cloud_Multi_Layer_Flag&#39;, &#39;MODIS_Aqua_Cloud_Optical_Thickness_16&#39;, &#39;MODIS_Aqua_Cloud_Optical_Thickness_16_PCL&#39;, &#39;MODIS_Aqua_Cloud_Optical_Thickness_1621&#39;, &#39;MODIS_Aqua_Cloud_Optical_Thickness_PCL_1621&#39;, &#39;MODIS_Aqua_Cloud_Optical_Thickness&#39;, &#39;MODIS_Aqua_Cloud_Optical_Thickness_PCL&#39;, &#39;MODIS_Aqua_Cloud_Phase_Optical_Properties&#39;, &#39;MODIS_Aqua_Cloud_Water_Path&#39;, &#39;MODIS_Aqua_Cloud_Water_Path_PCL&#39;, &#39;MODIS_Aqua_Cloud_Fraction_Day&#39;, &#39;MODIS_Aqua_Cloud_Phase_Infrared_Day&#39;, &#39;MODIS_Aqua_Cloud_Top_Height_Day&#39;, &#39;MODIS_Aqua_Cloud_Top_Pressure_Day&#39;, &#39;MODIS_Aqua_Cloud_Top_Temp_Day&#39;, &#39;MODIS_Aqua_Cloud_Fraction_Night&#39;, &#39;MODIS_Aqua_Cloud_Phase_Infrared_Night&#39;, &#39;MODIS_Aqua_Cloud_Top_Height_Night&#39;, &#39;MODIS_Aqua_Cloud_Top_Pressure_Night&#39;, &#39;MODIS_Aqua_Cloud_Top_Temp_Night&#39;, &#39;MODIS_Aqua_SurfaceReflectance_Bands143&#39;, &#39;MODIS_Aqua_SurfaceReflectance_Bands721&#39;, &#39;MODIS_Aqua_SurfaceReflectance_Bands121&#39;, &#39;MODIS_Aqua_L3_SurfaceReflectance_Bands143_8Day&#39;, &#39;MODIS_Aqua_L3_SurfaceReflectance_Bands721_8Day&#39;, &#39;MODIS_Aqua_L2G_SurfaceReflectance_Bands143_Daily&#39;, &#39;MODIS_Aqua_L3_SurfaceReflectance_Bands121_8Day&#39;, &#39;MODIS_Aqua_NDSI_Snow_Cover&#39;, &#39;MODIS_Aqua_L3_NDSI_Snow_Cover_Daily&#39;, &#39;MODIS_Aqua_L3_Snow_Extent_8Day&#39;, &#39;MODIS_Aqua_L3_Snow_Cover_Monthly_Average_Pct&#39;, &#39;MODIS_Aqua_Land_Surface_Temp_Day&#39;, &#39;MODIS_Aqua_Land_Surface_Temp_Night&#39;, &#39;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&#39;, &#39;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Night&#39;, &#39;MODIS_Aqua_L3_Land_Surface_Temp_8Day_Day&#39;, &#39;MODIS_Aqua_L3_Land_Surface_Temp_8Day_Night&#39;, &#39;MODIS_Aqua_L3_Land_Surface_Temp_Monthly_Day&#39;, &#39;MODIS_Aqua_L3_Land_Surface_Temp_Monthly_Night&#39;, &#39;MODIS_Aqua_L3_EVI_Monthly&#39;, &#39;MODIS_Aqua_L3_NDVI_Monthly&#39;, &#39;MODIS_Aqua_L3_EVI_16Day&#39;, &#39;MODIS_Aqua_L3_NDVI_16Day&#39;, &#39;MODIS_Aqua_L4_FPAR_8Day&#39;, &#39;MODIS_Aqua_L4_LAI_8Day&#39;, &#39;MODIS_Aqua_L4_Gross_Primary_Productivity_8Day&#39;, &#39;MODIS_Aqua_L4_Net_Photosynthesis_8Day&#39;, &#39;MODIS_Aqua_Ice_Surface_Temp_Day&#39;, &#39;MODIS_Aqua_Sea_Ice&#39;, &#39;MODIS_Aqua_Ice_Surface_Temp_Night&#39;, &#39;MODIS_Aqua_L3_Ice_Surface_Temp_Daily_Day&#39;, &#39;MODIS_Aqua_L3_Sea_Ice_Daily&#39;, &#39;MODIS_Aqua_L3_Ice_Surface_Temp_Daily_Night&#39;, &#39;MODIS_Aqua_CorrectedReflectance_TrueColor&#39;, &#39;MODIS_Aqua_CorrectedReflectance_Bands721&#39;, &#39;MODIS_Aqua_Data_No_Data&#39;, &#39;MODIS_Aqua_L2_Chlorophyll_A&#39;, &#39;MODIS_Aqua_L2_Photosynthetically_Available_Radiation&#39;, &#39;MODIS_Aqua_L2_Sea_Surface_Temp_Day&#39;, &#39;MODIS_Aqua_L2_Sea_Surface_Temp_Night&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Day_8Day&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_4km_Night_8Day&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Night_8Day&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Day_Annual&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_4km_Night_Annual&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Night_Annual&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Day_Daily&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_4km_Night_Daily&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Night_Daily&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Day_Monthly&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_4km_Night_Monthly&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_4km_Night_Monthly&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Day_8Day&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_9km_Night_8Day&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Night_8Day&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Day_Annual&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_9km_Night_Annual&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Night_Annual&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Day_Daily&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_9km_Night_Daily&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Night_Daily&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Day_Monthly&#39;, &#39;MODIS_Aqua_L3_SST_MidIR_9km_Night_Monthly&#39;, &#39;MODIS_Aqua_L3_SST_Thermal_9km_Night_Monthly&#39;, &#39;NLDAS_Near_Surface_Air_Temperature_Primary_Monthly&#39;, &#39;NLDAS_Surface_Total_Precipitation_Primary_Monthly&#39;, &#39;NLDAS_Surface_Total_Precipitation_Secondary_Monthly&#39;, &#39;NLDAS_Underground_Soil_Moisture_Mosaic_Monthly&#39;, &#39;NLDAS_Underground_Soil_Moisture_Noah_Monthly&#39;, &#39;NLDAS_Underground_Soil_Moisture_VIC_Monthly&#39;, &#39;OCO-2_Solar_Induced_Florescence_757nm&#39;, &#39;OCO-2_Solar_Induced_Florescence_771nm&#39;, &#39;OCO-2_Solar_Induced_Florescence_Blended&#39;, &#39;OCO-2_Water_Vapor_Total_Column_Average&#39;, &#39;OCO-2_Carbon_Dioxide_Global_Mean_Difference&#39;, &#39;OCO-2_Carbon_Dioxide_Total_Column_Average&#39;, &#39;OCO-3_Solar_Induced_Florescence_757nm&#39;, &#39;OCO-3_Solar_Induced_Florescence_771nm&#39;, &#39;OCO-3_Solar_Induced_Florescence_Blended&#39;, &#39;OCO-3_Water_Vapor_Total_Column_Average&#39;, &#39;OCO-3_Carbon_Dioxide_Global_Mean_Difference&#39;, &#39;OCO-3_Carbon_Dioxide_Total_Column_Average&#39;, &#39;OLS_DMSP_F10_Digital_Derived_Lightning&#39;, &#39;OLS_DMSP_F12_Digital_Derived_Lightning&#39;, &#39;OMI_Absorbing_Aerosol_Optical_Depth&#39;, &#39;OMI_Absorbing_Aerosol_Optical_Thickness_MW_388&#39;, &#39;OMI_Aerosol_Index&#39;, &#39;OMI_Aerosol_Optical_Depth&#39;, &#39;OMI_Cloud_Pressure&#39;, &#39;OMI_Nitrogen_Dioxide_Tropo_Column&#39;, &#39;OMI_Ozone_DOAS_Total_Column&#39;, &#39;OMI_Ozone_TOMS_Total_Column&#39;, &#39;OMI_SO2_Upper_Troposphere_and_Stratosphere&#39;, &#39;OMI_SO2_Planetary_Boundary_Layer&#39;, &#39;OMI_SO2_Lower_Troposphere&#39;, &#39;OMI_SO2_Middle_Troposphere&#39;, &#39;OMI_Single_Scattering_Albedo&#39;, &#39;OMI_UV_Aerosol_Index&#39;, &#39;OMI_UV_Erythemal_Daily_Dose&#39;, &#39;OMI_UV_Erythemal_Dose_Rate&#39;, &#39;OMI_UV_Index&#39;, &#39;OMPS_Aerosol_Index&#39;, &#39;OMPS_Aerosol_Index_PyroCumuloNimbus&#39;, &#39;OMPS_Ozone_Total_Column&#39;, &#39;OMPS_SO2_Upper_Troposphere_and_Stratosphere&#39;, &#39;OMPS_SO2_Planetary_Boundary_Layer&#39;, &#39;OMPS_SO2_Lower_Troposphere&#39;, &#39;OMPS_SO2_Middle_Troposphere&#39;, &#39;OSCAR_Sea_Surface_Currents_Meridional&#39;, &#39;OSCAR_Sea_Surface_Currents_Zonal&#39;, &#39;OSM_Land_Mask&#39;, &#39;OSM_Land_Water_Map&#39;, &#39;OTD_OrbView1_Flash_Radiance&#39;, &#39;Reference_Features&#39;, &#39;Reference_Labels&#39;, &#39;RSS_Total_Precipitable_Water_Climatology_Monthly&#39;, &#39;RSS_Merged_Wind_Climatology_Monthly&#39;, &#39;Agricultural_Lands_Croplands_2000&#39;, &#39;Agricultural_Lands_Pastures_2000&#39;, &#39;Amphibian_Richness_All_Species_2013&#39;, &#39;Amphibian_Richness_All_Threats_2013&#39;, &#39;Amphibian_Richness_Critically_Endangered_Species_2013&#39;, &#39;Amphibian_Richness_Endangered_Species_2013&#39;, &#39;Amphibian_Richness_Vulnerable_Species_2013&#39;, &#39;Anthropogenic_Biomes_of_the_World_2001-2006&#39;, &#39;NDH_Cyclone_Proportional_Economic_Loss_Risk_Deciles_2000&#39;, &#39;NDH_Cyclone_Hazard_Frequency_Distribution_1980-2000&#39;, &#39;NDH_Cyclone_Mortality_Risks_Distribution_2000&#39;, &#39;NDH_Drought_Proportional_Economic_Loss_Risk_Deciles_2000&#39;, &#39;NDH_Drought_Hazard_Frequency_Distribution_1980-2000&#39;, &#39;NDH_Drought_Mortality_Risks_Distribution_2000&#39;, &#39;Nuclear_Power_Plant_Locations&#39;, &#39;Estimated_Net_Migration_1970-1980&#39;, &#39;Estimated_Net_Migration_1980-1990&#39;, &#39;Estimated_Net_Migration_1990-2000&#39;, &#39;NDH_Flood_Proportional_Economic_Loss_Risk_Deciles_2000&#39;, &#39;NDH_Flood_Hazard_Frequency_Distribution_1985-2003&#39;, &#39;NDH_Flood_Mortality_Risks_Distribution_2000&#39;, &#39;Landsat_Global_Man-made_Impervious_Surface&#39;, &#39;GPW_Population_Density_2000&#39;, &#39;GPW_Population_Density_2005&#39;, &#39;GPW_Population_Density_2010&#39;, &#39;GPW_Population_Density_2015&#39;, &#39;GPW_Population_Density_2020&#39;, &#39;GRanD_Dams&#39;, &#39;GRanD_Reservoirs&#39;, &#39;GRUMP_Urban_Extents_Grid_1995&#39;, &#39;GRUMP_Settlements&#39;, &#39;Landsat_Human_Built-up_And_Settlement_Extent&#39;, &#39;Human_Footprint_1995-2004&#39;, &#39;NDH_Landslide_Hazard_Distribution_2000&#39;, &#39;Last_of_the_Wild_1995-2004&#39;, &#39;Summer_Day_Max_Land_Surface_Temp_2013&#39;, &#39;Summer_Night_Min_Land_Surface_Temp_2013&#39;, &#39;Mammal_Richness_Grids_All_Species_2013&#39;, &#39;Mammal_Richness_Grids_All_Threats_2013&#39;, &#39;Mammal_Richness_Grids_Critically_Endangered_Species_2013&#39;, &#39;Mammal_Richness_Grids_Endangered_Species_2013&#39;, &#39;Mammal_Richness_Grids_Vulnerable_Species_2013&#39;, &#39;Mangrove_Forest_Distribution_2000&#39;, &#39;Ground_Level_Nitrogen_Dioxide_3_Year_Running_Mean_1996-1998&#39;, &#39;Ground_Level_Nitrogen_Dioxide_3_Year_Running_Mean_2010-2012&#39;, &#39;Particulate_Matter_Below_2.5micrometers_2001-2010&#39;, &#39;Particulate_Matter_Below_2.5micrometers_2010-2012&#39;, &#39;UHI_Avg_Summer_Day_Max_Land_Surface_Temp_2013&#39;, &#39;UHI_Avg_Summer_Night_Min_Land_Surface_Temp_2013&#39;, &#39;UHI_Urban-Rural_Summer_Day_Max_Land_Surface_Temp_Difference_2013&#39;, &#39;UHI_Urban-Rural_Summer_Night_Min_Land_Surface_Temp_Difference_2013&#39;, &#39;LECZ_Urban_Rural_Extents_Below_10m&#39;, &#39;Probabilities_of_Urban_Expansion_2000-2030&#39;, &#39;NDH_Volcano_Proportional_Economic_Loss_Risk_Deciles_2000&#39;, &#39;NDH_Volcano_Hazard_Frequency_Distribution_1979-2000&#39;, &#39;NDH_Volcano_Mortality_Risks_Distribution_2000&#39;, &#39;SMAP_L1_Passive_Faraday_Rotation_Aft&#39;, &#39;SMAP_L1_Passive_Faraday_Rotation_Fore&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Aft_H&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Aft_H_QA&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Aft_H_RFI&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Fore_H&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Fore_H_QA&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Fore_H_RFI&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Aft_V&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Aft_V_QA&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Aft_V_RFI&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Fore_V&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Fore_V_QA&#39;, &#39;SMAP_L1_Passive_Enhanced_Brightness_Temp_Fore_V_RFI&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Aft_H&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Aft_H_QA&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Aft_H_RFI&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Fore_H&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Fore_H_QA&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Fore_H_RFI&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Aft_V&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Aft_V_QA&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Aft_V_RFI&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Fore_V&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Fore_V_QA&#39;, &#39;SMAP_L1_Passive_Brightness_Temp_Fore_V_RFI&#39;, &#39;SMAP_L2_Passive_Day_Soil_Moisture_Option1&#39;, &#39;SMAP_L2_Passive_Enhanced_Day_Soil_Moisture_Option1&#39;, &#39;SMAP_L2_Passive_Enhanced_Night_Soil_Moisture_Option1&#39;, &#39;SMAP_L2_Passive_Night_Soil_Moisture_Option1&#39;, &#39;SMAP_L2_Passive_Day_Soil_Moisture_Option2&#39;, &#39;SMAP_L2_Passive_Enhanced_Day_Soil_Moisture_Option2&#39;, &#39;SMAP_L2_Passive_Enhanced_Night_Soil_Moisture_Option2&#39;, &#39;SMAP_L2_Passive_Night_Soil_Moisture_Option2&#39;, &#39;SMAP_L2_Passive_Day_Soil_Moisture_Option3&#39;, &#39;SMAP_L2_Passive_Enhanced_Day_Soil_Moisture_Option3&#39;, &#39;SMAP_L2_Passive_Enhanced_Night_Soil_Moisture_Option3&#39;, &#39;SMAP_L2_Passive_Night_Soil_Moisture_Option3&#39;, &#39;SMAP_Sentinel-1_L2_Active_Passive_Soil_Moisture&#39;, &#39;SMAP_L3_Passive_Day_Freeze_Thaw&#39;, &#39;SMAP_L3_Passive_Enhanced_Day_Freeze_Thaw&#39;, &#39;SMAP_L3_Passive_Enhanced_Night_Freeze_Thaw&#39;, &#39;SMAP_L3_Passive_Night_Freeze_Thaw&#39;, &#39;SMAP_L3_Active_Sigma0_HH&#39;, &#39;SMAP_L3_Active_Sigma0_HH_QA&#39;, &#39;SMAP_L3_Active_Sigma0_HH_RFI&#39;, &#39;SMAP_L3_Active_Sigma0_VV&#39;, &#39;SMAP_L3_Active_Sigma0_VV_QA&#39;, &#39;SMAP_L3_Active_Sigma0_VV_RFI&#39;, &#39;SMAP_L3_Active_Sigma0_XPOL&#39;, &#39;SMAP_L3_Active_Sigma0_XPOL_QA&#39;, &#39;SMAP_L3_Active_Sigma0_XPOL_RFI&#39;, &#39;SMAP_L3_Active_Soil_Moisture&#39;, &#39;SMAP_L3_Active_Passive_Soil_Moisture&#39;, &#39;SMAP_L3_Passive_Day_Soil_Moisture&#39;, &#39;SMAP_L3_Passive_Enhanced_Day_Soil_Moisture&#39;, &#39;SMAP_L3_Passive_Enhanced_Night_Soil_Moisture&#39;, &#39;SMAP_L3_Passive_Night_Soil_Moisture&#39;, &#39;SMAP_L3_Sea_Surface_Salinity_CAP_8Day_RunningMean&#39;, &#39;SMAP_L3_Sea_Surface_Salinity_CAP_Monthly&#39;, &#39;SMAP_L3_Sea_Surface_Salinity_REMSS_8Day_RunningMean&#39;, &#39;SMAP_L3_Sea_Surface_Salinity_REMSS_Monthly&#39;, &#39;SMAP_L3_Active_Passive_Brightness_Temp_H&#39;, &#39;SMAP_L3_Passive_Brightness_Temp_H&#39;, &#39;SMAP_L3_Active_Passive_Brightness_Temp_V&#39;, &#39;SMAP_L3_Passive_Brightness_Temp_V&#39;, &#39;SMAP_L4_Analyzed_Root_Zone_Soil_Moisture&#39;, &#39;SMAP_L4_Analyzed_Surface_Soil_Moisture&#39;, &#39;SMAP_L4_Emult_Average&#39;, &#39;SMAP_L4_Frozen_Area&#39;, &#39;SMAP_L4_Mean_Gross_Primary_Productivity&#39;, &#39;SMAP_L4_Mean_Net_Ecosystem_Exchange&#39;, &#39;SMAP_L4_Mean_Heterotrophic_Respiration&#39;, &#39;SMAP_L4_Snow_Mass&#39;, &#39;SMAP_L4_Soil_Temperature_Layer_1&#39;, &#39;SMAP_L4_Uncertainty_Analyzed_Root_Zone_Soil_Moisture&#39;, &#39;SMAP_L4_Uncertainty_Analyzed_Surface_Soil_Moisture&#39;, &#39;SMAP_L4_Uncertainty_Mean_Net_Ecosystem_Exchange&#39;, &#39;SRTM_Color_Index&#39;, &#39;SSMI_DMSP_F10_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F10_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F10_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F10_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F10_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F10_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F10_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F10_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F11_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F11_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F11_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F11_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F11_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F11_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F11_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F11_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F13_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F13_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F13_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F13_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F13_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F13_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F13_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F13_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F14_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F14_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F14_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F14_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F14_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F14_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F14_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F14_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F15_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F15_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F15_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F15_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F15_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F15_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F15_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F15_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F16_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F16_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F16_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F16_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F16_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F16_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F16_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F16_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F17_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F17_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F17_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F17_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F17_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F17_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F17_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F17_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F8_Cloud_Liquid_Water_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F8_Cloud_Liquid_Water_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F8_Rain_Rate_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F8_Rain_Rate_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F8_Wind_Speed_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F8_Wind_Speed_Over_Oceans_Descending&#39;, &#39;SSMI_DMSP_F8_Water_Vapor_Over_Oceans_Ascending&#39;, &#39;SSMI_DMSP_F8_Water_Vapor_Over_Oceans_Descending&#39;, &#39;SWDB_Aerosol_Angstrom_Exponent_Daily&#39;, &#39;SWDB_Aerosol_Angstrom_Exponent_Monthly&#39;, &#39;SWDB_Aerosol_Optical_Thickness_550nm_Daily&#39;, &#39;SWDB_Aerosol_Optical_Thickness_550nm_Monthly&#39;, &#39;TOPEX-Poseidon_JASON_Sea_Surface_Currents_Meridional_US_West_Coast_GAFECC&#39;, &#39;TOPEX-Poseidon_JASON_Sea_Surface_Currents_Zonal_US_West_Coast_GAFECC&#39;, &#39;TOPEX-Poseidon_JASON_Sea_Surface_Height_Anomalies_US_West_Coast_GAFECC&#39;, &#39;TOPEX-Poseidon_JASON_Sea_Surface_Height_Anomalies_GDR_Cycles&#39;, &#39;TOPEX-Poseidon_JASON_Sea_Surface_Height_Anomalies_Reconstructed&#39;, &#39;TRMM_Precipitation_Rate_Asc&#39;, &#39;TRMM_Precipitation_Rate_Dsc&#39;, &#39;TRMM_Brightness_Temp_Asc&#39;, &#39;TRMM_Brightness_Temp_Dsc&#39;, &#39;VIIRS_NOAA20_Brightness_Temp_BandI5_Day&#39;, &#39;VIIRS_NOAA20_Brightness_Temp_BandI5_Night&#39;, &#39;VIIRS_NOAA20_CorrectedReflectance_TrueColor&#39;, &#39;VIIRS_NOAA20_CorrectedReflectance_BandsM11-I2-I1&#39;, &#39;VIIRS_NOAA20_CorrectedReflectance_BandsM3-I3-M11&#39;, &#39;VIIRS_Black_Marble&#39;, &#39;VIIRS_CityLights_2012&#39;, &#39;VIIRS_Night_Lights&#39;, &#39;VIIRS_CrIS_NOAA20_BT_Band33_Fusion_Day&#39;, &#39;VIIRS_CrIS_NOAA20_BT_Band33_Fusion_Night&#39;, &#39;VIIRS_SNPP_Brightness_Temp_BandI5_Day&#39;, &#39;VIIRS_SNPP_Brightness_Temp_BandI5_Night&#39;, &#39;VIIRS_SNPP_DayNightBand_ENCC&#39;, &#39;VIIRS_SNPP_DayNightBand_At_Sensor_Radiance&#39;, &#39;VIIRS_SNPP_CorrectedReflectance_TrueColor&#39;, &#39;VIIRS_SNPP_CorrectedReflectance_BandsM11-I2-I1&#39;, &#39;VIIRS_SNPP_CorrectedReflectance_BandsM3-I3-M11&#39;, &#39;VIIRS_SNPP_L2_Chlorophyll_A&#39;, &#39;VIIRS_SNPP_L2_Photosynthetically_Available_Radiation&#39;, &#39;VIIRS_SNPP_L2_Sea_Surface_Temp_Day&#39;, &#39;VIIRS_SNPP_L2_Sea_Surface_Temp_Night&#39;, &#39;VIIRS_CrIS_SNPP_BT_Band33_Fusion_Day&#39;, &#39;VIIRS_SNPP_Cloud_Effective_Radius&#39;, &#39;VIIRS_SNPP_Clear_Sky_Confidence_Day&#39;, &#39;VIIRS_SNPP_Cloud_Optical_Thickness&#39;, &#39;VIIRS_SNPP_Cloud_Top_Height_Day&#39;, &#39;VIIRS_CrIS_SNPP_BT_Band33_Fusion_Night&#39;, &#39;VIIRS_SNPP_Clear_Sky_Confidence_Night&#39;, &#39;VIIRS_SNPP_Cloud_Top_Height_Night&#39;, &#39;VIIRS_SNPP_Angstrom_Exponent_Deep_Blue_Best_Estimate&#39;, &#39;VIIRS_SNPP_Angstrom_Exponent_Dark_Target_Ocean&#39;, &#39;VIIRS_SNPP_AOT_Deep_Blue_Best_Estimate&#39;, &#39;VIIRS_SNPP_AOT_Dark_Target_Land_Ocean&#39;, &#39;Landsat_WELD_CorrectedReflectance_Bands157_Global_Annual&#39;, &#39;Landsat_WELD_CorrectedReflectance_Bands157_Global_Monthly&#39;, &#39;Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual&#39;, &#39;Landsat_WELD_CorrectedReflectance_TrueColor_Global_Monthly&#39;, &#39;Landsat_WELD_CorrectedReflectance_Bands743_Global_Annual&#39;, &#39;Landsat_WELD_CorrectedReflectance_Bands743_Global_Monthly&#39;, &#39;Landsat_WELD_NDVI_Global_Annual&#39;, &#39;Landsat_WELD_NDVI_Global_Monthly&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>对于某些服务，我们可以指定某个时间以获得该时间的图像：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_uri</span> <span class="o">=</span> <span class="s1">&#39;http://map1c.vis.earthdata.nasa.gov/wmts-geo/wmts.cgi&#39;</span>  
+<span class="n">layer_name</span> <span class="o">=</span> <span class="s1">&#39;VIIRS_Night_Lights&#39;</span>   
+ 
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">54</span><span class="p">]</span> <span class="c1">#[90,130,15,50]  </span>
+
+<span class="n">lambert_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>  
+                             <span class="n">false_easting</span><span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">400000</span><span class="p">)</span>  
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>  
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">lambert_crs</span><span class="p">)</span>  
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>  
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>  
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>  
+<span class="c1"># Add WMTS imaging.  </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_wmts</span><span class="p">(</span><span class="n">base_uri</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">wmts_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="s1">&#39;2016-12-31&#39;</span><span class="p">})</span>      
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.slippy_image_artist.SlippyImageArtist at 0x1e118135ee0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Cartopy_2_29_1.png" src="../_images/Cartopy_2_29_1.png" />
+</div>
+</div>
+<p>我们可以画一下月平均气温，并用天地图叠加国境线：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_uri</span> <span class="o">=</span> <span class="s1">&#39;http://map1c.vis.earthdata.nasa.gov/wmts-geo/wmts.cgi&#39;</span> 
+<span class="n">layer_name</span> <span class="o">=</span> <span class="s1">&#39;GLDAS_Near_Surface_Air_Temperature_Monthly&#39;</span> <span class="c1">#&#39;MODIS_Combined_Value_Added_AOD&#39;  </span>
+
+<span class="n">extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">72</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">54</span><span class="p">]</span> <span class="c1">#[90,130,15,50] </span>
+<span class="n">lambert_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> 
+                              <span class="n">false_easting</span><span class="o">=</span><span class="mi">400000</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">400000</span><span class="p">)</span> 
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
+ 
+<span class="c1"># Plot WMTS data in a specific region, over a plain lat-lon map. </span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">lambert_crs</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span> 
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> 
+<span class="c1"># Add WMTS imaging. </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_wmts</span><span class="p">(</span><span class="n">base_uri</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span> 
+
+<span class="n">request_l</span> <span class="o">=</span> <span class="n">TDT_borders</span><span class="p">()</span> <span class="c1">#desired_tile_form=&#39;RGBA&#39;)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">request_l</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Cartopy_2_31_0.png" src="../_images/Cartopy_2_31_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./cartopy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Cartopy_1.html" title="previous page"><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 地图绘制（1）</a>
+    <a class='right-next' id="next-link" href="Cartopy_3.html" title="next page"><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 地图绘制（3）</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Xianxiang Li<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

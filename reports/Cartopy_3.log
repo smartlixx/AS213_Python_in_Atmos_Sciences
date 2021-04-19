@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 1107, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 852, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import cartopy.io.img_tiles as cimgt
+import cartopy.crs as ccrs
+from cartopy.io import shapereader
+from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
+
+headers='Mozilla/5.0' #{'User-Agent': 'Mozilla/5.0'}
+tk = <your-token>
+
+class TDT(cimgt.GoogleWTS):
+    def __init__(self, desired_tile_form='RGB', cache=False):
+        super().__init__(desired_tile_form=desired_tile_form,
+                         user_agent = headers)
+    def _image_url(self, tile):
+        x, y, z = tile
+        url = 'http://t0.tianditu.gov.cn/DataServer?T=vec_w&x=%s&y=%s&l=%s&tk=%s'% (x, y, z, tk)
+        return url
+    
+class TDT_ter(cimgt.GoogleWTS):
+    def __init__(self, desired_tile_form='RGB', cache=False):
+        super().__init__(desired_tile_form=desired_tile_form,
+                         user_agent = headers)
+    def _image_url(self, tile):
+        x, y, z = tile
+        url = 'http://t0.tianditu.gov.cn/DataServer?T=ter_w&x=%s&y=%s&l=%s&tk=%s'% (x, y, z, tk)
+        return url
+    
+class TDT_img(cimgt.GoogleWTS):
+    def __init__(self, desired_tile_form='RGB', cache=False):
+        super().__init__(desired_tile_form=desired_tile_form,
+                         user_agent = headers)
+    def _image_url(self, tile):
+        x, y, z = tile
+        url = 'http://t0.tianditu.gov.cn/DataServer?T=img_w&x=%s&y=%s&l=%s&tk=%s'% (x, y, z, tk)
+        return url
+------------------
+
+[0;36m  File [0;32m"<ipython-input-1-9216c7829aa2>"[0;36m, line [0;32m8[0m
+[0;31m    tk = <your-token>[0m
+[0m         ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (<ipython-input-1-9216c7829aa2>, line 8)
+
