@@ -11,6 +11,12 @@ only_build_toc_files: true
 execute:
   execute_notebooks: force
 
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - html_image
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:

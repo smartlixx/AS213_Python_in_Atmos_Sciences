@@ -2,6 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro
+  title: Introduction
 - part: Pandas
   chapters:
     - file: Pandas/Pandas_1
