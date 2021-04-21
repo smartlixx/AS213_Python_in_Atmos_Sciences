@@ -1,4 +1,4 @@
-# AS213_Python_in_Atmos_Sciences
+# AS213: Python in Atmosphric Sciences
 
 This is the course material for AS 213: Introduction to Python and Its Applications in Atmospheric Sciences at Sun Yat-sen University.
 

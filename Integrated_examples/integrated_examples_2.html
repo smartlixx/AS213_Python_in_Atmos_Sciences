@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -44,7 +44,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,8 +52,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="地图数据处理及可视化" href="integrated_examples_1.html" />
@@ -89,7 +87,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   AS213_Python_in_Atmos_Sciences
+   AS213: Python in Atmosphric Sciences
   </a>
  </li>
 </ul>
@@ -274,21 +272,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -306,7 +304,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -325,13 +323,13 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -350,13 +348,14 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -410,6 +409,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -425,7 +425,7 @@
 </ul>
 <div class="section" id="id2">
 <h2>全球平均气温<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>我们使用以前课上用过的 NCEP 再分析资料 <a class="reference external" href="http://air.mon.mean.nc">air.mon.mean.nc</a> 来计算全球平均气温 (1948-2016)</p>
+<p>我们使用以前课上用过的 NCEP 再分析资料 air.mon.mean.nc 来计算全球平均气温 (1948-2016)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -435,7 +435,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.core.options.set_options at 0x7feb68d7d880&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.core.options.set_options at 0x7fa204e6c890&gt;
 </pre></div>
 </div>
 </div>
@@ -448,126 +448,23 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/file_manager.py in _acquire_with_cache_info(self, needs_lock)
-    198             try:
---&gt; 199                 file = self._cache[self._key]
-    200             except KeyError:
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/lru_cache.py in __getitem__(self, key)
-     52         with self._lock:
----&gt; 53             value = self._cache[key]
-     54             self._cache.move_to_end(key)
-
-KeyError: [&lt;function _open_scipy_netcdf at 0x7feb6c2d55e0&gt;, (&#39;/Users/lixx/work/AS213_Python_in_Atmos_Sciences/Integrated_examples/air.mon.mean.nc&#39;,), &#39;r&#39;, ((&#39;mmap&#39;, None), (&#39;version&#39;, 2))]
-
-During handling of the above exception, another exception occurred:
-
-TypeError                                 Traceback (most recent call last)
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in _open_scipy_netcdf(filename, mode, mmap, version)
-     93     try:
----&gt; 94         return scipy.io.netcdf_file(filename, mode=mode, mmap=mmap, version=version)
-     95     except TypeError as e:  # netcdf3 message is obscure in this case
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/scipy/io/netcdf.py in __init__(self, filename, mode, mmap, version, maskandscale)
-    280         if mode in &#39;ra&#39;:
---&gt; 281             self._read()
-    282 
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/scipy/io/netcdf.py in _read(self)
-    601         if not magic == b&#39;CDF&#39;:
---&gt; 602             raise TypeError(&quot;Error: %s is not a valid NetCDF 3 file&quot; %
-    603                             self.filename)
-
-TypeError: Error: /Users/lixx/work/AS213_Python_in_Atmos_Sciences/Integrated_examples/air.mon.mean.nc is not a valid NetCDF 3 file
-
-During handling of the above exception, another exception occurred:
-
-TypeError                                 Traceback (most recent call last)
-&lt;ipython-input-2-fa32ae964ce3&gt; in &lt;module&gt;
-----&gt; 1 mon_air = xr.open_dataarray(&#39;air.mon.mean.nc&#39;)
-      2 mon_air
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/api.py in open_dataarray(filename_or_obj, group, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, engine, chunks, lock, cache, drop_variables, backend_kwargs, use_cftime, decode_timedelta)
-    687     &quot;&quot;&quot;
-    688 
---&gt; 689     dataset = open_dataset(
-    690         filename_or_obj,
-    691         group=group,
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/api.py in open_dataset(filename_or_obj, group, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, engine, chunks, lock, cache, drop_variables, backend_kwargs, use_cftime, decode_timedelta)
-    555 
-    556     with close_on_error(store):
---&gt; 557         ds = maybe_decode_store(store, chunks)
-    558 
-    559     # Ensure source filename always stored in dataset object (GH issue #2550)
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/api.py in maybe_decode_store(store, chunks)
-    451 
-    452     def maybe_decode_store(store, chunks):
---&gt; 453         ds = conventions.decode_cf(
-    454             store,
-    455             mask_and_scale=mask_and_scale,
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/conventions.py in decode_cf(obj, concat_characters, mask_and_scale, decode_times, decode_coords, drop_variables, use_cftime, decode_timedelta)
-    637         encoding = obj.encoding
-    638     elif isinstance(obj, AbstractDataStore):
---&gt; 639         vars, attrs = obj.load()
-    640         extra_coords = set()
-    641         close = obj.close
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/common.py in load(self)
-    111         &quot;&quot;&quot;
-    112         variables = FrozenDict(
---&gt; 113             (_decode_variable_name(k), v) for k, v in self.get_variables().items()
-    114         )
-    115         attributes = FrozenDict(self.get_attrs())
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in get_variables(self)
-    164     def get_variables(self):
-    165         return FrozenDict(
---&gt; 166             (k, self.open_store_variable(k, v)) for k, v in self.ds.variables.items()
-    167         )
-    168 
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in ds(self)
-    153     @property
-    154     def ds(self):
---&gt; 155         return self._manager.acquire()
-    156 
-    157     def open_store_variable(self, name, var):
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/file_manager.py in acquire(self, needs_lock)
-    179             An open file object, as returned by ``opener(*args, **kwargs)``.
-    180         &quot;&quot;&quot;
---&gt; 181         file, _ = self._acquire_with_cache_info(needs_lock)
-    182         return file
-    183 
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/file_manager.py in _acquire_with_cache_info(self, needs_lock)
-    203                     kwargs = kwargs.copy()
-    204                     kwargs[&quot;mode&quot;] = self._mode
---&gt; 205                 file = self._opener(*self._args, **kwargs)
-    206                 if self._mode == &quot;w&quot;:
-    207                     # ensure file doesn&#39;t get overriden when opened again
-
-/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/xarray/backends/scipy_.py in _open_scipy_netcdf(filename, mode, mmap, version)
-    103             &quot;&quot;&quot;
-    104             errmsg += msg
---&gt; 105             raise TypeError(errmsg)
-    106         else:
-    107             raise
-
-TypeError: Error: /Users/lixx/work/AS213_Python_in_Atmos_Sciences/Integrated_examples/air.mon.mean.nc is not a valid NetCDF 3 file
-            If this is a NetCDF4 file, you may need to install the
-            netcdf4 library, e.g.,
-
-            $ pip install netcdf4
-            
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><pre>&lt;xarray.DataArray &#x27;air&#x27; (time: 832, lat: 73, lon: 144)&gt;
+[8745984 values with dtype=float32]
+Coordinates:
+  * lat      (lat) float32 90.0 87.5 85.0 82.5 80.0 ... -82.5 -85.0 -87.5 -90.0
+  * lon      (lon) float32 0.0 2.5 5.0 7.5 10.0 ... 350.0 352.5 355.0 357.5
+  * time     (time) datetime64[ns] 1948-01-01 1948-02-01 ... 2017-04-01
+Attributes:
+    long_name:     Monthly Mean Air Temperature at sigma level 0.995
+    valid_range:   [-2000.  2000.]
+    units:         degC
+    precision:     1
+    var_desc:      Air Temperature
+    level_desc:    Surface
+    statistic:     Mean
+    parent_stat:   Individual Obs
+    dataset:       NCEP Reanalysis Derived Products
+    actual_range:  [-73.78001  41.74902]</pre></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,16 +506,15 @@ array(5.7122564, dtype=float32)</pre></div></div>
 <ul class="simple">
 <li><p>每个月长度不同</p></li>
 </ul>
-<p>参考 <a class="reference external" href="http://xarray.pydata.org/en/stable/examples/monthly-means.html">http://xarray.pydata.org/en/stable/examples/monthly-means.html</a></p>
+<p>参考 http://xarray.pydata.org/en/stable/examples/monthly-means.html</p>
 <ul class="simple">
 <li><p>更重要的是，地球是个球体，各处的面积并不相同</p></li>
 </ul>
-<p>在地球经度 <span class="math notranslate nohighlight">\(\varphi\)</span> 和纬度 <span class="math notranslate nohighlight">\(\lambda\)</span> 处，地球表面微元面积为</p>
-<div class="math notranslate nohighlight">
-\[
-dA = R^2\cos\lambda\,d\lambda\,d\varphi,\qquad  -\pi &lt; \varphi &lt; \pi,\, -\frac{\pi}{2} &lt; \lambda &lt; \frac{\pi}{2}, 
-\]</div>
-<p>所以在纬度 <span class="math notranslate nohighlight">\([\lambda, \lambda+d\lambda]\)</span> 之间，地球表面面积 <span class="math notranslate nohighlight">\(dA\propto\cos\lambda\)</span>。</p>
+<p>在地球经度 $\varphi$ 和纬度 $\lambda$ 处，地球表面微元面积为</p>
+<p>$$
+dA = R^2\cos\lambda,d\lambda,d\varphi,\qquad  -\pi &lt; \varphi &lt; \pi,, -\frac{\pi}{2} &lt; \lambda &lt; \frac{\pi}{2},
+$$</p>
+<p>所以在纬度 $[\lambda, \lambda+d\lambda]$ 之间，地球表面面积 $dA\propto\cos\lambda$。</p>
 <ul class="simple">
 <li><p>我们忽略每月天数的不同，只考虑地球表面积的影响</p></li>
 <li><p>建立一个纬度余弦值构成的权重数组，并归一化（权重之和为1）</p></li>
@@ -706,7 +602,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre>&lt;xarray.DataArray (time: 69)&gt;
+<div class="output text_html"><pre>&lt;xarray.DataArray &#x27;air&#x27; (time: 69)&gt;
 array([13.627374 , 13.63256  , 13.542421 , 13.688788 , 13.786775 ,
        13.852996 , 13.569222 , 13.556584 , 13.479174 , 13.794247 ,
        13.811653 , 13.766874 , 13.652037 , 13.691757 , 13.637964 ,
@@ -792,7 +688,7 @@ Trend =  0.012706676166727795
 </div>
 </div>
 <ul class="simple">
-<li><p>可见，1948 - 2016 年间，全球平均气温增加幅度为 0.013 <span class="math notranslate nohighlight">\(^o\)</span>C/年，或者 0.13 <span class="math notranslate nohighlight">\(^o\)</span>C/10年。</p></li>
+<li><p>可见，1948 - 2016 年间，全球平均气温增加幅度为 0.013 $^o$C/年，或者 0.13 $^o$C/10年。</p></li>
 <li><p>我们可以将趋势直线和对应 95% 置信区间的两条趋势直线加到上图中。</p></li>
 </ul>
 <div class="cell docutils container">
@@ -812,7 +708,7 @@ Trend =  0.012706676166727795
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc0ab6204d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa1f2814e10&gt;]
 </pre></div>
 </div>
 <img alt="../_images/integrated_examples_2_27_1.png" src="../_images/integrated_examples_2_27_1.png" />
@@ -844,10 +740,18 @@ Trend =  0.012706676166727795
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fc0ac06d950&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">a3bb9010a30c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">regionmask</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">china_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;../shp_file/simplied_china_country.shp&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">china_mask_poly</span> <span class="o">=</span> <span class="n">regionmask</span><span class="o">.</span><span class="n">Regions</span><span class="p">(</span><span class="n">china_shp</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="s1">&#39;china&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;regionmask&#39;
 </pre></div>
 </div>
-<img alt="../_images/integrated_examples_2_31_1.png" src="../_images/integrated_examples_2_31_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1512,10 +1416,10 @@ variables:
 </div>
 </div>
 <p>此外，我们还可以计算该区域的气溶胶光学厚度（aerosol optical depth, AOD）。它是消光系数在高度上的积分
-$<span class="math notranslate nohighlight">\(
+$$
 AOD = \int_0^{top}\tau(z) dz,
-\)</span><span class="math notranslate nohighlight">\(
-其中，\)</span>z<span class="math notranslate nohighlight">\( 为 WRF 网格的垂直高度，\)</span>\tau(z)<span class="math notranslate nohighlight">\( 为高度 \)</span>z$ 处的消光系数。</p>
+$$
+其中，$z$ 为 WRF 网格的垂直高度，$\tau(z)$ 为高度 $z$ 处的消光系数。</p>
 <p>这里我们使用 550 nm 光波的消光系数，WRF 中的变量名为 EXTCOF55。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1589,15 +1493,15 @@ AOD = \int_0^{top}\tau(z) dz,
 </div>
 <div class="section" id="ncl-python-geocat">
 <h3>NCL -&gt; Python: geoCAT<a class="headerlink" href="#ncl-python-geocat" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://geocat-examples.readthedocs.io/en/latest/gallery">https://geocat-examples.readthedocs.io/en/latest/gallery</a></p>
+<p>https://geocat-examples.readthedocs.io/en/latest/gallery</p>
 </div>
 <div class="section" id="metpy">
 <h3>MetPy<a class="headerlink" href="#metpy" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://unidata.github.io/MetPy/latest/index.html">https://unidata.github.io/MetPy/latest/index.html</a></p>
+<p>https://unidata.github.io/MetPy/latest/index.html</p>
 </div>
 <div class="section" id="unidata-python-gallery">
 <h3>Unidata Python Gallery<a class="headerlink" href="#unidata-python-gallery" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://unidata.github.io/python-training/gallery/gallery-home/">https://unidata.github.io/python-training/gallery/gallery-home/</a></p>
+<p>https://unidata.github.io/python-training/gallery/gallery-home/</p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -2039,7 +1943,7 @@ memory usage: 5.4+ MB
 </div>
 <div class="section" id="id5">
 <h3>极端天气分析<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>我们分析每年下雨的天数、高温（<span class="math notranslate nohighlight">\(&gt;35 ^oC\)</span>) 的天数以及低温（<span class="math notranslate nohighlight">\(&lt;10 ^oC\)</span>）的天数</p>
+<p>我们分析每年下雨的天数、高温（$&gt;35 ^oC$) 的天数以及低温（$&lt;10 ^oC$）的天数</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gz_rainyDays</span> <span class="o">=</span> <span class="n">gz</span><span class="p">[</span><span class="n">gz</span><span class="o">.</span><span class="n">PRCP</span><span class="o">&gt;</span><span class="mf">0.</span><span class="p">]</span>
@@ -2238,14 +2142,14 @@ memory usage: 5.4+ MB
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="integrated_examples_1.html" title="previous page">地图数据处理及可视化</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">

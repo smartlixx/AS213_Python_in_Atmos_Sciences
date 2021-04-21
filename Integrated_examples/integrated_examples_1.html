@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -44,7 +44,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -88,7 +88,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   AS213_Python_in_Atmos_Sciences
+   AS213: Python in Atmosphric Sciences
   </a>
  </li>
 </ul>
@@ -273,21 +273,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -305,7 +305,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -324,13 +324,13 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -349,13 +349,14 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -400,6 +401,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -418,16 +420,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">a62d01c1d62e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
 </pre></div>
 </div>
 </div>
@@ -966,7 +958,7 @@
 </table>
 </div></div></div>
 </div>
-<p>大家可以将这个结果和 <a class="reference external" href="https://www.sohu.com/a/355921579_353978">https://www.sohu.com/a/355921579_353978</a> 对照一下，看看结果是否正确。</p>
+<p>大家可以将这个结果和 https://www.sohu.com/a/355921579_353978 对照一下，看看结果是否正确。</p>
 </div>
 <div class="section" id="id3">
 <h2>地图标注、填色<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
@@ -989,7 +981,54 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;GeoAxesSubplot:&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py</span> in <span class="ni">_plot_polygon_collection</span><span class="nt">(ax, geoms, values, color, cmap, vmin, vmax, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">120</span>         <span class="kn">from</span> <span class="nn">descartes.patch</span> <span class="kn">import</span> <span class="n">PolygonPatch</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;descartes&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="n">fd9195187e71</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">crs</span><span class="p">})</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">provinces</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">75</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">54</span><span class="p">])</span>
+
+<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/geodataframe.py</span> in <span class="ni">plot</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span>         <span class="kn">from</span> <span class="nn">there.</span>
+<span class="g g-Whitespace">    </span><span class="mi">920</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">921</span><span class="s2">         return plot_dataframe(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">922</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">923</span><span class="s2">     plot.__doc__ = plot_dataframe.__doc__</span>
+
+<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py</span> in <span class="ni">plot_dataframe</span><span class="nt">(df, column, cmap, color, ax, cax, categorical, legend, scheme, k, vmin, vmax, markersize, figsize, legend_kwds, categories, classification_kwds, missing_kwds, aspect, **style_kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span><span class="s2">             markersize=markersize,</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span><span class="s2">             aspect=aspect,</span>
+<span class="ne">--&gt; </span><span class="mi">623</span><span class="s2">             **style_kwds</span>
+<span class="g g-Whitespace">    </span><span class="mi">624</span><span class="s2">         )</span>
+<span class="g g-Whitespace">    </span><span class="mi">625</span><span class="s2"> </span>
+
+<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py</span> in <span class="ni">plot_series</span><span class="nt">(s, cmap, color, ax, figsize, aspect, **style_kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span><span class="s2">         values_ = values[poly_idx] if cmap else None</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span><span class="s2">         _plot_polygon_collection(</span>
+<span class="ne">--&gt; </span><span class="mi">414</span><span class="s2">             ax, polys, values_, facecolor=facecolor, cmap=cmap, **style_kwds</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span><span class="s2">         )</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span><span class="s2"> </span>
+
+<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py</span> in <span class="ni">_plot_polygon_collection</span><span class="nt">(ax, geoms, values, color, cmap, vmin, vmax, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span><span class="s2">     except ImportError:</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span><span class="s2">         raise ImportError(</span>
+<span class="ne">--&gt; </span><span class="mi">123</span><span class="s2">             &quot;The descartes package is required for plotting polygons in geopandas. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="s2">             &quot;You can install it using &#39;conda install -c conda-forge descartes&#39; or &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="s2">             &quot;&#39;pip install descartes&#39;.&quot;</span>
+
+<span class="ne">ImportError</span>: The descartes package is required for plotting polygons in geopandas. You can install it using &#39;conda install -c conda-forge descartes&#39; or &#39;pip install descartes&#39;.
 </pre></div>
 </div>
 <img alt="../_images/integrated_examples_1_18_1.png" src="../_images/integrated_examples_1_18_1.png" />
@@ -7170,13 +7209,13 @@ posx and posy should be finite values
 <h3>课后练习<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>返回的数据里有各个省级单位下面的市、县的数据。尝试画一画你所在省的确诊病例分布图（如果需要市、县级地图，可以联系我）。</p></li>
-<li><p><a class="reference external" href="https://view.inews.qq.com/g2/getOnsInfo?name=disease_foreign">https://view.inews.qq.com/g2/getOnsInfo?name=disease_foreign</a> 返回国外病例数据。尝试画一画世界的病例分布。</p></li>
+<li><p>https://view.inews.qq.com/g2/getOnsInfo?name=disease_foreign 返回国外病例数据。尝试画一画世界的病例分布。</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.cnblogs.com/feffery/p/12361421.html">https://www.cnblogs.com/feffery/p/12361421.html</a> (强烈推荐此博客的文章)</p>
+<p>https://www.cnblogs.com/feffery/p/12361421.html (强烈推荐此博客的文章)</p>
 </div>
 </div>
 
@@ -7202,15 +7241,15 @@ posx and posy should be finite values
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="../Exercises/Exercise_El_Nino.html" title="previous page">厄尔尼诺/拉尼娜 (El Nino/La Nina) 现象</a>
     <a class='right-next' id="next-link" href="integrated_examples_2.html" title="next page">大气数据处理及可视化</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">

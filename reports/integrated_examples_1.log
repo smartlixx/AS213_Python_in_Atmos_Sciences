@@ -1,30 +1,84 @@
 Traceback (most recent call last):
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
-    executenb(
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 1107, in execute
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/nbclient/client.py", line 1112, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/nbclient/util.py", line 74, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/nbclient/util.py", line 53, in just_run
     return loop.run_until_complete(coro)
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
     return future.result()
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
-    await self.async_execute_cell(
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 852, in async_execute_cell
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/nbclient/client.py", line 554, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/nbclient/client.py", line 857, in async_execute_cell
     self._check_raise_for_error(cell, exec_reply)
-  File "/opt/miniconda3/envs/jupyter-book/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+  File "/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import geopandas as gpd
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+
+#crs = ccrs.LambertConformal(central_longitude=105.) #AzimuthalEqualArea()
+crs = ccrs.LambertAzimuthalEqualArea(central_longitude=105.)
+
+fig,ax = plt.subplots(figsize=(10,8),subplot_kw={'projection': crs})
+provinces.plot(ax=ax, facecolor='grey', edgecolor='white', linestyle='--', alpha=0.8, transform=ccrs.PlateCarree())
+ax.patch.set_visible(False)
+ax.set_extent([75,130,15,54])
+provinces.geometry.representative_point().plot(ax=ax, facecolor='white', edgecolor='black', 
+                                               marker='*', markersize=100, linewidth=0.5,
+                                               transform=ccrs.PlateCarree())
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-1-a62d01c1d62e>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mgeopandas[0m [0;32mas[0m [0mgpd[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mModuleNotFoundError[0m: No module named 'geopandas'
-ModuleNotFoundError: No module named 'geopandas'
+[0;32m/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py[0m in [0;36m_plot_polygon_collection[0;34m(ax, geoms, values, color, cmap, vmin, vmax, **kwargs)[0m
+[1;32m    119[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 120[0;31m         [0;32mfrom[0m [0mdescartes[0m[0;34m.[0m[0mpatch[0m [0;32mimport[0m [0mPolygonPatch[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    121[0m     [0;32mexcept[0m [0mImportError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mModuleNotFoundError[0m: No module named 'descartes'
+
+During handling of the above exception, another exception occurred:
+
+[0;31mImportError[0m                               Traceback (most recent call last)
+[0;32m<ipython-input-11-fd9195187e71>[0m in [0;36m<module>[0;34m[0m
+[1;32m      6[0m [0;34m[0m[0m
+[1;32m      7[0m [0mfig[0m[0;34m,[0m[0max[0m [0;34m=[0m [0mplt[0m[0;34m.[0m[0msubplots[0m[0;34m([0m[0mfigsize[0m[0;34m=[0m[0;34m([0m[0;36m10[0m[0;34m,[0m[0;36m8[0m[0;34m)[0m[0;34m,[0m[0msubplot_kw[0m[0;34m=[0m[0;34m{[0m[0;34m'projection'[0m[0;34m:[0m [0mcrs[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 8[0;31m [0mprovinces[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0max[0m[0;34m=[0m[0max[0m[0;34m,[0m [0mfacecolor[0m[0;34m=[0m[0;34m'grey'[0m[0;34m,[0m [0medgecolor[0m[0;34m=[0m[0;34m'white'[0m[0;34m,[0m [0mlinestyle[0m[0;34m=[0m[0;34m'--'[0m[0;34m,[0m [0malpha[0m[0;34m=[0m[0;36m0.8[0m[0;34m,[0m [0mtransform[0m[0;34m=[0m[0mccrs[0m[0;34m.[0m[0mPlateCarree[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      9[0m [0max[0m[0;34m.[0m[0mpatch[0m[0;34m.[0m[0mset_visible[0m[0;34m([0m[0;32mFalse[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     10[0m [0max[0m[0;34m.[0m[0mset_extent[0m[0;34m([0m[0;34m[[0m[0;36m75[0m[0;34m,[0m[0;36m130[0m[0;34m,[0m[0;36m15[0m[0;34m,[0m[0;36m54[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/geodataframe.py[0m in [0;36mplot[0;34m(self, *args, **kwargs)[0m
+[1;32m    919[0m         [0;32mfrom[0m [0mthere[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    920[0m         """
+[0;32m--> 921[0;31m         [0;32mreturn[0m [0mplot_dataframe[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    922[0m [0;34m[0m[0m
+[1;32m    923[0m     [0mplot[0m[0;34m.[0m[0m__doc__[0m [0;34m=[0m [0mplot_dataframe[0m[0;34m.[0m[0m__doc__[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py[0m in [0;36mplot_dataframe[0;34m(df, column, cmap, color, ax, cax, categorical, legend, scheme, k, vmin, vmax, markersize, figsize, legend_kwds, categories, classification_kwds, missing_kwds, aspect, **style_kwds)[0m
+[1;32m    621[0m             [0mmarkersize[0m[0;34m=[0m[0mmarkersize[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    622[0m             [0maspect[0m[0;34m=[0m[0maspect[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 623[0;31m             [0;34m**[0m[0mstyle_kwds[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    624[0m         )
+[1;32m    625[0m [0;34m[0m[0m
+
+[0;32m/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py[0m in [0;36mplot_series[0;34m(s, cmap, color, ax, figsize, aspect, **style_kwds)[0m
+[1;32m    412[0m         [0mvalues_[0m [0;34m=[0m [0mvalues[0m[0;34m[[0m[0mpoly_idx[0m[0;34m][0m [0;32mif[0m [0mcmap[0m [0;32melse[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    413[0m         _plot_polygon_collection(
+[0;32m--> 414[0;31m             [0max[0m[0;34m,[0m [0mpolys[0m[0;34m,[0m [0mvalues_[0m[0;34m,[0m [0mfacecolor[0m[0;34m=[0m[0mfacecolor[0m[0;34m,[0m [0mcmap[0m[0;34m=[0m[0mcmap[0m[0;34m,[0m [0;34m**[0m[0mstyle_kwds[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    415[0m         )
+[1;32m    416[0m [0;34m[0m[0m
+
+[0;32m/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/geopandas/plotting.py[0m in [0;36m_plot_polygon_collection[0;34m(ax, geoms, values, color, cmap, vmin, vmax, **kwargs)[0m
+[1;32m    121[0m     [0;32mexcept[0m [0mImportError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    122[0m         raise ImportError(
+[0;32m--> 123[0;31m             [0;34m"The descartes package is required for plotting polygons in geopandas. "[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    124[0m             [0;34m"You can install it using 'conda install -c conda-forge descartes' or "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    125[0m             [0;34m"'pip install descartes'."[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mImportError[0m: The descartes package is required for plotting polygons in geopandas. You can install it using 'conda install -c conda-forge descartes' or 'pip install descartes'.
+ImportError: The descartes package is required for plotting polygons in geopandas. You can install it using 'conda install -c conda-forge descartes' or 'pip install descartes'.
 
