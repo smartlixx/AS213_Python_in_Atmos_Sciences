@@ -4,10 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Cartopy 地图绘制（1） &#8212; AS213 Python in Atmospheric Sciences</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +21,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,34 +32,33 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cartopy 地图绘制（2）" href="Cartopy_2.html" />
     <link rel="prev" title="Xarray 数据处理（2）" href="../xarray/xarray-2.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -72,32 +69,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    AS213: Python in Atmosphric Sciences
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Pandas
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Pandas/Pandas_1.html">
    <code class="docutils literal notranslate">
@@ -144,12 +145,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Matplotlib
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Matplotlib/Matplotlib_advanced.html">
    <code class="docutils literal notranslate">
@@ -171,12 +172,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   xarray
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xarray/xarray-1.html">
    <code class="docutils literal notranslate">
@@ -198,12 +199,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Cartopy
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    <code class="docutils literal notranslate">
@@ -240,12 +241,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intergrated examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Integrated_examples/integrated_examples_1.html">
    地图数据处理及可视化
@@ -258,6 +259,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -301,7 +303,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -323,12 +325,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -352,14 +354,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#projection">
    投影 Projection
@@ -453,17 +454,125 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cartopy 地图绘制（1）</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projection">
+   投影 Projection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   添加经纬度标签
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-feature-interface">
+   地图特性 The Feature Interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transforming-data">
+   转换参考系 Transforming data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     例子：珠海到伦敦
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#raster">
+   绘制二维 (Raster) 数据
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xarray">
+   与
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     xarray
+    </span>
+   </code>
+   结合绘图
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     另一种（更好的）解决方案
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   展示卫星图像
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     风云卫星图像
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shapefile">
+   Shapefile
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     例子: 单独显示某个国家
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     例子：显示多个国家和地区
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   中国地图
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lambertconformal">
+     LambertConformal 坐标标注
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="cartopy-1">
+  <section class="tex2jax_ignore mathjax_ignore" id="cartopy-1">
 <h1><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 地图绘制（1）<a class="headerlink" href="#cartopy-1" title="Permalink to this headline">¶</a></h1>
 <p><img alt="" src="https://scitools.org.uk/cartopy/docs/latest/_static/cartopy.png" /></p>
 <p><strong>Carto</strong>graphy <strong>Py</strong>thon</p>
@@ -504,7 +613,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;&#39;, &#39;/Users/lixx/.local/share/cartopy&#39;, &#39;/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/cartopy/data&#39;, {(&#39;shapefiles&#39;, &#39;natural_earth&#39;): &lt;cartopy.io.shapereader.NEShpDownloader object at 0x7f9926a746d0&gt;, (&#39;shapefiles&#39;, &#39;gshhs&#39;): &lt;cartopy.io.shapereader.GSHHSShpDownloader object at 0x7f9926a7cb90&gt;}])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;&#39;, &#39;/Users/lixx/.local/share/cartopy&#39;, &#39;/opt/miniconda3/lib/python3.7/site-packages/cartopy/data&#39;, {(&#39;shapefiles&#39;, &#39;natural_earth&#39;): &lt;cartopy.io.shapereader.NEShpDownloader object at 0x7fcec154a790&gt;, (&#39;shapefiles&#39;, &#39;gshhs&#39;): &lt;cartopy.io.shapereader.GSHHSShpDownloader object at 0x7fcec1633050&gt;}])
 </pre></div>
 </div>
 </div>
@@ -517,7 +626,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">shapely</span></code></p></li>
 </ul>
 <p>它取代 <code class="docutils literal notranslate"><span class="pre">Basemap</span></code>，但是还没有完全实现 <code class="docutils literal notranslate"><span class="pre">Basemap</span></code> 的所有功能。</p>
-<div class="section" id="projection">
+<section id="projection">
 <h2>投影 Projection<a class="headerlink" href="#projection" title="Permalink to this headline">¶</a></h2>
 <table width='100%'><tr><td width='50%'><img src='China_map_mercator.png' width='400' algin='right'/></td><td width='50%'><img src='China_map_Lambert.png' width='400' align='left'/></td></tr></table><ul class="simple">
 <li><p>为了将地球（或者地球的一部分）画到平面上（纸上或者屏幕上），我们需要投影（Projections）。</p></li>
@@ -555,18 +664,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/ipykernel_launcher.py:9: UserWarning: The default value for the *approx* keyword argument to TransverseMercator will change from True to False after 0.18.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/lib/python3.7/site-packages/ipykernel_launcher.py:9: UserWarning: The default value for the *approx* keyword argument to TransverseMercator will change from True to False after 0.18.
   if __name__ == &#39;__main__&#39;:
-/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/ipykernel_launcher.py:11: UserWarning: The default value for the *approx* keyword argument to OSGB will change from True to False after 0.18.
+/opt/miniconda3/lib/python3.7/site-packages/ipykernel_launcher.py:11: UserWarning: The default value for the *approx* keyword argument to OSGB will change from True to False after 0.18.
   # This is added back by InteractiveShellApp.init_path()
-/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/ipykernel_launcher.py:17: UserWarning: The default value for the *approx* keyword argument to OSNI will change from True to False after 0.18.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/cartopy/mpl/feature_artist.py:154: UserWarning: Unable to determine extent. Defaulting to global.
+/opt/miniconda3/lib/python3.7/site-packages/ipykernel_launcher.py:17: UserWarning: The default value for the *approx* keyword argument to OSNI will change from True to False after 0.18.
+/opt/miniconda3/lib/python3.7/site-packages/cartopy/mpl/feature_artist.py:154: UserWarning: Unable to determine extent. Defaulting to global.
   warnings.warn(&#39;Unable to determine extent. Defaulting to global.&#39;)
 </pre></div>
 </div>
-<img alt="../_images/Cartopy_1_8_2.png" src="../_images/Cartopy_1_8_2.png" />
+<img alt="../_images/Cartopy_1_8_1.png" src="../_images/Cartopy_1_8_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -614,8 +721,8 @@
 <blockquote>
 <div><p>All models (map projections) are wrong, but some are useful. - Phileas Elson (SciPy 2018)</p>
 </div></blockquote>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h2>添加经纬度标签<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -632,7 +739,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9928e9d590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcec2c63090&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_12_1.png" src="../_images/Cartopy_1_12_1.png" />
@@ -664,14 +771,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9928ebc750&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcec39cf4d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_14_1.png" src="../_images/Cartopy_1_14_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="the-feature-interface">
+</section>
+<section id="the-feature-interface">
 <h2>地图特性 The Feature Interface<a class="headerlink" href="#the-feature-interface" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 可以通过地图特性来添加海岸线、海洋、陆地、河流等信息。</p>
 <div class="cell docutils container">
@@ -683,7 +790,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9928ae6290&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcec39ee090&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_16_1.png" src="../_images/Cartopy_1_16_1.png" />
@@ -700,7 +807,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9928a8ebd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcec2e03190&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_17_1.png" src="../_images/Cartopy_1_17_1.png" />
@@ -718,7 +825,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f9928db13d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcec38c4d10&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_18_1.png" src="../_images/Cartopy_1_18_1.png" />
@@ -746,8 +853,8 @@
 <img alt="../_images/Cartopy_1_19_0.png" src="../_images/Cartopy_1_19_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="transforming-data">
+</section>
+<section id="transforming-data">
 <h2>转换参考系 Transforming data<a class="headerlink" href="#transforming-data" title="Permalink to this headline">¶</a></h2>
 <p>为了绘制地理数据，我们必须在标准的 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> 绘图函数中指定<code class="docutils literal notranslate"><span class="pre">transform</span></code> 参数，来告诉绘图程序所绘制数据的投影方法. 所以
 <code class="docutils literal notranslate"><span class="pre">transform</span></code> 的值应该是<em><strong>所绘制数据的原始投影方法</strong></em>。</p>
@@ -763,7 +870,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9928df3a90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcec2d55250&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_22_1.png" src="../_images/Cartopy_1_22_1.png" />
@@ -781,7 +888,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f99291a4d50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcec38dba90&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_24_1.png" src="../_images/Cartopy_1_24_1.png" />
@@ -799,7 +906,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f992931a310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcec22c2250&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_26_1.png" src="../_images/Cartopy_1_26_1.png" />
@@ -818,13 +925,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9929333c10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcec1bb3b50&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_28_1.png" src="../_images/Cartopy_1_28_1.png" />
 </div>
 </div>
-<div class="section" id="id2">
+<section id="id2">
 <h3>例子：珠海到伦敦<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -862,9 +969,9 @@
 <img alt="../_images/Cartopy_1_31_0.png" src="../_images/Cartopy_1_31_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="raster">
+</section>
+</section>
+<section id="raster">
 <h2>绘制二维 (Raster) 数据<a class="headerlink" href="#raster" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,7 +985,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7f990f0e9350&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x7fcec1f2a350&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_33_1.png" src="../_images/Cartopy_1_33_1.png" />
@@ -895,7 +1002,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7f990f104250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7fcec200e550&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_35_1.png" src="../_images/Cartopy_1_35_1.png" />
@@ -914,7 +1021,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7f990f112550&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7fcec22dcc90&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_37_1.png" src="../_images/Cartopy_1_37_1.png" />
@@ -933,14 +1040,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7f990f10d190&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.contour.GeoContourSet at 0x7fcec1af9d10&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_39_1.png" src="../_images/Cartopy_1_39_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="xarray">
+</section>
+<section id="xarray">
 <h2>与 <code class="docutils literal notranslate"><span class="pre">xarray</span></code>结合绘图<a class="headerlink" href="#xarray" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -974,7 +1081,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/xarray/coding/times.py:113: SerializationWarning: Ambiguous reference date string: 1-1-1 00:00:0.0. The first value is assumed to be the year hence will be padded with zeros to remove the ambiguity (the padded reference date string is: 0001-1-1 00:00:0.0). To remove this message, remove the ambiguity by padding your reference date strings with zeros.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/lib/python3.7/site-packages/xarray/coding/times.py:83: SerializationWarning: Ambiguous reference date string: 1-1-1 00:00:0.0. The first value is assumed to be the year hence will be padded with zeros to remove the ambiguity (the padded reference date string is: 0001-1-1 00:00:0.0). To remove this message, remove the ambiguity by padding your reference date strings with zeros.
   warnings.warn(warning_msg, SerializationWarning)
 </pre></div>
 </div>
@@ -992,7 +1099,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f990f058510&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fcec1bd51d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_42_1.png" src="../_images/Cartopy_1_42_1.png" />
@@ -1007,7 +1114,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f990e132210&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fcea73b1390&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_43_1.png" src="../_images/Cartopy_1_43_1.png" />
@@ -1377,7 +1484,7 @@ Coordinates:
   * lon      (lon) float64 0.0 2.812 5.625 8.438 ... 348.8 351.6 354.4 357.2
   * lat      (lat) float64 -87.86 -85.1 -82.31 -79.53 ... 79.53 82.31 85.1 87.86
 Data variables:
-    depth    (lat, lon) float64 nan nan nan nan nan nan ... nan nan nan nan nan</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-936d934e-ed97-47e7-b383-b832c5aaaf42' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-936d934e-ed97-47e7-b383-b832c5aaaf42' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 64</li><li><span class='xr-has-index'>lon</span>: 128</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-4066a46a-74b3-4cdb-913e-f5558e647012' class='xr-section-summary-in' type='checkbox'  checked><label for='section-4066a46a-74b3-4cdb-913e-f5558e647012' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.812 5.625 ... 354.4 357.2</div><input id='attrs-f5e2ccaa-da8b-481d-a17c-dc2a231e0aea' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f5e2ccaa-da8b-481d-a17c-dc2a231e0aea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-234d2be7-faff-4580-85db-fcf1eb24736e' class='xr-var-data-in' type='checkbox'><label for='data-234d2be7-faff-4580-85db-fcf1eb24736e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([  0.    ,   2.8125,   5.625 ,   8.4375,  11.25  ,  14.0625,  16.875 ,
+    depth    (lat, lon) float64 nan nan nan nan nan nan ... nan nan nan nan nan</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-0d47fbc7-5280-48ca-8628-0e5effaf760c' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0d47fbc7-5280-48ca-8628-0e5effaf760c' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 64</li><li><span class='xr-has-index'>lon</span>: 128</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-3a4f05e3-1a95-4c9e-85ea-807938ee477b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3a4f05e3-1a95-4c9e-85ea-807938ee477b' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.812 5.625 ... 354.4 357.2</div><input id='attrs-9e20a9c0-e145-4377-aeed-cae57098549f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9e20a9c0-e145-4377-aeed-cae57098549f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b00930b8-e492-4925-a484-1aedf550ce98' class='xr-var-data-in' type='checkbox'><label for='data-b00930b8-e492-4925-a484-1aedf550ce98' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([  0.    ,   2.8125,   5.625 ,   8.4375,  11.25  ,  14.0625,  16.875 ,
         19.6875,  22.5   ,  25.3125,  28.125 ,  30.9375,  33.75  ,  36.5625,
         39.375 ,  42.1875,  45.    ,  47.8125,  50.625 ,  53.4375,  56.25  ,
         59.0625,  61.875 ,  64.6875,  67.5   ,  70.3125,  73.125 ,  75.9375,
@@ -1395,7 +1502,7 @@ Data variables:
        295.3125, 298.125 , 300.9375, 303.75  , 306.5625, 309.375 , 312.1875,
        315.    , 317.8125, 320.625 , 323.4375, 326.25  , 329.0625, 331.875 ,
        334.6875, 337.5   , 340.3125, 343.125 , 345.9375, 348.75  , 351.5625,
-       354.375 , 357.1875])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-87.86 -85.1 -82.31 ... 85.1 87.86</div><input id='attrs-77ae042a-397e-44d5-994b-457489f9c2fe' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-77ae042a-397e-44d5-994b-457489f9c2fe' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9e1813f6-51c2-4bfa-b461-68d0aeaa70b7' class='xr-var-data-in' type='checkbox'><label for='data-9e1813f6-51c2-4bfa-b461-68d0aeaa70b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-87.863614, -85.096348, -82.31274 , -79.525439, -76.736738, -73.947359,
+       354.375 , 357.1875])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-87.86 -85.1 -82.31 ... 85.1 87.86</div><input id='attrs-c1548ba8-630e-4cc2-8c02-8f5475a9df09' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c1548ba8-630e-4cc2-8c02-8f5475a9df09' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-38583908-a850-4dfa-ac07-baa2c9a039c8' class='xr-var-data-in' type='checkbox'><label for='data-38583908-a850-4dfa-ac07-baa2c9a039c8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-87.863614, -85.096348, -82.31274 , -79.525439, -76.736738, -73.947359,
        -71.157602, -68.367612, -65.577469, -62.78722 , -59.996894, -57.206511,
        -54.416085, -51.625625, -48.835138, -46.04463 , -43.254104, -40.463563,
        -37.67301 , -34.882447, -32.091876, -29.301298, -26.510713, -23.720124,
@@ -1405,13 +1512,13 @@ Data variables:
         29.301298,  32.091876,  34.882447,  37.67301 ,  40.463563,  43.254104,
         46.04463 ,  48.835138,  51.625625,  54.416085,  57.206511,  59.996894,
         62.78722 ,  65.577469,  68.367612,  71.157602,  73.947359,  76.736738,
-        79.525439,  82.31274 ,  85.096348,  87.863614])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0777809a-f491-4dd1-b9d9-1583ebf46053' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0777809a-f491-4dd1-b9d9-1583ebf46053' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>depth</span></div><div class='xr-var-dims'>(lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c15dc99b-16be-4b64-b09f-3169ced6f6ad' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c15dc99b-16be-4b64-b09f-3169ced6f6ad' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-60aa4516-0f05-40d1-b9ed-c307ffcebff1' class='xr-var-data-in' type='checkbox'><label for='data-60aa4516-0f05-40d1-b9ed-c307ffcebff1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
+        79.525439,  82.31274 ,  85.096348,  87.863614])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-dae6c96e-2c1e-470f-bf88-fc3d7b808e73' class='xr-section-summary-in' type='checkbox'  checked><label for='section-dae6c96e-2c1e-470f-bf88-fc3d7b808e73' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>depth</span></div><div class='xr-var-dims'>(lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-089cbc63-024f-4668-a11e-1259d94ad218' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-089cbc63-024f-4668-a11e-1259d94ad218' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-432df590-6ce3-49da-9a78-7f3856cadf8e' class='xr-var-data-in' type='checkbox'><label for='data-432df590-6ce3-49da-9a78-7f3856cadf8e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        ...,
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a464ca92-da44-4d2c-bf66-7a077e20645d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a464ca92-da44-4d2c-bf66-7a077e20645d' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f26f6485-cc4a-419f-8ff1-700ef96aa71a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f26f6485-cc4a-419f-8ff1-700ef96aa71a' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1480,7 +1587,7 @@ New shape - (64, 129)
 <img alt="../_images/Cartopy_1_47_0.png" src="../_images/Cartopy_1_47_0.png" />
 </div>
 </div>
-<div class="section" id="id3">
+<section id="id3">
 <h3>另一种（更好的）解决方案<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>之前我们学过：<code class="docutils literal notranslate"><span class="pre">xarray.dataset.assign_coords</span></code> 可以用来改变坐标值。</p>
 <div class="cell docutils container">
@@ -1850,7 +1957,7 @@ Coordinates:
   * lon      (lon) float64 0.0 2.812 5.625 8.438 ... -11.25 -8.438 -5.625 -2.812
   * lat      (lat) float64 -87.86 -85.1 -82.31 -79.53 ... 79.53 82.31 85.1 87.86
 Data variables:
-    depth    (lat, lon) float64 nan nan nan nan nan nan ... nan nan nan nan nan</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-981103a6-dcde-4bdd-afee-9e688af78a64' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-981103a6-dcde-4bdd-afee-9e688af78a64' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 64</li><li><span class='xr-has-index'>lon</span>: 128</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-e98ceabe-4f17-4341-a6d2-50e63b0e6c18' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e98ceabe-4f17-4341-a6d2-50e63b0e6c18' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.812 5.625 ... -5.625 -2.812</div><input id='attrs-1f338e64-1587-4ff0-b67a-5d1847cbf90b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1f338e64-1587-4ff0-b67a-5d1847cbf90b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4761ee0f-2ac8-4b3c-a313-548d83955e8a' class='xr-var-data-in' type='checkbox'><label for='data-4761ee0f-2ac8-4b3c-a313-548d83955e8a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([   0.    ,    2.8125,    5.625 ,    8.4375,   11.25  ,   14.0625,
+    depth    (lat, lon) float64 nan nan nan nan nan nan ... nan nan nan nan nan</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-b93ed40f-5e1d-4d25-988c-c77ed982ed55' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b93ed40f-5e1d-4d25-988c-c77ed982ed55' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 64</li><li><span class='xr-has-index'>lon</span>: 128</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-c2df3290-fd2f-4f45-9aed-b1032a1e2d2f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c2df3290-fd2f-4f45-9aed-b1032a1e2d2f' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.812 5.625 ... -5.625 -2.812</div><input id='attrs-d7e2645c-1629-4518-ab92-6f54f4da97d4' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-d7e2645c-1629-4518-ab92-6f54f4da97d4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e1a74e4f-638d-4249-812b-0013e4127283' class='xr-var-data-in' type='checkbox'><label for='data-e1a74e4f-638d-4249-812b-0013e4127283' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([   0.    ,    2.8125,    5.625 ,    8.4375,   11.25  ,   14.0625,
          16.875 ,   19.6875,   22.5   ,   25.3125,   28.125 ,   30.9375,
          33.75  ,   36.5625,   39.375 ,   42.1875,   45.    ,   47.8125,
          50.625 ,   53.4375,   56.25  ,   59.0625,   61.875 ,   64.6875,
@@ -1871,7 +1978,7 @@ Data variables:
         -56.25  ,  -53.4375,  -50.625 ,  -47.8125,  -45.    ,  -42.1875,
         -39.375 ,  -36.5625,  -33.75  ,  -30.9375,  -28.125 ,  -25.3125,
         -22.5   ,  -19.6875,  -16.875 ,  -14.0625,  -11.25  ,   -8.4375,
-         -5.625 ,   -2.8125])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-87.86 -85.1 -82.31 ... 85.1 87.86</div><input id='attrs-b17d4653-8921-4a71-a0ed-77ca09fa18ba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b17d4653-8921-4a71-a0ed-77ca09fa18ba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-31934050-258d-4e4e-9750-d896e65d65a4' class='xr-var-data-in' type='checkbox'><label for='data-31934050-258d-4e4e-9750-d896e65d65a4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-87.863614, -85.096348, -82.31274 , -79.525439, -76.736738, -73.947359,
+         -5.625 ,   -2.8125])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-87.86 -85.1 -82.31 ... 85.1 87.86</div><input id='attrs-bcb383b1-4a1a-456c-90ce-7c5db2f8dab1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bcb383b1-4a1a-456c-90ce-7c5db2f8dab1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f42e76f8-6b8d-4cf7-ba57-04315c690aeb' class='xr-var-data-in' type='checkbox'><label for='data-f42e76f8-6b8d-4cf7-ba57-04315c690aeb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-87.863614, -85.096348, -82.31274 , -79.525439, -76.736738, -73.947359,
        -71.157602, -68.367612, -65.577469, -62.78722 , -59.996894, -57.206511,
        -54.416085, -51.625625, -48.835138, -46.04463 , -43.254104, -40.463563,
        -37.67301 , -34.882447, -32.091876, -29.301298, -26.510713, -23.720124,
@@ -1881,13 +1988,13 @@ Data variables:
         29.301298,  32.091876,  34.882447,  37.67301 ,  40.463563,  43.254104,
         46.04463 ,  48.835138,  51.625625,  54.416085,  57.206511,  59.996894,
         62.78722 ,  65.577469,  68.367612,  71.157602,  73.947359,  76.736738,
-        79.525439,  82.31274 ,  85.096348,  87.863614])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9abe8b4d-3b2c-44d3-8516-2c117c02b350' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9abe8b4d-3b2c-44d3-8516-2c117c02b350' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>depth</span></div><div class='xr-var-dims'>(lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-77b539f7-0a6f-462d-b511-832a5c43f08b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-77b539f7-0a6f-462d-b511-832a5c43f08b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-97fe86ed-ec34-49a2-9e7e-a61f1f1dbd00' class='xr-var-data-in' type='checkbox'><label for='data-97fe86ed-ec34-49a2-9e7e-a61f1f1dbd00' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
+        79.525439,  82.31274 ,  85.096348,  87.863614])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d5df27e9-9e2b-4f01-b48d-4876ae855f8c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d5df27e9-9e2b-4f01-b48d-4876ae855f8c' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>depth</span></div><div class='xr-var-dims'>(lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-ac43f8cf-9afe-4975-bf1a-314f8807b988' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ac43f8cf-9afe-4975-bf1a-314f8807b988' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-792dd25b-62ec-4a7c-83c4-f39de34385fa' class='xr-var-data-in' type='checkbox'><label for='data-792dd25b-62ec-4a7c-83c4-f39de34385fa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        ...,
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-792f20c9-28fb-4320-8240-826e17c5df11' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-792f20c9-28fb-4320-8240-826e17c5df11' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c4e9166f-f715-41af-a9c6-e3c4d9c78e41' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-c4e9166f-f715-41af-a9c6-e3c4d9c78e41' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>可以进一步用 <code class="docutils literal notranslate"><span class="pre">sortby</span></code> 来把坐标换成我们习惯的顺序，但并不是必须的。</p>
 <div class="cell docutils container">
@@ -2255,7 +2362,7 @@ Coordinates:
   * lon      (lon) float64 -180.0 -177.2 -174.4 -171.6 ... 171.6 174.4 177.2
   * lat      (lat) float64 -87.86 -85.1 -82.31 -79.53 ... 79.53 82.31 85.1 87.86
 Data variables:
-    depth    (lat, lon) float64 nan nan nan nan nan nan ... nan nan nan nan nan</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-1b9cfda1-ffd0-4d55-9e60-d195166f0c38' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1b9cfda1-ffd0-4d55-9e60-d195166f0c38' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 64</li><li><span class='xr-has-index'>lon</span>: 128</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-703bcdd6-d4fb-493b-ad9c-e5e6b97259b0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-703bcdd6-d4fb-493b-ad9c-e5e6b97259b0' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-180.0 -177.2 ... 174.4 177.2</div><input id='attrs-0c9e5cea-ee41-4200-a5d2-712107df632a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0c9e5cea-ee41-4200-a5d2-712107df632a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-28f9113d-40f7-42aa-ba61-87a721ebc369' class='xr-var-data-in' type='checkbox'><label for='data-28f9113d-40f7-42aa-ba61-87a721ebc369' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-180.    , -177.1875, -174.375 , -171.5625, -168.75  , -165.9375,
+    depth    (lat, lon) float64 nan nan nan nan nan nan ... nan nan nan nan nan</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-8129d6e5-88a2-4e44-9dcd-5a9632aab568' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8129d6e5-88a2-4e44-9dcd-5a9632aab568' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 64</li><li><span class='xr-has-index'>lon</span>: 128</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-3aa97d41-c446-49d7-bb0c-3b73ad85b822' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3aa97d41-c446-49d7-bb0c-3b73ad85b822' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-180.0 -177.2 ... 174.4 177.2</div><input id='attrs-eba9e353-3327-4990-aa10-81d7a6f5a61f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-eba9e353-3327-4990-aa10-81d7a6f5a61f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-443f7d13-13d9-4b65-b406-87bd4995e7d1' class='xr-var-data-in' type='checkbox'><label for='data-443f7d13-13d9-4b65-b406-87bd4995e7d1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-180.    , -177.1875, -174.375 , -171.5625, -168.75  , -165.9375,
        -163.125 , -160.3125, -157.5   , -154.6875, -151.875 , -149.0625,
        -146.25  , -143.4375, -140.625 , -137.8125, -135.    , -132.1875,
        -129.375 , -126.5625, -123.75  , -120.9375, -118.125 , -115.3125,
@@ -2276,7 +2383,7 @@ Data variables:
         123.75  ,  126.5625,  129.375 ,  132.1875,  135.    ,  137.8125,
         140.625 ,  143.4375,  146.25  ,  149.0625,  151.875 ,  154.6875,
         157.5   ,  160.3125,  163.125 ,  165.9375,  168.75  ,  171.5625,
-        174.375 ,  177.1875])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-87.86 -85.1 -82.31 ... 85.1 87.86</div><input id='attrs-f122249b-34e2-4642-835e-b262998965b6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f122249b-34e2-4642-835e-b262998965b6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-071c9c92-c4aa-4916-9dc2-0fb31ff38b8c' class='xr-var-data-in' type='checkbox'><label for='data-071c9c92-c4aa-4916-9dc2-0fb31ff38b8c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-87.863614, -85.096348, -82.31274 , -79.525439, -76.736738, -73.947359,
+        174.375 ,  177.1875])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-87.86 -85.1 -82.31 ... 85.1 87.86</div><input id='attrs-f784a497-8802-4912-8290-1fccc241db38' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f784a497-8802-4912-8290-1fccc241db38' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-78b1e085-3499-4b22-af86-31e861d4e83d' class='xr-var-data-in' type='checkbox'><label for='data-78b1e085-3499-4b22-af86-31e861d4e83d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-87.863614, -85.096348, -82.31274 , -79.525439, -76.736738, -73.947359,
        -71.157602, -68.367612, -65.577469, -62.78722 , -59.996894, -57.206511,
        -54.416085, -51.625625, -48.835138, -46.04463 , -43.254104, -40.463563,
        -37.67301 , -34.882447, -32.091876, -29.301298, -26.510713, -23.720124,
@@ -2286,13 +2393,13 @@ Data variables:
         29.301298,  32.091876,  34.882447,  37.67301 ,  40.463563,  43.254104,
         46.04463 ,  48.835138,  51.625625,  54.416085,  57.206511,  59.996894,
         62.78722 ,  65.577469,  68.367612,  71.157602,  73.947359,  76.736738,
-        79.525439,  82.31274 ,  85.096348,  87.863614])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8b5c6436-804f-4c57-b9aa-d5e70bdc12b1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8b5c6436-804f-4c57-b9aa-d5e70bdc12b1' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>depth</span></div><div class='xr-var-dims'>(lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-cacce666-28f7-4306-bcc9-ade9b42e4504' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cacce666-28f7-4306-bcc9-ade9b42e4504' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-92351be8-52c0-466a-b485-e4a3a25c1fd1' class='xr-var-data-in' type='checkbox'><label for='data-92351be8-52c0-466a-b485-e4a3a25c1fd1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
+        79.525439,  82.31274 ,  85.096348,  87.863614])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ef219568-0d9e-4999-bde0-98d9f075d274' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ef219568-0d9e-4999-bde0-98d9f075d274' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>depth</span></div><div class='xr-var-dims'>(lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>nan nan nan nan ... nan nan nan nan</div><input id='attrs-e6a0d241-c898-4b19-abbc-e818e12ff6bb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e6a0d241-c898-4b19-abbc-e818e12ff6bb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f5104590-cd28-4891-840e-26b383e9c8b2' class='xr-var-data-in' type='checkbox'><label for='data-f5104590-cd28-4891-840e-26b383e9c8b2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
        ...,
        [nan, nan, nan, ..., nan, nan, nan],
        [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9d99ce43-085d-493d-88cb-e00f943f1d07' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9d99ce43-085d-493d-88cb-e00f943f1d07' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [nan, nan, nan, ..., nan, nan, nan]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7a7ea0ef-5666-457e-baf1-0ec093f60745' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-7a7ea0ef-5666-457e-baf1-0ec093f60745' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2315,9 +2422,9 @@ Data variables:
 <img alt="../_images/Cartopy_1_53_0.png" src="../_images/Cartopy_1_53_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id4">
+</section>
+</section>
+<section id="id4">
 <h2>展示卫星图像<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2363,9 +2470,9 @@ Data variables:
 <img alt="../_images/Cartopy_1_55_1.png" src="../_images/Cartopy_1_55_1.png" />
 </div>
 </div>
-<div class="section" id="id5">
+<section id="id5">
 <h3>风云卫星图像<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>风云4A 是我国第二代地球同步卫星。根据 http://fy4.nsmc.org.cn/portal/cn/operation/status.html, 风云4A 卫星高度为 35755 km，中心经度在104.7°E，我们可以据此构建一个同步卫星投影方法，从而将卫星图像叠加到采用任何投影的地图上去。</p>
+<p>风云4A 是我国第二代地球同步卫星。根据 <a class="reference external" href="http://fy4.nsmc.org.cn/portal/cn/operation/status.html">http://fy4.nsmc.org.cn/portal/cn/operation/status.html</a>, 风云4A 卫星高度为 35755 km，中心经度在104.7°E，我们可以据此构建一个同步卫星投影方法，从而将卫星图像叠加到采用任何投影的地图上去。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fy_proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geostationary</span><span class="p">(</span><span class="n">satellite_height</span><span class="o">=</span><span class="mi">35755000</span><span class="p">,</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">104.7</span><span class="p">)</span>
@@ -2383,11 +2490,11 @@ Data variables:
   <rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2021-04-21T18:11:11.849873</dc:date>
+    <dc:date>2020-12-30T21:28:29.481078</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.3.4, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.3.2, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -2472,7 +2579,7 @@ L 170.28 88.74
 " style="fill:#ffffff;"/>
    </g>
    <g id="PathCollection_1">
-    <path clip-path="url(#p96d7315648)" d="M 143.2572 92.886685 
+    <path clip-path="url(#p04aa8d10f7)" d="M 143.2572 92.886685 
 L 145.247103 93.965457 
 L 147.286977 94.849022 
 L 147.998117 95.64726 
@@ -2540,7 +2647,7 @@ L 141.081408 92.0237
 L 141.974882 92.590298 
 L 143.2572 92.886685 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 104.443867 81.263597 
+    <path clip-path="url(#p04aa8d10f7)" d="M 104.443867 81.263597 
 L 105.077685 80.649772 
 L 106.438629 79.754455 
 L 107.652918 78.619249 
@@ -2587,7 +2694,7 @@ L 102.49762 83.607169
 L 103.657523 82.303651 
 L 104.443867 81.263597 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 18.044635 107.598928 
+    <path clip-path="url(#p04aa8d10f7)" d="M 18.044635 107.598928 
 L 18.354426 108.241738 
 L 18.730916 109.230172 
 L 19.240224 111.008716 
@@ -2637,13 +2744,13 @@ L 17.588661 107.593756
 L 17.682581 106.946049 
 L 18.044635 107.598928 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 162.587957 112.1915 
+    <path clip-path="url(#p04aa8d10f7)" d="M 162.587957 112.1915 
 L 162.661677 112.973316 
 L 162.453012 113.180872 
 L 162.465722 112.577018 
 L 162.587957 112.1915 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 162.465173 111.897138 
+    <path clip-path="url(#p04aa8d10f7)" d="M 162.465173 111.897138 
 L 162.497645 111.509221 
 L 162.766424 110.407257 
 L 162.89364 110.823486 
@@ -2651,7 +2758,7 @@ L 162.672127 111.971066
 L 162.588647 111.807206 
 L 162.465173 111.897138 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 134.330242 99.842631 
+    <path clip-path="url(#p04aa8d10f7)" d="M 134.330242 99.842631 
 L 134.278216 98.639391 
 L 134.549196 98.060313 
 L 134.85814 97.514881 
@@ -2659,7 +2766,7 @@ L 135.133547 97.980455
 L 135.084488 98.744185 
 L 134.330242 99.842631 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 159.561945 119.596192 
+    <path clip-path="url(#p04aa8d10f7)" d="M 159.561945 119.596192 
 L 159.656825 120.388935 
 L 159.667169 120.979275 
 L 159.356727 121.337276 
@@ -2673,7 +2780,7 @@ L 159.471025 118.791779
 L 159.536166 119.232084 
 L 159.561945 119.596192 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 155.356375 94.426113 
+    <path clip-path="url(#p04aa8d10f7)" d="M 155.356375 94.426113 
 L 155.667145 94.916686 
 L 155.723857 95.719573 
 L 155.419677 96.137143 
@@ -2688,7 +2795,7 @@ L 154.662176 93.411195
 L 155.028398 93.779422 
 L 155.356375 94.426113 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 153.908295 97.830163 
+    <path clip-path="url(#p04aa8d10f7)" d="M 153.908295 97.830163 
 L 153.365614 98.218553 
 L 152.847657 98.592961 
 L 152.337103 98.603084 
@@ -2711,14 +2818,14 @@ L 154.57943 97.254443
 L 154.089264 97.392361 
 L 153.908295 97.830163 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 161.466598 104.549484 
+    <path clip-path="url(#p04aa8d10f7)" d="M 161.466598 104.549484 
 L 161.554135 105.048674 
 L 161.114512 105.068126 
 L 161.022643 104.167052 
 L 161.347971 104.503896 
 L 161.466598 104.549484 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 161.398714 103.250504 
+    <path clip-path="url(#p04aa8d10f7)" d="M 161.398714 103.250504 
 L 161.258916 103.531444 
 L 160.964182 102.260291 
 L 160.946554 101.369241 
@@ -2726,7 +2833,7 @@ L 161.174522 101.358359
 L 161.246174 102.546849 
 L 161.398714 103.250504 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 160.79374 103.689371 
+    <path clip-path="url(#p04aa8d10f7)" d="M 160.79374 103.689371 
 L 160.527202 103.7374 
 L 160.131177 103.608816 
 L 160.020754 103.385432 
@@ -2735,7 +2842,7 @@ L 160.5727 102.999538
 L 160.745135 103.302223 
 L 160.79374 103.689371 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 160.357829 100.94663 
+    <path clip-path="url(#p04aa8d10f7)" d="M 160.357829 100.94663 
 L 160.460517 101.417845 
 L 160.449847 101.719248 
 L 159.981591 101.104456 
@@ -2745,7 +2852,7 @@ L 159.563871 99.92474
 L 159.857971 100.275488 
 L 160.357829 100.94663 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 158.694633 99.504416 
+    <path clip-path="url(#p04aa8d10f7)" d="M 158.694633 99.504416 
 L 158.944842 99.989919 
 L 158.783563 100.082086 
 L 158.485164 99.747296 
@@ -2753,7 +2860,7 @@ L 158.230089 99.131444
 L 158.296262 98.875752 
 L 158.694633 99.504416 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 157.021448 96.985573 
+    <path clip-path="url(#p04aa8d10f7)" d="M 157.021448 96.985573 
 L 157.245399 97.328051 
 L 157.558378 98.289919 
 L 157.89018 98.79808 
@@ -2765,7 +2872,7 @@ L 156.838844 96.681259
 L 156.966432 96.529663 
 L 157.021448 96.985573 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 144.563947 146.597531 
+    <path clip-path="url(#p04aa8d10f7)" d="M 144.563947 146.597531 
 L 145.360366 145.966709 
 L 146.053681 145.363251 
 L 146.90083 144.532869 
@@ -2796,7 +2903,7 @@ L 143.522093 147.32298
 L 143.941356 147.062704 
 L 144.563947 146.597531 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 134.456698 145.95529 
+    <path clip-path="url(#p04aa8d10f7)" d="M 134.456698 145.95529 
 L 134.873196 145.972525 
 L 134.023351 147.230276 
 L 133.49805 147.623166 
@@ -2814,7 +2921,7 @@ L 133.161212 146.430194
 L 133.697423 146.233735 
 L 134.456698 145.95529 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 117.274049 137.423918 
+    <path clip-path="url(#p04aa8d10f7)" d="M 117.274049 137.423918 
 L 115.779551 138.127341 
 L 114.620698 138.460042 
 L 114.206664 139.126381 
@@ -3013,7 +3120,7 @@ L 118.425844 137.458722
 L 117.274049 137.423918 
 L 117.274049 137.423918 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 52.41345 76.511489 
+    <path clip-path="url(#p04aa8d10f7)" d="M 52.41345 76.511489 
 L 52.100952 78.194489 
 L 51.469297 78.66067 
 L 50.198298 79.042719 
@@ -3024,7 +3131,7 @@ L 51.236328 73.72787
 L 51.821905 74.846181 
 L 52.41345 76.511489 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 127.928492 93.300378 
+    <path clip-path="url(#p04aa8d10f7)" d="M 127.928492 93.300378 
 L 129.482996 93.765999 
 L 129.957219 95.002293 
 L 128.785195 94.341818 
@@ -3034,14 +3141,14 @@ L 125.774662 94.272784
 L 126.142384 93.376068 
 L 127.928492 93.300378 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 124.254146 94.928177 
+    <path clip-path="url(#p04aa8d10f7)" d="M 124.254146 94.928177 
 L 123.238819 94.634541 
 L 122.966459 93.934136 
 L 124.468221 93.849115 
 L 124.820439 94.384641 
 L 124.254146 94.928177 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 125.867645 85.192784 
+    <path clip-path="url(#p04aa8d10f7)" d="M 125.867645 85.192784 
 L 125.985945 86.083374 
 L 126.846314 86.228523 
 L 126.989303 86.894339 
@@ -3055,7 +3162,7 @@ L 125.110851 87.087987
 L 125.39151 85.784699 
 L 125.867645 85.192784 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 118.379409 87.302891 
+    <path clip-path="url(#p04aa8d10f7)" d="M 118.379409 87.302891 
 L 120.139481 87.236084 
 L 121.626414 86.048914 
 L 121.893189 86.415186 
@@ -3101,7 +3208,7 @@ L 115.204274 86.585672
 L 116.426815 87.072805 
 L 118.379409 87.302891 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 113.811767 105.494236 
+    <path clip-path="url(#p04aa8d10f7)" d="M 113.811767 105.494236 
 L 111.808076 104.385825 
 L 113.277897 104.055516 
 L 114.066919 104.538807 
@@ -3109,7 +3216,7 @@ L 114.579674 105.022177
 L 114.462349 105.456837 
 L 113.811767 105.494236 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 115.57637 102.702936 
+    <path clip-path="url(#p04aa8d10f7)" d="M 115.57637 102.702936 
 L 116.605753 102.570285 
 L 118.005458 101.964786 
 L 117.734334 102.864586 
@@ -3119,7 +3226,7 @@ L 113.38143 102.573509
 L 114.631503 102.226347 
 L 115.57637 102.702936 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 110.783399 102.460079 
+    <path clip-path="url(#p04aa8d10f7)" d="M 110.783399 102.460079 
 L 111.761581 102.320298 
 L 112.1209 103.006324 
 L 110.289012 103.345753 
@@ -3130,7 +3237,7 @@ L 109.784276 102.608233
 L 110.230685 102.031054 
 L 110.783399 102.460079 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 95.012459 99.356614 
+    <path clip-path="url(#p04aa8d10f7)" d="M 95.012459 99.356614 
 L 95.232768 99.940059 
 L 98.386098 100.096837 
 L 98.75782 99.419994 
@@ -3154,7 +3261,7 @@ L 92.995694 98.591551
 L 94.32778 99.232407 
 L 95.012459 99.356614 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 88.188821 90.539988 
+    <path clip-path="url(#p04aa8d10f7)" d="M 88.188821 90.539988 
 L 88.472011 91.696874 
 L 89.053579 92.621944 
 L 90.278717 92.768359 
@@ -3190,14 +3297,14 @@ L 86.631623 89.921279
 L 87.588905 90.497447 
 L 88.188821 90.539988 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 114.384064 68.092703 
+    <path clip-path="url(#p04aa8d10f7)" d="M 114.384064 68.092703 
 L 113.516105 66.877817 
 L 114.82213 66.95369 
 L 115.392741 67.529457 
 L 115.093973 68.892708 
 L 114.384064 68.092703 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 117.347744 72.469928 
+    <path clip-path="url(#p04aa8d10f7)" d="M 117.347744 72.469928 
 L 117.699018 72.025205 
 L 117.797912 71.034329 
 L 118.620463 70.951417 
@@ -3210,7 +3317,7 @@ L 118.063181 74.018743
 L 117.061316 72.896278 
 L 117.347744 72.469928 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 123.173181 75.054526 
+    <path clip-path="url(#p04aa8d10f7)" d="M 123.173181 75.054526 
 L 123.388123 76.126284 
 L 123.526077 77.0326 
 L 123.098398 78.508575 
@@ -3238,7 +3345,7 @@ L 122.85347 73.65223
 L 123.031702 74.462014 
 L 123.173181 75.054526 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 96.240581 59.349087 
+    <path clip-path="url(#p04aa8d10f7)" d="M 96.240581 59.349087 
 L 94.94317 58.869016 
 L 94.861138 57.561025 
 L 95.604824 56.880213 
@@ -3249,7 +3356,7 @@ L 97.886089 57.748137
 L 97.56269 58.623075 
 L 96.240581 59.349087 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 113.760137 50.440448 
+    <path clip-path="url(#p04aa8d10f7)" d="M 113.760137 50.440448 
 L 113.256489 52.727921 
 L 112.806913 53.911606 
 L 111.884874 52.662331 
@@ -3259,7 +3366,7 @@ L 113.159853 49.152295
 L 113.863121 49.589693 
 L 113.760137 50.440448 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 130.69472 32.802818 
+    <path clip-path="url(#p04aa8d10f7)" d="M 130.69472 32.802818 
 L 130.490253 33.861906 
 L 131.148231 35.049885 
 L 131.2745 35.952934 
@@ -3297,7 +3404,7 @@ L 128.776998 30.36017
 L 130.187684 31.907413 
 L 130.69472 32.802818 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 129.668801 27.956273 
+    <path clip-path="url(#p04aa8d10f7)" d="M 129.668801 27.956273 
 L 129.906749 27.592999 
 L 130.929432 28.74837 
 L 129.938566 28.899598 
@@ -3314,7 +3421,7 @@ L 128.080169 27.279375
 L 128.947588 27.680912 
 L 129.668801 27.956273 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 120.773662 19.140231 
+    <path clip-path="url(#p04aa8d10f7)" d="M 120.773662 19.140231 
 L 121.794038 19.919827 
 L 122.572142 20.710761 
 L 123.674629 21.58258 
@@ -3337,7 +3444,7 @@ L 119.87522 18.689996
 L 120.059906 18.617919 
 L 120.773662 19.140231 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 111.100614 73.478084 
+    <path clip-path="url(#p04aa8d10f7)" d="M 111.100614 73.478084 
 L 109.063359 74.999599 
 L 109.794998 73.871143 
 L 110.888116 72.882176 
@@ -3347,7 +3454,7 @@ L 112.847846 71.501497
 L 111.868473 72.376693 
 L 111.100614 73.478084 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 115.814886 59.554912 
+    <path clip-path="url(#p04aa8d10f7)" d="M 115.814886 59.554912 
 L 115.64997 60.181119 
 L 116.273951 61.286906 
 L 116.023067 62.558372 
@@ -3381,7 +3488,7 @@ L 115.231952 59.552803
 L 115.636511 59.166643 
 L 115.814886 59.554912 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 116.36304 70.164606 
+    <path clip-path="url(#p04aa8d10f7)" d="M 116.36304 70.164606 
 L 116.073897 69.403793 
 L 117.01807 69.908356 
 L 117.976062 69.919064 
@@ -3391,7 +3498,7 @@ L 116.413675 71.721989
 L 116.311235 70.977663 
 L 116.36304 70.164606 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 121.432434 69.054045 
+    <path clip-path="url(#p04aa8d10f7)" d="M 121.432434 69.054045 
 L 121.995585 70.831817 
 L 120.82638 70.392662 
 L 120.899897 70.927257 
@@ -3406,11 +3513,11 @@ L 119.558865 68.399871
 L 120.975864 68.457837 
 L 121.432434 69.054045 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 33.271178 30.007226 
+    <path clip-path="url(#p04aa8d10f7)" d="M 33.271178 30.007226 
 L 33.261513 30.261647 
 L 32.879255 30.981366 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 124.160351 38.84455 
+    <path clip-path="url(#p04aa8d10f7)" d="M 124.160351 38.84455 
 L 124.506759 38.142279 
 L 125.195334 38.322351 
 L 125.446667 37.833678 
@@ -3423,7 +3530,7 @@ L 125.237877 39.835831
 L 124.366496 39.436147 
 L 124.160351 38.84455 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 19.494956 45.749239 
+    <path clip-path="url(#p04aa8d10f7)" d="M 19.494956 45.749239 
 L 19.398167 45.976102 
 L 19.304029 46.239933 
 L 19.254998 46.385586 
@@ -3462,7 +3569,7 @@ L 23.699554 39.662012
 L 24.492544 38.59986 
 L 24.812697 38.178009 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 25.350234 37.509545 
+    <path clip-path="url(#p04aa8d10f7)" d="M 25.350234 37.509545 
 L 25.650614 37.144694 
 L 26.020938 36.688591 
 L 27.016043 35.532119 
@@ -3527,7 +3634,7 @@ L 27.258139 35.250909
 L 26.670108 35.920565 
 L 26.925787 35.622499 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 60.714013 12.386206 
+    <path clip-path="url(#p04aa8d10f7)" d="M 60.714013 12.386206 
 L 60.466639 12.48214 
 L 60.042744 12.649713 
 L 59.237247 12.964908 
@@ -3535,7 +3642,7 @@ L 58.341184 13.30874
 L 57.662301 13.569079 
 L 57.689143 13.551054 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 54.995666 14.706845 
+    <path clip-path="url(#p04aa8d10f7)" d="M 54.995666 14.706845 
 L 54.71241 14.847585 
 L 56.350911 14.115365 
 L 56.099312 14.261533 
@@ -3597,7 +3704,7 @@ L 114.717245 11.676048
 L 116.15871 12.169259 
 L 116.102567 12.148934 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 125.573477 16.177247 
+    <path clip-path="url(#p04aa8d10f7)" d="M 125.573477 16.177247 
 L 127.102288 17.117875 
 L 125.909361 16.53781 
 L 126.08027 16.815627 
@@ -4026,7 +4133,7 @@ L 18.895223 130.10089
 L 21.042132 134.132676 
 L 21.042132 134.132676 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 122.538548 102.461023 
+    <path clip-path="url(#p04aa8d10f7)" d="M 122.538548 102.461023 
 L 123.567918 102.394224 
 L 124.037982 102.187751 
 L 124.57682 102.380184 
@@ -4042,7 +4149,7 @@ L 121.041352 103.219436
 L 121.240105 102.837809 
 L 122.538548 102.461023 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 62.030445 165.558356 
+    <path clip-path="url(#p04aa8d10f7)" d="M 62.030445 165.558356 
 L 61.5537 165.279945 
 L 61.949298 165.397262 
 L 61.970248 165.290987 
@@ -4108,7 +4215,7 @@ L 112.880885 166.391179
 L 113.029752 166.347368 
 L 113.029752 166.347368 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 54.5637 154.307699 
+    <path clip-path="url(#p04aa8d10f7)" d="M 54.5637 154.307699 
 L 55.302712 154.638075 
 L 56.145005 154.820553 
 L 56.308166 154.990251 
@@ -4118,7 +4225,7 @@ L 54.851044 154.838154
 L 54.661217 154.485141 
 L 54.5637 154.307699 
 " style="fill:none;stroke:#000000;"/>
-    <path clip-path="url(#p96d7315648)" d="M 36.79331 29.072673 
+    <path clip-path="url(#p04aa8d10f7)" d="M 36.79331 29.072673 
 L 38.245032 27.948662 
 L 38.879515 27.687138 
 L 39.669435 27.067115 
@@ -4173,7 +4280,7 @@ L 36.79331 29.072673
 " style="fill:none;stroke:#000000;"/>
    </g>
    <g id="LineCollection_1">
-    <path clip-path="url(#p96d7315648)" d="M 136.582086 154.637933 
+    <path clip-path="url(#p04aa8d10f7)" d="M 136.582086 154.637933 
 L 136.850551 154.443904 
 L 138.545884 153.177562 
 L 140.207866 151.86427 
@@ -4248,10 +4355,10 @@ L 138.545884 24.302438
 L 136.850551 23.036096 
 L 136.582086 22.842067 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 72.695106 168.355546 
+    <path clip-path="url(#p04aa8d10f7)" style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
+    <path clip-path="url(#p04aa8d10f7)" style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
+    <path clip-path="url(#p04aa8d10f7)" style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
+    <path clip-path="url(#p04aa8d10f7)" d="M 72.695106 168.355546 
 L 71.166973 167.955702 
 L 69.643273 167.497369 
 L 68.125234 166.980425 
@@ -4352,7 +4459,7 @@ L 69.643273 9.982631
 L 71.166973 9.524298 
 L 72.695106 9.124454 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 94.826331 169.241499 
+    <path clip-path="url(#p04aa8d10f7)" d="M 94.826331 169.241499 
 L 95.413276 168.925487 
 L 95.99983 168.549841 
 L 96.585519 168.114162 
@@ -4453,7 +4560,7 @@ L 95.99983 8.930159
 L 95.413276 8.554513 
 L 94.826331 8.238501 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 136.582086 154.637933 
+    <path clip-path="url(#p04aa8d10f7)" d="M 136.582086 154.637933 
 L 136.850551 154.443904 
 L 138.545884 153.177562 
 L 140.207866 151.86427 
@@ -4530,7 +4637,7 @@ L 136.582086 22.842067
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
    </g>
    <g id="LineCollection_2">
-    <path clip-path="url(#p96d7315648)" d="M 49.087498 159.817944 
+    <path clip-path="url(#p04aa8d10f7)" d="M 49.087498 159.817944 
 L 49.499883 160.027017 
 L 50.297796 160.359719 
 L 51.263008 160.687881 
@@ -4573,7 +4680,7 @@ L 127.533726 160.222107
 L 128.261849 159.887988 
 L 128.392502 159.817944 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 26.503911 141.365264 
+    <path clip-path="url(#p04aa8d10f7)" d="M 26.503911 141.365264 
 L 26.626581 141.493356 
 L 27.174594 141.886214 
 L 27.9867 142.280553 
@@ -4620,7 +4727,7 @@ L 150.56471 141.722899
 L 150.976089 141.365264 
 L 150.976089 141.365263 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 12.27811 116.860121 
+    <path clip-path="url(#p04aa8d10f7)" d="M 12.27811 116.860121 
 L 12.351019 116.9143 
 L 12.893474 117.174551 
 L 13.762741 117.437188 
@@ -4666,7 +4773,7 @@ L 164.118049 117.327977
 L 164.850964 117.066193 
 L 165.20189 116.860121 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 7.2 88.74 
+    <path clip-path="url(#p04aa8d10f7)" d="M 7.2 88.74 
 L 7.200659 88.74 
 L 7.388919 88.74 
 L 7.91776 88.74 
@@ -4714,7 +4821,7 @@ L 169.823587 88.74
 L 170.210057 88.74 
 L 170.28 88.74 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 12.27811 60.619879 
+    <path clip-path="url(#p04aa8d10f7)" d="M 12.27811 60.619879 
 L 12.351019 60.5657 
 L 12.893474 60.305449 
 L 13.762741 60.042812 
@@ -4760,7 +4867,7 @@ L 164.118049 60.152023
 L 164.850964 60.413807 
 L 165.20189 60.619879 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 26.503911 36.114736 
+    <path clip-path="url(#p04aa8d10f7)" d="M 26.503911 36.114736 
 L 26.626581 35.986644 
 L 27.174594 35.593786 
 L 27.9867 35.199447 
@@ -4807,7 +4914,7 @@ L 150.56471 35.757101
 L 150.976089 36.114736 
 L 150.976089 36.114737 
 " style="fill:none;stroke:#b0b0b0;stroke-width:0.8;"/>
-    <path clip-path="url(#p96d7315648)" d="M 49.087498 17.662056 
+    <path clip-path="url(#p04aa8d10f7)" d="M 49.087498 17.662056 
 L 49.499883 17.452983 
 L 50.297796 17.120281 
 L 51.263008 16.792119 
@@ -4919,7 +5026,7 @@ L 170.28 88.74
   </g>
  </g>
  <defs>
-  <clipPath id="p96d7315648">
+  <clipPath id="p04aa8d10f7">
    <path d="M 170.28 88.74 
 L 169.840105 97.230838 
 L 168.524589 105.630733 
@@ -4986,7 +5093,7 @@ L 170.28 88.74
   </clipPath>
  </defs>
 </svg>
-<pre>&lt;cartopy.crs.Geostationary object at 0x7f990f77f1d0&gt;</pre></div></div>
+<pre>&lt;cartopy.crs.Geostationary object at 0x7fcec2171b30&gt;</pre></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5004,7 +5111,7 @@ L 170.28 88.74
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f990fc56ad0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fcea73d07d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Cartopy_1_59_1.png" src="../_images/Cartopy_1_59_1.png" />
@@ -5021,6 +5128,12 @@ L 170.28 88.74
 <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">fy_proj</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">img_extent</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fcea73b5710&gt;
+</pre></div>
+</div>
+<img alt="../_images/Cartopy_1_61_1.png" src="../_images/Cartopy_1_61_1.png" />
 </div>
 </div>
 <p>我们放大“双台共舞”的区域来看看 2019-09 超强台风利奇马 和 2019-10 强台风罗莎:</p>
@@ -5052,11 +5165,11 @@ L 170.28 88.74
 </div>
 </div>
 <p>我们看看用 <code class="docutils literal notranslate"><span class="pre">SatPy</span></code> 直接画出来的利奇马：
-（参考 https://nbviewer.jupyter.org/github/pytroll/pytroll-examples/blob/master/satpy/FY4A_agri_introduction(zh-CN).ipynb)</p>
+（参考 <a class="reference external" href="https://nbviewer.jupyter.org/github/pytroll/pytroll-examples/blob/master/satpy/FY4A_agri_introduction(zh-CN).ipynb">https://nbviewer.jupyter.org/github/pytroll/pytroll-examples/blob/master/satpy/FY4A_agri_introduction(zh-CN).ipynb</a>)</p>
 <p><img alt="" src="../_images/FY4A_201908070800_resampled_lekima.tif" /></p>
-</div>
-</div>
-<div class="section" id="shapefile">
+</section>
+</section>
+<section id="shapefile">
 <h2>Shapefile<a class="headerlink" href="#shapefile" title="Permalink to this headline">¶</a></h2>
 <p>shapefile 文件格式:</p>
 <ul class="simple">
@@ -5071,7 +5184,7 @@ L 170.28 88.74
 <li><p>.dbf: dBase 数据库文件，存储着每个形状的属性. 它可以让访问空间特性数据变得更快。</p></li>
 <li><p>.shx: 将 shapefile 的记录组织起来，以供参考.</p></li>
 </ul>
-<div class="section" id="id6">
+<section id="id6">
 <h3>例子: 单独显示某个国家<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5111,8 +5224,8 @@ L 170.28 88.74
 <img alt="../_images/Cartopy_1_69_0.png" src="../_images/Cartopy_1_69_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>例子：显示多个国家和地区<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5144,9 +5257,9 @@ L 170.28 88.74
 <img alt="../_images/Cartopy_1_71_0.png" src="../_images/Cartopy_1_71_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id8">
+</section>
+</section>
+<section id="id8">
 <h2>中国地图<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>中国地图常见的错误
 <img alt="" src="../_images/China_map_problems.jpg" /></p>
@@ -5243,12 +5356,12 @@ L 170.28 88.74
 <img alt="../_images/Cartopy_1_75_1.png" src="../_images/Cartopy_1_75_1.png" />
 </div>
 </div>
-<div class="section" id="lambertconformal">
+<section id="lambertconformal">
 <h3>LambertConformal 坐标标注<a class="headerlink" href="#lambertconformal" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>由于 <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> 的局限，对于 <code class="docutils literal notranslate"><span class="pre">LambertConformal</span></code> 投影还无法标注坐标轴 (version &lt;= 0.17)。</p></li>
 <li><p>这个问题在即将发布的 0.18 版本可望得到解决</p></li>
-<li><p>Andrew Dawson 提供了一种临时解决方法 https://gist.github.com/ajdawson/dd536f786741e987ae4e</p></li>
+<li><p>Andrew Dawson 提供了一种临时解决方法 <a class="reference external" href="https://gist.github.com/ajdawson/dd536f786741e987ae4e">https://gist.github.com/ajdawson/dd536f786741e987ae4e</a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5395,9 +5508,9 @@ L 170.28 88.74
 <img alt="../_images/Cartopy_1_81_1.png" src="../_images/Cartopy_1_81_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -5421,26 +5534,35 @@ L 170.28 88.74
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../xarray/xarray-2.html" title="previous page"><code class="docutils literal notranslate"><span class="pre">Xarray</span></code> 数据处理（2）</a>
-    <a class='right-next' id="next-link" href="Cartopy_2.html" title="next page"><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 地图绘制（2）</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../xarray/xarray-2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Xarray</span></code> 数据处理（2）</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="Cartopy_2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> 地图绘制（2）</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Xianxiang Li<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Xianxiang Li<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
@@ -5448,7 +5570,7 @@ L 170.28 88.74
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
 
     

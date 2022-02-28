@@ -4,10 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>大气数据处理及可视化 &#8212; AS213 Python in Atmospheric Sciences</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +21,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,33 +32,34 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="地图数据处理及可视化" href="integrated_examples_1.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -71,32 +70,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    AS213: Python in Atmosphric Sciences
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Pandas
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Pandas/Pandas_1.html">
    <code class="docutils literal notranslate">
@@ -143,12 +146,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Matplotlib
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Matplotlib/Matplotlib_advanced.html">
    <code class="docutils literal notranslate">
@@ -170,12 +173,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   xarray
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xarray/xarray-1.html">
    <code class="docutils literal notranslate">
@@ -197,12 +200,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Cartopy
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../cartopy/Cartopy_1.html">
    <code class="docutils literal notranslate">
@@ -239,12 +242,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intergrated examples
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="integrated_examples_1.html">
    地图数据处理及可视化
@@ -257,6 +260,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -300,7 +304,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -322,12 +326,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -351,14 +355,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    全球平均气温
@@ -407,25 +410,88 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>大气数据处理及可视化</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   全球平均气温
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     中国区域的平均气温
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrf">
+   WRF 数据处理和可视化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ncl-python-geocat">
+     NCL -&gt; Python: geoCAT
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metpy">
+     MetPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unidata-python-gallery">
+     Unidata Python Gallery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   时间序列分析和可视化
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     极端天气分析
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="id1">
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>大气数据处理及可视化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>知识点：大气（包括海洋）数据读取、处理及可视化，包括模式结果处理</p></li>
 <li><p>工具：xarray, wrf-python, pandas, cartopy, regionmask</p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>全球平均气温<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>我们使用以前课上用过的 NCEP 再分析资料 air.mon.mean.nc 来计算全球平均气温 (1948-2016)</p>
+<p>我们使用以前课上用过的 NCEP 再分析资料 <a class="reference external" href="http://air.mon.mean.nc">air.mon.mean.nc</a> 来计算全球平均气温 (1948-2016)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -435,7 +501,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.core.options.set_options at 0x7fa204e6c890&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.core.options.set_options at 0x7fc0bc960b10&gt;
 </pre></div>
 </div>
 </div>
@@ -506,15 +572,16 @@ array(5.7122564, dtype=float32)</pre></div></div>
 <ul class="simple">
 <li><p>每个月长度不同</p></li>
 </ul>
-<p>参考 http://xarray.pydata.org/en/stable/examples/monthly-means.html</p>
+<p>参考 <a class="reference external" href="http://xarray.pydata.org/en/stable/examples/monthly-means.html">http://xarray.pydata.org/en/stable/examples/monthly-means.html</a></p>
 <ul class="simple">
 <li><p>更重要的是，地球是个球体，各处的面积并不相同</p></li>
 </ul>
-<p>在地球经度 $\varphi$ 和纬度 $\lambda$ 处，地球表面微元面积为</p>
-<p>$$
-dA = R^2\cos\lambda,d\lambda,d\varphi,\qquad  -\pi &lt; \varphi &lt; \pi,, -\frac{\pi}{2} &lt; \lambda &lt; \frac{\pi}{2},
-$$</p>
-<p>所以在纬度 $[\lambda, \lambda+d\lambda]$ 之间，地球表面面积 $dA\propto\cos\lambda$。</p>
+<p>在地球经度 <span class="math notranslate nohighlight">\(\varphi\)</span> 和纬度 <span class="math notranslate nohighlight">\(\lambda\)</span> 处，地球表面微元面积为</p>
+<div class="math notranslate nohighlight">
+\[
+dA = R^2\cos\lambda\,d\lambda\,d\varphi,\qquad  -\pi &lt; \varphi &lt; \pi,\, -\frac{\pi}{2} &lt; \lambda &lt; \frac{\pi}{2}, 
+\]</div>
+<p>所以在纬度 <span class="math notranslate nohighlight">\([\lambda, \lambda+d\lambda]\)</span> 之间，地球表面面积 <span class="math notranslate nohighlight">\(dA\propto\cos\lambda\)</span>。</p>
 <ul class="simple">
 <li><p>我们忽略每月天数的不同，只考虑地球表面积的影响</p></li>
 <li><p>建立一个纬度余弦值构成的权重数组，并归一化（权重之和为1）</p></li>
@@ -602,7 +669,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre>&lt;xarray.DataArray &#x27;air&#x27; (time: 69)&gt;
+<div class="output text_html"><pre>&lt;xarray.DataArray (time: 69)&gt;
 array([13.627374 , 13.63256  , 13.542421 , 13.688788 , 13.786775 ,
        13.852996 , 13.569222 , 13.556584 , 13.479174 , 13.794247 ,
        13.811653 , 13.766874 , 13.652037 , 13.691757 , 13.637964 ,
@@ -688,7 +755,7 @@ Trend =  0.012706676166727795
 </div>
 </div>
 <ul class="simple">
-<li><p>可见，1948 - 2016 年间，全球平均气温增加幅度为 0.013 $^o$C/年，或者 0.13 $^o$C/10年。</p></li>
+<li><p>可见，1948 - 2016 年间，全球平均气温增加幅度为 0.013 <span class="math notranslate nohighlight">\(^o\)</span>C/年，或者 0.13 <span class="math notranslate nohighlight">\(^o\)</span>C/10年。</p></li>
 <li><p>我们可以将趋势直线和对应 95% 置信区间的两条趋势直线加到上图中。</p></li>
 </ul>
 <div class="cell docutils container">
@@ -708,13 +775,13 @@ Trend =  0.012706676166727795
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa1f2814e10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc0ab6204d0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/integrated_examples_2_27_1.png" src="../_images/integrated_examples_2_27_1.png" />
 </div>
 </div>
-<div class="section" id="id3">
+<section id="id3">
 <h3>中国区域的平均气温<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>如果我们需要用上面的数据集，求中国的平均气温，该怎么办？</p></li>
@@ -740,18 +807,10 @@ Trend =  0.012706676166727795
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">a3bb9010a30c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">regionmask</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">china_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;../shp_file/simplied_china_country.shp&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">china_mask_poly</span> <span class="o">=</span> <span class="n">regionmask</span><span class="o">.</span><span class="n">Regions</span><span class="p">(</span><span class="n">china_shp</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="s1">&#39;china&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;regionmask&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fc0ac06d950&gt;
 </pre></div>
 </div>
+<img alt="../_images/integrated_examples_2_31_1.png" src="../_images/integrated_examples_2_31_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -903,9 +962,9 @@ Trend =  0.010559139967498625
 <img alt="../_images/integrated_examples_2_36_1.png" src="../_images/integrated_examples_2_36_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="wrf">
+</section>
+</section>
+<section id="wrf">
 <h2>WRF 数据处理和可视化<a class="headerlink" href="#wrf" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>WRF（Weather Research and Forecasting）是广泛应用的区域气象模式</p></li>
@@ -1416,10 +1475,10 @@ variables:
 </div>
 </div>
 <p>此外，我们还可以计算该区域的气溶胶光学厚度（aerosol optical depth, AOD）。它是消光系数在高度上的积分
-$$
+$<span class="math notranslate nohighlight">\(
 AOD = \int_0^{top}\tau(z) dz,
-$$
-其中，$z$ 为 WRF 网格的垂直高度，$\tau(z)$ 为高度 $z$ 处的消光系数。</p>
+\)</span><span class="math notranslate nohighlight">\(
+其中，\)</span>z<span class="math notranslate nohighlight">\( 为 WRF 网格的垂直高度，\)</span>\tau(z)<span class="math notranslate nohighlight">\( 为高度 \)</span>z$ 处的消光系数。</p>
 <p>这里我们使用 550 nm 光波的消光系数，WRF 中的变量名为 EXTCOF55。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1491,20 +1550,20 @@ $$
 <img alt="../_images/integrated_examples_2_56_0.png" src="../_images/integrated_examples_2_56_0.png" />
 </div>
 </div>
-<div class="section" id="ncl-python-geocat">
+<section id="ncl-python-geocat">
 <h3>NCL -&gt; Python: geoCAT<a class="headerlink" href="#ncl-python-geocat" title="Permalink to this headline">¶</a></h3>
-<p>https://geocat-examples.readthedocs.io/en/latest/gallery</p>
-</div>
-<div class="section" id="metpy">
+<p><a class="reference external" href="https://geocat-examples.readthedocs.io/en/latest/gallery">https://geocat-examples.readthedocs.io/en/latest/gallery</a></p>
+</section>
+<section id="metpy">
 <h3>MetPy<a class="headerlink" href="#metpy" title="Permalink to this headline">¶</a></h3>
-<p>https://unidata.github.io/MetPy/latest/index.html</p>
-</div>
-<div class="section" id="unidata-python-gallery">
+<p><a class="reference external" href="https://unidata.github.io/MetPy/latest/index.html">https://unidata.github.io/MetPy/latest/index.html</a></p>
+</section>
+<section id="unidata-python-gallery">
 <h3>Unidata Python Gallery<a class="headerlink" href="#unidata-python-gallery" title="Permalink to this headline">¶</a></h3>
-<p>https://unidata.github.io/python-training/gallery/gallery-home/</p>
-</div>
-</div>
-<div class="section" id="id4">
+<p><a class="reference external" href="https://unidata.github.io/python-training/gallery/gallery-home/">https://unidata.github.io/python-training/gallery/gallery-home/</a></p>
+</section>
+</section>
+<section id="id4">
 <h2>时间序列分析和可视化<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Python 提供了很多辅助工具来处理时间序列</p>
 <ul class="simple">
@@ -1941,9 +2000,9 @@ memory usage: 5.4+ MB
 <img alt="../_images/integrated_examples_2_80_1.png" src="../_images/integrated_examples_2_80_1.png" />
 </div>
 </div>
-<div class="section" id="id5">
+<section id="id5">
 <h3>极端天气分析<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>我们分析每年下雨的天数、高温（$&gt;35 ^oC$) 的天数以及低温（$&lt;10 ^oC$）的天数</p>
+<p>我们分析每年下雨的天数、高温（<span class="math notranslate nohighlight">\(&gt;35 ^oC\)</span>) 的天数以及低温（<span class="math notranslate nohighlight">\(&lt;10 ^oC\)</span>）的天数</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gz_rainyDays</span> <span class="o">=</span> <span class="n">gz</span><span class="p">[</span><span class="n">gz</span><span class="o">.</span><span class="n">PRCP</span><span class="o">&gt;</span><span class="mf">0.</span><span class="p">]</span>
@@ -2116,9 +2175,9 @@ memory usage: 5.4+ MB
 <img alt="../_images/integrated_examples_2_90_1.png" src="../_images/integrated_examples_2_90_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2142,25 +2201,28 @@ memory usage: 5.4+ MB
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="integrated_examples_1.html" title="previous page">地图数据处理及可视化</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="integrated_examples_1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">地图数据处理及可视化</p>
         </div>
-        
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Xianxiang Li<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Xianxiang Li<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
@@ -2168,7 +2230,7 @@ memory usage: 5.4+ MB
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
 
     

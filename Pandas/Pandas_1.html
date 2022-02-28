@@ -4,10 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Pandas - 1 &#8212; AS213 Python in Atmospheric Sciences</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +21,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,34 +32,33 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pandas - 2" href="Pandas_2.html" />
     <link rel="prev" title="AS213: Python in Atmosphric Sciences" href="../intro.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -72,32 +69,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    AS213: Python in Atmosphric Sciences
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Pandas
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    <code class="docutils literal notranslate">
@@ -144,12 +145,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Matplotlib
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Matplotlib/Matplotlib_advanced.html">
    <code class="docutils literal notranslate">
@@ -171,12 +172,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   xarray
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xarray/xarray-1.html">
    <code class="docutils literal notranslate">
@@ -198,12 +199,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Cartopy
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../cartopy/Cartopy_1.html">
    <code class="docutils literal notranslate">
@@ -240,12 +241,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intergrated examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Integrated_examples/integrated_examples_1.html">
    地图数据处理及可视化
@@ -258,6 +259,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -301,7 +303,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -323,12 +325,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -352,14 +354,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pandas">
    1.
@@ -503,17 +504,175 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pandas - 1</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   数据结构
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     1.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Series
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframe">
+     1.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       DataFrame
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index">
+     1.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Index
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   数据类型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-o">
+   3. 文件 I/O
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     文件读取
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     文件写入
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4. 元素选取方法
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     思考题
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     4.1
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       []
+      </span>
+     </code>
+     操作符
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loc-label">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc
+      </span>
+     </code>
+     基于
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       label
+      </span>
+     </code>
+     的选取方式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iloc">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .iloc
+      </span>
+     </code>
+     基于位置的选取方式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#at-iat">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       at
+      </span>
+     </code>
+     和
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       iat
+      </span>
+     </code>
+     方法
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="pandas-1">
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas-1">
 <h1><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> - 1<a class="headerlink" href="#pandas-1" title="Permalink to this headline">¶</a></h1>
 <div>
 <img src='https://pandas.pydata.org/static/img/pandas.svg' width='400'/>
@@ -532,14 +691,14 @@
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 是一个优秀的数据分析工具包，主要用来分析二维数据和时间序列。它建构在 <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> 之上，但是能处理混合类型的数据。</p>
 <div>
     <img src='./stack.png' width='600' align='center'/>
-</div>  <div class="section" id="pandas">
+</div>  <section id="pandas">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据结构<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 主要支持两种数据结构：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code>: 一维带标签的数组，由数据类型相同的元素构成，具有列表和字典的特性。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>: 二维数据，由索引相同的 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 构成的的二维数据结构，类似表格</p></li>
 </ul>
-<div class="section" id="series">
+<section id="series">
 <h3>1.1. <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h3>
 <p>四个重要属性:</p>
 <ul class="simple">
@@ -558,11 +717,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a   -1.313967
-b   -1.579931
-c    0.542895
-d   -0.149474
-e    1.034422
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    0.279662
+b    2.179480
+c    1.181846
+d   -0.635226
+e   -0.016946
 Name: 这是一个Series, dtype: float64
 </pre></div>
 </div>
@@ -575,7 +734,7 @@ Name: 这是一个Series, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.31396681, -1.57993056,  0.54289455, -0.14947438,  1.03442175])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.27966185,  2.17948013,  1.18184557, -0.63522589, -0.01694577])
 </pre></div>
 </div>
 </div>
@@ -634,8 +793,8 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="dataframe">
+</section>
+<section id="dataframe">
 <h3>1.2. <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h3>
 <p>四个重要属性:</p>
 <ul class="simple">
@@ -927,7 +1086,7 @@ Data columns (total 5 columns):
  3   四       3 non-null      object
  4   五       3 non-null      object
 dtypes: object(5)
-memory usage: 252.0+ bytes
+memory usage: 224.0+ bytes
 </pre></div>
 </div>
 </div>
@@ -964,30 +1123,30 @@ memory usage: 252.0+ bytes
   <tbody>
     <tr>
       <th>a</th>
-      <td>-1.313967</td>
+      <td>0.279662</td>
     </tr>
     <tr>
       <th>b</th>
-      <td>-1.579931</td>
+      <td>2.179480</td>
     </tr>
     <tr>
       <th>c</th>
-      <td>0.542895</td>
+      <td>1.181846</td>
     </tr>
     <tr>
       <th>d</th>
-      <td>-0.149474</td>
+      <td>-0.635226</td>
     </tr>
     <tr>
       <th>e</th>
-      <td>1.034422</td>
+      <td>-0.016946</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="index">
+</section>
+<section id="index">
 <h3>1.3. <code class="docutils literal notranslate"><span class="pre">Index</span></code><a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Index</span></code> 是构成和操作 <code class="docutils literal notranslate"><span class="pre">Series</span></code>、<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 的关键。</p></li>
@@ -1075,9 +1234,9 @@ memory usage: 252.0+ bytes
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id1">
+</section>
+</section>
+<section id="id1">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 数据类型<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>旧版本 <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 的数据类型实际上都是继承自 <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></p></li>
@@ -1173,11 +1332,11 @@ Categories (2, int64): [3 &lt; 2]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="i-o">
+</section>
+<section id="i-o">
 <h2>3. 文件 I/O<a class="headerlink" href="#i-o" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 可以对多种文件进行读写操作，最常用的是 <code class="docutils literal notranslate"><span class="pre">csv</span></code> 文件 （comma separated values）和 <code class="docutils literal notranslate"><span class="pre">excel</span></code> 文件</p>
-<div class="section" id="id2">
+<section id="id2">
 <h3>文件读取<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code></p></li>
@@ -1186,7 +1345,7 @@ Categories (2, int64): [3 &lt; 2]
 <li><p><code class="docutils literal notranslate"><span class="pre">pd.read_HDFStore</span></code> HDF5 文件 (需要安装 <code class="docutils literal notranslate"><span class="pre">PyTables</span></code> 包)</p></li>
 <li><p>…</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> 有几个很有用的参数：[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html]</p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> 有几个很有用的参数：[<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html</a>]</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code>: str, 间隔符，默认值 ‘,’</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">header</span></code>: int 或 list of ints, 表头的位置（第几行，从 0 开始），默认为 ‘infer’（一般为第一行）</p></li>
@@ -1205,8 +1364,8 @@ Categories (2, int64): [3 &lt; 2]
 <li><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code>: Type name 或 dict of column -&gt; type, 指定读取的每列的数据类型，默认值为 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">parse_dates</span></code>: boolean，list of ints，names，list of lists 或者 dict, 指定是否将某些列转化为日期，默认 False.</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h3>文件写入<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pd.to_csv</span></code></p></li>
@@ -1225,9 +1384,9 @@ Categories (2, int64): [3 &lt; 2]
 <li><p><code class="docutils literal notranslate"><span class="pre">header</span></code>: 是否输出列的名字作为文件的第一行 (默认 <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">date_format</span></code>: 指定时间的输出格式</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id4">
+</section>
+</section>
+<section id="id4">
 <h2>4. 元素选取方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2128,11 +2287,11 @@ Categories (2, int64): [3 &lt; 2]
 </table>
 </div></div></div>
 </div>
-<div class="section" id="id5">
+<section id="id5">
 <h3>思考题<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>结合上面讲过的文件 I/O，思考如何将上面两个语句合并成一个，以达到同样的效果？</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>4.1 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 操作符<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[]</span></code> 用来选取行，使用的是位置（即第几行）</p>
 <div class="cell docutils container">
@@ -2451,8 +2610,8 @@ Name: Physics, dtype: object
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="loc-label">
+</section>
+<section id="loc-label">
 <h3><code class="docutils literal notranslate"><span class="pre">.loc</span></code> 基于 <code class="docutils literal notranslate"><span class="pre">label</span></code> 的选取方式<a class="headerlink" href="#loc-label" title="Permalink to this headline">¶</a></h3>
 <p>基于 <code class="docutils literal notranslate"><span class="pre">label</span></code> 的选取方式，使用索引值和列名来访问元素。</p>
 <div class="cell docutils container">
@@ -3225,8 +3384,8 @@ Name: Math, dtype: float64
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="iloc">
+</section>
+<section id="iloc">
 <h3><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> 基于位置的选取方式<a class="headerlink" href="#iloc" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> 可以使用位置来选取元素，注意：与 <code class="docutils literal notranslate"><span class="pre">.loc</span></code> 不同，切片右端点不包含</p>
 <div class="cell docutils container">
@@ -3474,8 +3633,8 @@ Name: ID, dtype: int64
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="at-iat">
+</section>
+<section id="at-iat">
 <h3><code class="docutils literal notranslate"><span class="pre">at</span></code> 和 <code class="docutils literal notranslate"><span class="pre">iat</span></code> 方法<a class="headerlink" href="#at-iat" title="Permalink to this headline">¶</a></h3>
 <p>当访问单个元素时，使用 <code class="docutils literal notranslate"><span class="pre">at</span></code>（基于 label）和 <code class="docutils literal notranslate"><span class="pre">iat</span></code>（基于位置）都比相应的 <code class="docutils literal notranslate"><span class="pre">loc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">iloc</span></code> 要快一些</p>
 <div class="cell docutils container">
@@ -3505,94 +3664,23 @@ Name: ID, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S_1&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.84 µs ± 31.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.99 µs ± 105 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.4 µs ± 321 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">49</span><span class="o">-</span><span class="n">dadf4c13156c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s2">&quot;data2.loc[1101,&#39;School&#39;]&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;data2.iat[0,0]&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;data2.iloc[0,0]&#39;</span><span class="p">)</span>
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2342</span>                 <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2343</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2344</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2345</span>             <span class="k">return</span> <span class="n">result</span>
-<span class="g g-Whitespace">   </span><span class="mi">2346</span> 
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/decorator.py</span> in <span class="ni">fun</span><span class="nt">(*args, **kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>                 <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">231</span>             <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span>
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/IPython/core/magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> 
-<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/IPython/core/magics/execution.py</span> in <span class="ni">timeit</span><span class="nt">(self, line, cell, local_ns)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1171</span>                     <span class="k">break</span>
-<span class="g g-Whitespace">   </span><span class="mi">1172</span> 
-<span class="ne">-&gt; </span><span class="mi">1173</span>         <span class="n">all_runs</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">repeat</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1174</span>         <span class="n">best</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_runs</span><span class="p">)</span> <span class="o">/</span> <span class="n">number</span>
-<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="n">worst</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">all_runs</span><span class="p">)</span> <span class="o">/</span> <span class="n">number</span>
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/timeit.py</span> in <span class="ni">repeat</span><span class="nt">(self, repeat, number)</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">repeat</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">204</span>             <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>             <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>         <span class="k">return</span> <span class="n">r</span>
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/IPython/core/magics/execution.py</span> in <span class="ni">timeit</span><span class="nt">(self, number)</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span>         <span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">169</span>             <span class="n">timing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>             <span class="k">if</span> <span class="n">gcold</span><span class="p">:</span>
-
-<span class="nn">&lt;magic-timeit&gt;</span> in <span class="ni">inner</span><span class="nt">(_it, _timer)</span>
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/pandas/core/indexing.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">883</span>         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">884</span>             <span class="n">key</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">apply_if_callable</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">key</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">885</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_scalar_access</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">886</span>                 <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">887</span>                     <span class="c1"># AttributeError for IntervalTree get_value</span>
-
-<span class="nn">/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/pandas/core/indexing.py</span> in <span class="ni">_is_scalar_access</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1419</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1420</span>         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1421</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1422</span>                 <span class="k">return</span> <span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1423</span> 
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.94 µs ± 79.3 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+4.77 µs ± 80.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+13.4 µs ± 144 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+14.7 µs ± 166 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="references">
+</section>
+</section>
+<section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>1.<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide">https://pandas.pydata.org/pandas-docs/stable/user_guide</a></p>
 <p>2.<a class="reference external" href="https://github.com/datawhalechina/joyful-pandas/tree/master/data">https://github.com/datawhalechina/joyful-pandas</a></p>
 <p>3.<a class="reference external" href="https://github.com/hangsz/pandas-tutorial">https://github.com/hangsz/pandas-tutorial</a></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3616,26 +3704,35 @@ Name: ID, dtype: int64
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">AS213: Python in Atmosphric Sciences</a>
-    <a class='right-next' id="next-link" href="Pandas_2.html" title="next page"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> - 2</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">AS213: Python in Atmosphric Sciences</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="Pandas_2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> - 2</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Xianxiang Li<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Xianxiang Li<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
@@ -3643,7 +3740,7 @@ Name: ID, dtype: int64
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
 
     

@@ -17,27 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import regionmask
-import geopandas as gpd
-
-china_shp = gpd.read_file('../shp_file/simplied_china_country.shp',encoding='utf8')
-china_mask_poly = regionmask.Regions(china_shp.geometry,names='china')
-
-china_mask = china_mask_poly.mask(mon_air)
-#china_mask= np.ma.masked_invalid(china_mask)
-china_mask = xr.where(china_mask==0,1.0,china_mask)
-china_mask.plot()
+import wrf
+import xarray
+from netCDF4 import Dataset
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-15-a3bb9010a30c>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mregionmask[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0;32mimport[0m [0mgeopandas[0m [0;32mas[0m [0mgpd[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0mchina_shp[0m [0;34m=[0m [0mgpd[0m[0;34m.[0m[0mread_file[0m[0;34m([0m[0;34m'../shp_file/simplied_china_country.shp'[0m[0;34m,[0m[0mencoding[0m[0;34m=[0m[0;34m'utf8'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0mchina_mask_poly[0m [0;34m=[0m [0mregionmask[0m[0;34m.[0m[0mRegions[0m[0;34m([0m[0mchina_shp[0m[0;34m.[0m[0mgeometry[0m[0;34m,[0m[0mnames[0m[0;34m=[0m[0;34m'china'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-22-a20576d2abee>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mimport[0m [0mwrf[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;32mimport[0m [0mxarray[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;32mfrom[0m [0mnetCDF4[0m [0;32mimport[0m [0mDataset[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'regionmask'
-ModuleNotFoundError: No module named 'regionmask'
+[0;31mModuleNotFoundError[0m: No module named 'wrf'
+ModuleNotFoundError: No module named 'wrf'
 

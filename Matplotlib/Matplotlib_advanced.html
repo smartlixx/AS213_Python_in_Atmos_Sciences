@@ -4,10 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Matplotlib 进阶 &#8212; AS213 Python in Atmospheric Sciences</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +21,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,34 +32,33 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Matplotlib 作业" href="Matplotlib_homework.html" />
     <link rel="prev" title="思考题" href="../Pandas/%E6%80%9D%E8%80%83%E9%A2%98_%E7%AD%94%E6%A1%88.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -72,32 +69,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    AS213: Python in Atmosphric Sciences
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Pandas
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Pandas/Pandas_1.html">
    <code class="docutils literal notranslate">
@@ -144,12 +145,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Matplotlib
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    <code class="docutils literal notranslate">
@@ -171,12 +172,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   xarray
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xarray/xarray-1.html">
    <code class="docutils literal notranslate">
@@ -198,12 +199,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Cartopy
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../cartopy/Cartopy_1.html">
    <code class="docutils literal notranslate">
@@ -240,12 +241,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intergrated examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Integrated_examples/integrated_examples_1.html">
    地图数据处理及可视化
@@ -258,6 +259,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -301,7 +303,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -323,12 +325,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -352,14 +354,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    <code class="docutils literal notranslate">
@@ -562,17 +563,234 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Matplotlib 进阶</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Matplotlib
+    </span>
+   </code>
+   的几种调用方法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-axes">
+   Figure 和 Axes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subplots">
+   Subplots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#axes">
+   在
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Axes
+    </span>
+   </code>
+   中绘图
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labels">
+   坐标轴标注 Labels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   线型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   颜色
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markers">
+   Markers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-ticks-and-gridlines">
+   标注、刻度和网格 Label, Ticks, and Gridlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spines">
+   Spines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fill-between">
+   fill_between
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     填充整个坐标轴
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib-styles">
+   Matplotlib styles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#legend">
+   图例 Legend
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inset">
+   插图 Inset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#x-y">
+   双
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     x
+    </span>
+   </code>
+   或
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     y
+    </span>
+   </code>
+   轴
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     第一种情况
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     第二种情况
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   时间坐标轴
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#annotations">
+   插入标注文本 Annotations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subplot">
+   不同
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     subplot
+    </span>
+   </code>
+   间绘制辅助线
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   输出文件
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   动画
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   绘制复杂的
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     subplot
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quiver">
+   矢量箭头 quiver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#streamplot">
+   流线图 streamplot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   中文字体
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Pandas
+    </span>
+   </code>
+   绘图
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colorbar-colormap">
+   Colorbar 和 colormap
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#colorbar">
+     多图共用一个 colorbar
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="matplotlib">
+  <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
 <h1><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> 进阶<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
 <div>
 <img src='https://matplotlib.org/_static/logo2_compressed.svg' width='400'/>
@@ -600,7 +818,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="id1">
+<section id="id1">
 <h2><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> 的几种调用方法<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>参考 <a class="reference external" href="https://matplotlib.org/faq/usage_faq.html#coding-styles">https://matplotlib.org/faq/usage_faq.html#coding-styles</a>:</p>
 <ol class="simple">
@@ -628,7 +846,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c51b7450&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91e4537110&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_5_1.png" src="../_images/Matplotlib_advanced_5_1.png" />
@@ -636,8 +854,8 @@
 </div>
 <div>
     <img src='https://matplotlib.org/devdocs/_images/anatomy.png' width='600'/>
-</div>   </div>
-<div class="section" id="figure-axes">
+</div>   </section>
+<section id="figure-axes">
 <h2>Figure 和 Axes<a class="headerlink" href="#figure-axes" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Figure</span></code> 是 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> 对象架构中的最高一级。 它可以用来直接显式创建一幅图。</p>
 <div class="cell docutils container">
@@ -727,8 +945,8 @@
 <img alt="../_images/Matplotlib_advanced_17_0.png" src="../_images/Matplotlib_advanced_17_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="subplots">
+</section>
+<section id="subplots">
 <h2>Subplots<a class="headerlink" href="#subplots" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> 可以一次性创建多个 Axes</p>
 <div class="cell docutils container">
@@ -823,8 +1041,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="axes">
+</section>
+<section id="axes">
 <h2>在 <code class="docutils literal notranslate"><span class="pre">Axes</span></code> 中绘图<a class="headerlink" href="#axes" title="Permalink to this headline">¶</a></h2>
 <p>所有的绘图操作都发生在 Axes 对象上. 如果你采用<a class="reference external" href="https://matplotlib.org/faq/usage_faq.html#coding-styles">面向对象的方式</a>来调用 <code class="docutils literal notranslate"><span class="pre">matploblib</span></code>，事情就会变得很容易理解.</p>
 <div class="cell docutils container">
@@ -835,7 +1053,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c643c2d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91e6343650&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_31_1.png" src="../_images/Matplotlib_advanced_31_1.png" />
@@ -854,14 +1072,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c64eef10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91e6435590&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_33_1.png" src="../_images/Matplotlib_advanced_33_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="labels">
+</section>
+<section id="labels">
 <h2>坐标轴标注 Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -886,8 +1104,8 @@
 <img alt="../_images/Matplotlib_advanced_35_0.png" src="../_images/Matplotlib_advanced_35_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>线型<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -907,14 +1125,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c5761050&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91e4a7ac90&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_37_1.png" src="../_images/Matplotlib_advanced_37_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>颜色<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>根据 <a class="reference external" href="https://matplotlib.org/2.0.2/api/colors_api.html">colors documentation</a>，有一常用些颜色有专门的名字：</p>
 <ul class="simple">
@@ -936,7 +1154,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c568bd90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91e4ad07d0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_40_1.png" src="../_images/Matplotlib_advanced_40_1.png" />
@@ -962,7 +1180,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c5bb3650&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91e4fb7290&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_42_1.png" src="../_images/Matplotlib_advanced_42_1.png" />
@@ -990,8 +1208,8 @@
 <img alt="../_images/Matplotlib_advanced_45_0.png" src="../_images/Matplotlib_advanced_45_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="markers">
+</section>
+<section id="markers">
 <h2>Markers<a class="headerlink" href="#markers" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">matplolib</span></code> 里有<a class="reference external" href="https://matplotlib.org/api/markers_api.html">很多不同的 markers</a> 供选择!</p>
 <div class="cell docutils container">
@@ -1008,14 +1226,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c7227190&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91e78f2350&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_48_1.png" src="../_images/Matplotlib_advanced_48_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="label-ticks-and-gridlines">
+</section>
+<section id="label-ticks-and-gridlines">
 <h2>标注、刻度和网格 Label, Ticks, and Gridlines<a class="headerlink" href="#label-ticks-and-gridlines" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">()</span>        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">()</span>
 
@@ -1089,8 +1307,8 @@
 <img alt="../_images/Matplotlib_advanced_53_0.png" src="../_images/Matplotlib_advanced_53_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="spines">
+</section>
+<section id="spines">
 <h2>Spines<a class="headerlink" href="#spines" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Axes</span></code> 有四个 spines (即连接 <code class="docutils literal notranslate"><span class="pre">ticks</span></code>的直线），分别为 <code class="docutils literal notranslate"><span class="pre">'left'</span></code>, <code class="docutils literal notranslate"><span class="pre">'right'</span></code>, <code class="docutils literal notranslate"><span class="pre">'bottom'</span></code> 和 <code class="docutils literal notranslate"><span class="pre">'top'</span></code>, 存放在 <code class="docutils literal notranslate"><span class="pre">Axes.spines</span></code> 这个有序字典（OrderedDict）里。</p>
 <p>我们可以改变这些 spines 的属性，包括颜色和位置。</p>
@@ -1124,7 +1342,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87c82ff410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91ea1ef290&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_55_1.png" src="../_images/Matplotlib_advanced_55_1.png" />
@@ -1163,8 +1381,8 @@
 <img alt="../_images/Matplotlib_advanced_56_0.png" src="../_images/Matplotlib_advanced_56_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="fill-between">
+</section>
+<section id="fill-between">
 <h2>fill_between<a class="headerlink" href="#fill-between" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1253,7 +1471,7 @@
 <img alt="../_images/Matplotlib_advanced_61_1.png" src="../_images/Matplotlib_advanced_61_1.png" />
 </div>
 </div>
-<div class="section" id="id4">
+<section id="id4">
 <h3>填充整个坐标轴<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">transform</span></code> 参数：参照系的选择</p>
 <ul class="simple">
@@ -1273,15 +1491,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PolyCollection at 0x7f87c6dbca90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PolyCollection at 0x7f91ea1e6ed0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_64_1.png" src="../_images/Matplotlib_advanced_64_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="matplotlib-styles">
+</section>
+</section>
+<section id="matplotlib-styles">
 <h2>Matplotlib styles<a class="headerlink" href="#matplotlib-styles" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -1324,8 +1542,8 @@
 <img alt="../_images/Matplotlib_advanced_68_2.png" src="../_images/Matplotlib_advanced_68_2.png" />
 </div>
 </div>
-</div>
-<div class="section" id="legend">
+</section>
+<section id="legend">
 <h2>图例 Legend<a class="headerlink" href="#legend" title="Permalink to this headline">¶</a></h2>
 <p>图例一般由以下部分组成</p>
 <ul class="simple">
@@ -1411,7 +1629,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f87c88f8890&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f91eb013610&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_73_1.png" src="../_images/Matplotlib_advanced_73_1.png" />
@@ -1428,7 +1646,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f87c6fedd50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f91ea7daad0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_74_1.png" src="../_images/Matplotlib_advanced_74_1.png" />
@@ -1455,8 +1673,8 @@
 <img alt="../_images/Matplotlib_advanced_76_0.png" src="../_images/Matplotlib_advanced_76_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="inset">
+</section>
+<section id="inset">
 <h2>插图 Inset<a class="headerlink" href="#inset" title="Permalink to this headline">¶</a></h2>
 <p>很多时候我们需要放置一张小图来表现一些细节（比如中国地图的南海小图），这时我们需要一个插图 (inset)。</p>
 <div><img src='./China_map_mercator.png' width=300 align='center'/></div><p>可以用 <code class="docutils literal notranslate"><span class="pre">fig.add_axes</span></code> 来实现，其第一个参数为四个 <code class="docutils literal notranslate"><span class="pre">float</span></code> 组成的 <code class="docutils literal notranslate"><span class="pre">list</span></code>，分别表示插图的位置和大小 <code class="docutils literal notranslate"><span class="pre">[x,y,width,height]</span></code>。</p>
@@ -1479,14 +1697,14 @@
 <span class="n">main_ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gaussian colored noise&#39;</span><span class="p">)</span>
 
 <span class="c1"># this is an inset axes over the main axes</span>
-<span class="n">right_inset_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="o">.</span><span class="mi">65</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">right_inset_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.65</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.2</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">right_inset_ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">right_inset_ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
 <span class="n">right_inset_ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
 <span class="n">right_inset_ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
 
 <span class="c1"># this is another inset axes over the main axes</span>
-<span class="n">left_inset_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">left_inset_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.2</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.2</span><span class="p">],</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">left_inset_ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)],</span> <span class="n">r</span><span class="p">)</span>
 <span class="n">left_inset_ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Impulse response&#39;</span><span class="p">)</span>
 <span class="n">left_inset_ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
@@ -1502,10 +1720,10 @@
 <img alt="../_images/Matplotlib_advanced_80_1.png" src="../_images/Matplotlib_advanced_80_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="x-y">
+</section>
+<section id="x-y">
 <h2>双<code class="docutils literal notranslate"><span class="pre">x</span></code> 或 <code class="docutils literal notranslate"><span class="pre">y</span></code> 轴<a class="headerlink" href="#x-y" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
+<section id="id5">
 <h3>第一种情况<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>两个坐标轴绘制同一个数据，但显示不同的坐标数据，比如一个显示角度，一个显示弧度，或一个显示摄氏度，一个显示华氏度。</p>
 <p>我们可以用 <code class="docutils literal notranslate"><span class="pre">axes.Axes.secondary_xaxis</span></code> 和 <code class="docutils literal notranslate"><span class="pre">axes.Axes.secondary_yaxis</span></code> 来实现这个效果.</p>
@@ -1572,7 +1790,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;period [s]&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/jupyter-book/lib/python3.7/site-packages/ipykernel_launcher.py:14: RuntimeWarning: divide by zero encountered in true_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/lib/python3.7/site-packages/ipykernel_launcher.py:14: RuntimeWarning: divide by zero encountered in true_divide
   
 </pre></div>
 </div>
@@ -1623,8 +1841,8 @@
 <img alt="../_images/Matplotlib_advanced_85_1.png" src="../_images/Matplotlib_advanced_85_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>第二种情况<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>两个坐标轴来绘制不同的数据</p>
 <ul class="simple">
@@ -1677,12 +1895,12 @@
 <img alt="../_images/Matplotlib_advanced_88_0.png" src="../_images/Matplotlib_advanced_88_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id7">
+</section>
+</section>
+<section id="id7">
 <h2>时间坐标轴<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="annotations">
+</section>
+<section id="annotations">
 <h2>插入标注文本 Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ax.text</span></code></p></li>
@@ -1731,8 +1949,8 @@
 <img alt="../_images/Matplotlib_advanced_93_1.png" src="../_images/Matplotlib_advanced_93_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="subplot">
+</section>
+<section id="subplot">
 <h2>不同 <code class="docutils literal notranslate"><span class="pre">subplot</span></code> 间绘制辅助线<a class="headerlink" href="#subplot" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.patches.ConnectionPath</span></code> 可以在不同子图间绘制连接线</p></li>
@@ -1771,7 +1989,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f87cab66310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91cce27450&gt;]
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_96_1.png" src="../_images/Matplotlib_advanced_96_1.png" />
@@ -1809,14 +2027,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.patches.ConnectionPatch at 0x7f87cacc21d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.patches.ConnectionPatch at 0x7f91cd16e710&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_97_1.png" src="../_images/Matplotlib_advanced_97_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h2>输出文件<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plt.savefig</span></code>, <code class="docutils literal notranslate"><span class="pre">fig.savefig</span></code></p>
 <p>参数：</p>
@@ -1825,8 +2043,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">dpi</span></code>：<code class="docutils literal notranslate"><span class="pre">dots</span> <span class="pre">per</span> <span class="pre">inch</span></code>，图片的精度，出版的图片一般要求 <code class="docutils literal notranslate"><span class="pre">dpi</span> <span class="pre">&gt;</span> <span class="pre">300</span></code>。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bbox_inches=&quot;tight&quot;</span></code>：让保存的图片更加紧凑，去掉周边的空白</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h2>动画<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <div>
 <img src='./dynamics_animation.gif' width='800'/>
@@ -1908,8 +2126,8 @@
 </div>
 </div>
 <p><img alt="" src="../_images/movie2.gif" /></p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h2>绘制复杂的 <code class="docutils literal notranslate"><span class="pre">subplot</span></code><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2012,8 +2230,8 @@
 <img alt="../_images/Matplotlib_advanced_114_0.png" src="../_images/Matplotlib_advanced_114_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="quiver">
+</section>
+<section id="quiver">
 <h2>矢量箭头 quiver<a class="headerlink" href="#quiver" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2034,14 +2252,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.quiver.Quiver at 0x7f87aee51210&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.quiver.Quiver at 0x7f91ce31ec50&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_116_1.png" src="../_images/Matplotlib_advanced_116_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="streamplot">
+</section>
+<section id="streamplot">
 <h2>流线图 streamplot<a class="headerlink" href="#streamplot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2051,14 +2269,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.streamplot.StreamplotSet at 0x7f87af6abfd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.streamplot.StreamplotSet at 0x7f91ceb0ef90&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_118_1.png" src="../_images/Matplotlib_advanced_118_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h2>中文字体<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> 默认的字体不支持中文；我们必须指定支持中文的字体。</p>
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib.font_manager</span></code> 可以用来管理字体</p>
@@ -2091,8 +2309,8 @@
 <img alt="../_images/Matplotlib_advanced_121_1.png" src="../_images/Matplotlib_advanced_121_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="pandas">
+</section>
+<section id="pandas">
 <h2><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> 绘图<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2281,7 +2499,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:label=&#39;64622568-0f26-4368-8798-8e1787400342&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:label=&#39;ddea9f5f-d870-4902-ab9b-89703a9156db&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_133_1.png" src="../_images/Matplotlib_advanced_133_1.png" />
@@ -2312,11 +2530,11 @@
 <img alt="../_images/Matplotlib_advanced_135_0.png" src="../_images/Matplotlib_advanced_135_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="colorbar-colormap">
+</section>
+<section id="colorbar-colormap">
 <h2>Colorbar 和 colormap<a class="headerlink" href="#colorbar-colormap" title="Permalink to this headline">¶</a></h2>
-<p>Colormap 参考 https://matplotlib.org/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py</p>
-<div class="section" id="colorbar">
+<p>Colormap 参考 <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py">https://matplotlib.org/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py</a></p>
+<section id="colorbar">
 <h3>多图共用一个 colorbar<a class="headerlink" href="#colorbar" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2367,15 +2585,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f87b3512c10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f91d1a8c650&gt;
 </pre></div>
 </div>
 <img alt="../_images/Matplotlib_advanced_142_1.png" src="../_images/Matplotlib_advanced_142_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="references">
+</section>
+</section>
+<section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://rabernat.github.io/research_computing_2018/more-matplotlib.html">https://rabernat.github.io/research_computing_2018/more-matplotlib.html</a></p></li>
@@ -2384,8 +2602,8 @@
 <li><p><a class="reference external" href="https://github.com/rougier/matplotlib-tutorial">https://github.com/rougier/matplotlib-tutorial</a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2409,26 +2627,35 @@
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Pandas/%E6%80%9D%E8%80%83%E9%A2%98_%E7%AD%94%E6%A1%88.html" title="previous page">思考题</a>
-    <a class='right-next' id="next-link" href="Matplotlib_homework.html" title="next page"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> 作业</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../Pandas/%E6%80%9D%E8%80%83%E9%A2%98_%E7%AD%94%E6%A1%88.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">思考题</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="Matplotlib_homework.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> 作业</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Xianxiang Li<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Xianxiang Li<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
@@ -2436,7 +2663,7 @@
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
 
     

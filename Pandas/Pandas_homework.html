@@ -4,10 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>作业：处理香港的臭氧污染数据 &#8212; AS213 Python in Atmospheric Sciences</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +21,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,34 +32,35 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="思考题" href="%E6%80%9D%E8%80%83%E9%A2%98.html" />
     <link rel="prev" title="Pandas - 3" href="Pandas_3.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -72,32 +71,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/sysu_logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">AS213 Python in Atmospheric Sciences</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    AS213: Python in Atmosphric Sciences
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Pandas
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Pandas_1.html">
    <code class="docutils literal notranslate">
@@ -144,12 +147,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Matplotlib
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Matplotlib/Matplotlib_advanced.html">
    <code class="docutils literal notranslate">
@@ -171,12 +174,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   xarray
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xarray/xarray-1.html">
    <code class="docutils literal notranslate">
@@ -198,12 +201,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Cartopy
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../cartopy/Cartopy_1.html">
    <code class="docutils literal notranslate">
@@ -240,12 +243,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intergrated examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Integrated_examples/integrated_examples_1.html">
    地图数据处理及可视化
@@ -258,6 +261,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -301,7 +305,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -323,12 +327,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -352,14 +356,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pandas">
    1. 使用
@@ -420,53 +423,128 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>作业：处理香港的臭氧污染数据</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   1. 使用
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   读取该文件，并使用时间来作为索引。
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2. 查看读取的数据信息，删除全部都是缺失值的站点
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   3. 找出每个站点的最大值、最小值和平均值
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4. 找出2000年香港臭氧浓度的最大值，并找出该最大值出现在何时、何地。
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   5. 计算臭氧浓度的年均日变化，并画图，有哪个站点的平均浓度一直比其它站点高？
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   6. 计算 8 小时滚动平均浓度
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   7. 找出全年污染浓度超标的天数
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-xlsx-o3-hk-2000-new-csv">
+   8.（加分题）该数据的原始数据在文件
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     2000_EN.xlsx
+    </span>
+   </code>
+   中。请尝试将该文件的臭氧数据转换成
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     O3_HK_2000_new.csv
+    </span>
+   </code>
+   中的形式
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="id1">
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>作业：处理香港的臭氧污染数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>地表附近的臭氧是珠三角地区主要的污染物。文件 <code class="docutils literal notranslate"><span class="pre">O3_HK_2000_new.csv</span></code> 保存的是香港 2000 年 14 个地面观测站逐小时的臭氧浓度（单位 $\mu$g m$^{-3}$）。</p>
+<p>地表附近的臭氧是珠三角地区主要的污染物。文件 <code class="docutils literal notranslate"><span class="pre">O3_HK_2000_new.csv</span></code> 保存的是香港 2000 年 14 个地面观测站逐小时的臭氧浓度（单位 <span class="math notranslate nohighlight">\(\mu\)</span>g m<span class="math notranslate nohighlight">\(^{-3}\)</span>）。</p>
 <p>注意：DAY 表示的是一年中的第几天（请查阅课件了解如何在 <code class="docutils literal notranslate"><span class="pre">strftime</span></code> 中用符号表示该时间）。</p>
-<div class="section" id="pandas">
+<section id="pandas">
 <h2>1. 使用 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 读取该文件，并使用时间来作为索引。<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
 <p>提示：HOUR 的值是从 1 到 24，无法用<code class="docutils literal notranslate"><span class="pre">strftime</span></code> 中用符号表示，请考虑使用 <code class="docutils literal notranslate"><span class="pre">DateOffset</span></code> 来转换时间格式。</p>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>2. 查看读取的数据信息，删除全部都是缺失值的站点<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>3. 找出每个站点的最大值、最小值和平均值<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>4. 找出2000年香港臭氧浓度的最大值，并找出该最大值出现在何时、何地。<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>5. 计算臭氧浓度的年均日变化，并画图，有哪个站点的平均浓度一直比其它站点高？<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>提示：即全年按照小时的平均值 （按 <code class="docutils literal notranslate"><span class="pre">hour</span></code> 值分组、平均）。</p>
 <p>使用 ax = df.plot() 可以直接绘制一个 DataFrame df 的各列数据, 并使用 ax.legend(bbox_to_anchor=(1.01,0.9)) 把图例放到画图区域的外面。</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>6. 计算 8 小时滚动平均浓度<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>8 小时滚动平均浓度是臭氧观测的一个重要指标。</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>7. 找出全年污染浓度超标的天数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p>香港臭氧浓度目标为每天最大 8 小时平均浓度小于 160 $\mu$g m$^{-3}$ （任何一个观测站超过此最大值，则当天香港空气质量不达标），每年超过此标准的天数不得多于 9 天
-(https://www.epd.gov.hk/epd/english/environmentinhk/air/air_quality_objectives/air_quality_objectives.html)。</p>
+<p>香港臭氧浓度目标为每天最大 8 小时平均浓度小于 160 <span class="math notranslate nohighlight">\(\mu\)</span>g m<span class="math notranslate nohighlight">\(^{-3}\)</span> （任何一个观测站超过此最大值，则当天香港空气质量不达标），每年超过此标准的天数不得多于 9 天
+(<a class="reference external" href="https://www.epd.gov.hk/epd/english/environmentinhk/air/air_quality_objectives/air_quality_objectives.html">https://www.epd.gov.hk/epd/english/environmentinhk/air/air_quality_objectives/air_quality_objectives.html</a>)。</p>
 <p>请你找出 2000 年有哪些天污染浓度超过这个标准？一共有多少天？全年的污染超标了吗（多于9天）？</p>
-</div>
-<div class="section" id="en-xlsx-o3-hk-2000-new-csv">
+</section>
+<section id="en-xlsx-o3-hk-2000-new-csv">
 <h2>8.（加分题）该数据的原始数据在文件 <code class="docutils literal notranslate"><span class="pre">2000_EN.xlsx</span></code> 中。请尝试将该文件的臭氧数据转换成 <code class="docutils literal notranslate"><span class="pre">O3_HK_2000_new.csv</span></code> 中的形式<a class="headerlink" href="#en-xlsx-o3-hk-2000-new-csv" title="Permalink to this headline">¶</a></h2>
 <p>注意：时间可以不用拆分成 <code class="docutils literal notranslate"><span class="pre">YEAR</span></code>,<code class="docutils literal notranslate"><span class="pre">DAY</span></code> 和 <code class="docutils literal notranslate"><span class="pre">HOUR</span></code>。重点是如何将数据表现形式进行转化。提示：请查阅 <code class="docutils literal notranslate"><span class="pre">pd.pivot</span></code> 的功能和用法。</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -490,26 +568,35 @@
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Pandas_3.html" title="previous page"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> - 3</a>
-    <a class='right-next' id="next-link" href="%E6%80%9D%E8%80%83%E9%A2%98.html" title="next page">思考题</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Pandas_3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> - 3</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="%E6%80%9D%E8%80%83%E9%A2%98.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">思考题</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Xianxiang Li<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By Xianxiang Li<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
@@ -517,7 +604,7 @@
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
 
     
