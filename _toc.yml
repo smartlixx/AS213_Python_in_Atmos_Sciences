@@ -1,34 +1,33 @@
-# Table of content
-# Learn more at https://jupyterbook.org/customize/toc.html
-#
-- file: intro
-  title: Introduction
-- part: Pandas
+format: jb-book
+root: intro
+title: Introduction
+parts:
+- caption: Pandas
   chapters:
-    - file: Pandas/Pandas_1
-    - file: Pandas/Pandas_2
-    - file: Pandas/Pandas_3
-    - file: Pandas/Pandas_homework
-      title: Pandas homework
-    - file: Pandas/思考题
-    - file: Pandas/思考题_答案
-      title: 思考题答案
-- part: Matplotlib
+  - file: Pandas/Pandas_1
+  - file: Pandas/Pandas_2
+  - file: Pandas/Pandas_3
+  - file: Pandas/Pandas_homework
+    title: Pandas homework
+  - file: "Pandas/\u601D\u8003\u9898"
+  - file: "Pandas/\u601D\u8003\u9898_\u7B54\u6848"
+    title: "\u601D\u8003\u9898\u7B54\u6848"
+- caption: Matplotlib
   chapters:
-    - file: Matplotlib/Matplotlib_advanced
-    - file: Matplotlib/Matplotlib_homework
-- part: xarray
+  - file: Matplotlib/Matplotlib_advanced
+  - file: Matplotlib/Matplotlib_homework
+- caption: xarray
   chapters:
-    - file: xarray/xarray-1
-    - file: xarray/xarray-2
-- part: Cartopy
+  - file: xarray/xarray-1
+  - file: xarray/xarray-2
+- caption: Cartopy
   chapters:
-    - file: cartopy/Cartopy_1
-    - file: cartopy/Cartopy_2
-    - file: cartopy/Cartopy_3
-    - file: Exercises/Exercise_El_Nino
-      title: xarray/cartopy 作业
-- part: Intergrated examples
+  - file: cartopy/Cartopy_1
+  - file: cartopy/Cartopy_2
+  - file: cartopy/Cartopy_3
+  - file: Exercises/Exercise_El_Nino
+    title: "xarray/cartopy \u4F5C\u4E1A"
+- caption: Intergrated examples
   chapters:
-    - file: Integrated_examples/integrated_examples_1
-    - file: Integrated_examples/integrated_examples_2
+  - file: Integrated_examples/integrated_examples_1
+  - file: Integrated_examples/integrated_examples_2
